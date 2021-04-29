@@ -1,0 +1,269 @@
+@charset "utf-8";
+.tac{text-align:center;}
+.fwb{font-weight:bold}
+.ti0{text-indent:0;}
+
+
+body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  background:rgb(204,204,204);
+  font-size:12pt;
+  font-family:"Times New Roman", serif;
+  text-align:left;
+  line-height:150%;
+  text-align:justify;
+}
+page{ 
+  width:170mm;
+  height:257mm; 
+  background:#fff;
+  display:block;
+  margin:0 auto;
+  margin-bottom:5mm;
+  box-shadow:0 0 0.5cm rgba(0,0,0,0.5);
+  padding:20mm;
+}
+
+page > section{
+	padding: 10mm;
+	height: 257mm;
+}
+
+page.hf section::before{
+	content: "Beijing Institute of Technology Master Degree Thesis";
+	position:relative;
+	display:block;
+	top:-1cm;
+	font-size:10pt;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    font-size: 10pt;
+}
+page.hf footer{
+	position:relative;
+	display:block;
+	top:-12mm;
+	text-align:center;
+}
+
+h1,h2,h3,h4,h5,h6{
+	text-align:center;
+}
+h1{
+ 	font-size:2.2em;
+	font-weight:bold;
+}
+h2{
+	font-size:20pt;
+	font-weight:bold;
+}
+h3{
+	font-size:1.5em;
+	font-weight:normal;
+}
+h4{
+	font-size:1.25em;
+	font-weight:bold;
+	text-align:left;
+}
+h5{
+	font-size:1em;
+	font-weight:bold;
+	text-align:left;
+}
+h6{
+	text-align:center;
+	font-weight:bold;
+	font-size:1.1em;
+	margin:0;
+}
+p{
+	text-indent:3em;
+}
+
+a:link, a:visited, a:link:active, a:visited:active{
+	color:#33f;
+	text-decoration:none;
+}
+
+/* line for date &amp; signatures */
+span.ul{
+	width:140px;
+	display:inline-block;
+	border-bottom:1px solid #000;
+}
+
+/* basic image wrapper for figures and captions */
+.image{
+	padding:0 1em;
+}
+.image img{
+	width:100%;
+}
+.image p{
+	text-indent:0;
+}
+
+article{
+	display:block;
+	width:100%;
+}
+/*article > div{
+	float:left;
+}*/
+
+
+.details{
+	width:100%;
+	margin-top:270pt;
+	font-size:14pt;
+}
+.details div{
+	display:inline-block;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.details p{
+	margin-bottom:10pt;
+	text-indent:0;
+}
+.details .dots p::after{
+	content:".............................................................................";
+}
+
+
+/* Table of contents */
+.toc p {
+	text-indent:0;
+}
+.toc ul{
+	list-style-type:none;
+}
+.toc section>ul{
+	padding-left:0;
+}
+.toc ul li{
+}
+.toc ul li p{
+	width:100%;
+	margin:0;
+	overflow:hidden;
+	white-space:nowrap;
+	padding:0.75em 0;
+}
+.toc ul li p a{
+	width:96%;
+	float:left;
+	overflow:hidden;
+}
+.toc ul li p a::after{
+	content:".........................................................................................................................................................................................................";
+}
+.toc ul li span{
+	height:inherit;
+	float:right;
+	text-align:right;
+	bottom:0;
+}
+
+
+/* Table1 grid-container  */
+.table1.grid-container .item0{grid-area:placeholder;}
+.table1.grid-container .item1{grid-area:vertical;}
+.table1.grid-container .item2{grid-area:header;}
+.table1.grid-container .item3{grid-area:label0;}
+.table1.grid-container .item4{grid-area:label1;}
+.table1.grid-container .item5{grid-area:label2;}
+.table1.grid-container .item6{grid-area:label3;}
+.table1.grid-container .item7{grid-area:main0;}
+.table1.grid-container .item8{grid-area:main1;}
+.table1.grid-container .item9{grid-area:main2;}
+.table1.grid-container .item10{grid-area:main3;}
+.table1.grid-container .item11{grid-area:caption;}
+
+.table1.grid-container{
+	display:grid;
+	grid:
+	'placeholder header header'
+	'vertical label0 label1'
+	'label2 main0 main1'
+	'label3 main2 main3'
+	'caption caption caption';
+	padding:1.5em;
+	text-align:center;
+}
+.table1.grid-container p{
+	text-indent:0;
+}
+.table1.grid-container .item1{
+	
+}
+.table1.grid-container .item1 h6{
+	position:relative;
+	transform:rotate(270deg);
+	top: 145px;
+	left:-55px;
+}
+.table1.grid-container .item7,
+.table1.grid-container .item8,
+.table1.grid-container .item9,
+.table1.grid-container .item10{
+	border:1px solid #000;
+	padding:5px;
+}
+.table1.grid-container .item7{
+	border-width:1px 0 0 1px;
+}
+.table1.grid-container .item10{
+	border-width:0 1px 1px  0;
+}
+.table1.grid-container .item3,
+.table1.grid-container .item4,
+.table1.grid-container .item5,
+.table1.grid-container .item6{
+	font-weight:bold;
+}
+.table1.grid-container .item11{
+	padding-top:5px;
+}
+
+
+
+
+.references p{
+	text-indent:0;
+	margin:0.75em 0;
+	text-align:left;
+	word-wrap:break-word;
+}
+.references section p:first-child{
+	margin-top:0;
+}
+
+@media print{
+  body,html,page{
+	width: 210mm;
+	height: 297mm
+	margin:0;
+	box-shadow:0;
+  }
+  
+  page {
+	margin: 0;
+	border: initial;
+	border-radius: initial;
+	width: initial;
+	min-height: initial;
+	box-shadow: initial;
+	background: initial;
+	page-break-after: always
+  }
+  @page {
+	size: A4;
+	margin: 0
+  }
+}
+
