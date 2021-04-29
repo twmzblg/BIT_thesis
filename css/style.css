@@ -192,20 +192,23 @@ article{
 	'label2 main0 main1'
 	'label3 main2 main3'
 	'caption caption caption';
-	padding:1.5em;
 	text-align:center;
 }
 .table1.grid-container p{
 	text-indent:0;
 }
-.table1.grid-container .item1{
-	
+.table1.grid-container .item2{
+	padding-top:.75em;
+}
+.table1.grid-container .item5 p,
+.table1.grid-container .item6 p{
+	text-indent:0;
 }
 .table1.grid-container .item1 h6{
 	position:relative;
 	transform:rotate(270deg);
-	top: 145px;
-	left:-55px;
+	top: 147px;
+	left:-45px;
 }
 .table1.grid-container .item7,
 .table1.grid-container .item8,
@@ -214,12 +217,14 @@ article{
 	border:1px solid #000;
 	padding:5px;
 }
-.table1.grid-container .item7{
-	border-width:1px 0 0 1px;
+.table1.grid-container .item7,
+.table1.grid-container .item8{
+	border-bottom-width:0;
 }
+.table1.grid-container .item8,
 .table1.grid-container .item10{
-	border-width:0 1px 1px  0;
-}
+	border-left-width:0;
+}*/
 .table1.grid-container .item3,
 .table1.grid-container .item4,
 .table1.grid-container .item5,
@@ -229,6 +234,18 @@ article{
 .table1.grid-container .item11{
 	padding-top:5px;
 }
+
+.table1.grid-container .item0,
+.table1.grid-container .item1,
+.table1.grid-container .item2,
+.table1.grid-container .item3,
+.table1.grid-container .item4,
+.table1.grid-container .item5,
+.table1.grid-container .item6{
+	background-color:#000;
+	color:#fff;
+}
+
 
 
 
