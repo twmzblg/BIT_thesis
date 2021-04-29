@@ -96,12 +96,12 @@
                     	<p><a href="#BC">Section 2.1: Blockchain</a><span>4</span></p>
                         <ul>
                             <li>
-                                <p><a href="#MoC">Subsection 2.1.1: Means of Consensus</a><span>?</span></p>
+                                <p><a href="#MoC">Subsection 2.1.1: Means of Consensus</a><span>4</span></p>
                             </li>
                         </ul>
                     </li>
                     <li>
-                    	<p><a href="#DAG">Section 2.2: Directed Acyclic Graph</a><span>?</span></p>
+                    	<p><a href="#DAG">Section 2.2: Directed Acyclic Graph</a><span>7</span></p>
                     </li>
                 </ul>
             </li>
@@ -272,7 +272,7 @@
         <h5>Practical Byzantine Fault Tolerance</h5>
         <p>PBFT is unique in that only one network member becomes the primary participant who communicates with all other participants to validate a specific block, removing the chance of a fork. PBFT and its variants are widely used in consortium (private) chains with foreknowledge of a fixed (smaller) number of known participants. They can tolerate up to a third of participants having any form of Byzantine fault <a id="link_Castro_1999" href="#Castro_1999">[Castro_1999]</a>.</p>
         
-        <h4 id="#DAG">2.2: Directed Acyclic Graph</h4>
+        <h4 id="DAG">2.2: Directed Acyclic Graph</h4>
         <article>
             <div style="width:58%;float:left;margin-right:4%;">
                 <p>Another form of DLT, DAG is a topological directed graph that prevents closed loops. Topological ordering requires that the starting vertex comes before the ending vertex, thus eliminating loops. Rather than building a chain of blocks linked to the previous one, a new transaction must link to one or two other transactions to be processed and confirmed. Only newly added transactions are confirmed, indirectly confirming the entire transaction history.</p>
