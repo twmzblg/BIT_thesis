@@ -142,38 +142,6 @@
 <page id="TOC2" class="hf toc">
 	<section>
     	<ul>
-            <li>
-                <ul>
-                    <li>
-                        <p><a href="#HyperledgerIDStack">5.1 - Hyperledger Identity Stack: Indy, Aries, ad Ursa</a><span>26</span></p>
-                    </li>
-                    <li>
-                        <p><a href="#AtalaPrism">5.2 - Atala Prism</a><span>30</span></p>
-                    </li>
-                    <li>
-                        <p><a href="#DecentralizedIdentityFoundation">5.3 - Decentralized Identity Foundation</a><span>34</span></p>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <p><a href="#Conclusion">Conclusion</a><span>37</span></p>
-            </li>
-            <li>
-                <p><a href="#References">References</a><span>38</span></p>
-            </li>
-            <li>
-                <p><a href="#ZKP">Appendix A - Zero-Knowledge Proofs and zk-SNARKs</a><span>?</span></p>
-            </li>
-            <li>
-                <p><a href="#GDPR">Appendix B - GDPR</a><span>?</span></p>
-            </li>
-            <li>
-                <p><a href="#RecoveryKeyManagement">Appendix C - Recovery Key and Backup Management</a><span>?</span></p>
-            </li>
-            <li>
-                <p><a href="#IPFS">Appendix D - InterPlanetary File System</a><span>?</span></p>
-            </li>
-        </ul>
     </section>
     <footer>IV</footer>
 </page><!-- END #TOC2.hf -->
@@ -938,7 +906,7 @@
         	<li><b>Sidetree:</b> blockchain agnostic, layer two, DID Method <a id="link_DIF_Sidetree" href="#DIF_Sidetree">[DIF_Sidetree]</a></li>
         	<li><b>Secure Data Storage:</b> formulizing specifications for a foundational secure data storage layer</li>
         </ul>
-        <p style="margin-bottom:0;">The majority of the content from the above working groups is standardization. However, one notable contribution comes in the form of a Universal Resolver (UR). The UR is a foundational piece of infrastructure for the SSI ecosystem by resolving the DIDdoc from a supplied DID. Currently, the development UR (https://dev.uniresolver.io) can support 42 DID Methods. This is not intended for more than development use, as being on a single server, the dev UR centralizes an intended decentralized infrastructure. When the SSI ecosystem is closer to final development, multiple servers will offer their own UR.</p>
+        <p style="margin-bottom:0;">The majority of the content from the above working groups is standardization. However, one notable contribution comes in the form of a Universal Resolver (UR). The UR is a foundational piece of infrastructure for the SSI ecosystem by resolving the DIDdoc from a supplied DID <a id="link_Sabadello_2021" href="#Sabadello_2021">[Sabadello_2021]</a>. Currently, the development UR (https://dev.uniresolver.io) can support 42 DID Methods. This is not intended for more than development use, as being on a single server, the dev UR centralizes an intended decentralized infrastructure. When the SSI ecosystem is closer to final development, multiple servers will offer their own UR.</p>
         <article>
         <div style="width:50%;float:left;margin-right:2%;">
         	<p class="ti0" style="margin-top:0;">The universal resolver protocol and appropriate drives are meant to be downloaded and run on more instances to maintain the distributed nature of the SSI ecosystem <a id="link_DIF_Universal_Resolver" href="#DIF_Universal_Resolver">[DIF_Universal_Resolver]</a>.</p>
@@ -1161,12 +1129,205 @@ Use of ZKP from Hyperledger Ursa.</td>
     <footer>44</footer>
 </page><!-- END #References6.references.hf -->
 <!-- Appendices -->
-<page id="" class="hf">
+<!-- Appendix A -->
+<page class="hf">
 	<section>
-    	
+    	<h2 id="ZKP">Appendix A - Zero-Knowledge Proofs and zk&#8209;SNARKs</h2>
+        
+        
+        <p>Researchers at MIT in 1985 first proposed Zero-knowledge proofs (ZKPs). Initially, ZKPs were designed for interactive proof systems, having a Prover and a Verifier. The goal was for the Prover to prove knowledge of information x to the Verifier without communicating any information other than the fact that ‘Prover knows x.’</p>
+		<p class="ti0">By definition, a ZKP must satisfy:</p>
+        <ul>
+        	<li><b>Completeness:</b> If Prover genuinely holds the knowledge and both parties follow the protocol correctly, Verifier can be eventually convinced without any external help.</li>
+        	<li><b>Soundness:</b> Prover can only convince Verifier if they hold the knowledge.</li>
+        	<li><b>Zero-knowledge:</b> Verifier does not learn anything about the knowledge, simply that the Prover has said knowledge.</li>
+        </ul>
+        <p>As an illustration, Prover is given by Verifier a graph with nodes and edges and is tasked to find a 3-coloring such that no two adjacent nodes have the same color. Imagine Verifier is an organization, and Prover is a freelancer. Prover finds a 3-coloring and must prove that they have done so without showing the result before getting paid.</p>
+        <p>To construct an interactive ZKP protocol, the graph is drawn on the floor in a closed room. Prover, alone,  places colored balls on the nodes according to the discovered pattern and covers the balls with non-transparent bowls. Verifier comes into the room, chooses an edge, and verifies that the attached nodes are different colors. If they are not different, then Prover is disqualified. See Figure A.1.</p> 
+		<div class="image">
+          <img src="./imgs/Figure_a1.svg" alt="Interactive ZKP Illustration">
+          <p><b>Figure A1:</b> Interactive ZKP Illustration</p>
+        </div>
     </section>
     <footer>45</footer>
-</page><!-- END #.hf -->
+</page><!-- END #ZKP.hf -->
+<page id="pg46" class="hf">
+	<section>
+        <p>Since a single attempt by the verifier, checking adjacent nodes of one edge is not probabilistically certain, the verifier must be allowed as many checks till satisfaction. However, if the verifier were to record the colors and check all edges secretly, they would consequently have violated the zero-knowledge principle. To rectify this, the verifier must leave the room after validating an edge. The prover may then switch the colors of the balls, maintaining the pattern. Thus, proving that all edges chosen consistently have two different colored edges but maintaining zero knowledge of the exact pattern. This can be done until the verifier has certainty that there is only negligible error.</p> 
+        <p>The problem with traditional ZKP is that it is an interactive system, requiring Prover and Verifier’s presence, and as such is not scalable. Zk-SNARKs or zero-knowledge Succinct Non-interactive ARguments of Knowledge provides an algorithmic formation using cryptographic hash functions.</p>
+        <p class="ti0">The three algorithms in zk-SNARK:</p>
+        <ul>
+        	<li>Prover (P): takes in three inputs – proving key (pk), a random input (x), and the statement to prove (s). Such that P(pk, x, s) = prf.</li>
+        	<li>Verifier (V): takes in the random input (x), verifying key (vk), and prf from the P algorithm and returns a Boolean answer according to validity.</li> 
+        	<li>Key Generator (G): takes in a secret value (&lambda;) and a program (C) to generate pk and vk. The lambda value has to be kept private and confidential as any holder could generate proving and verifying keys and build counterfeit proofs.</li>
+        </ul>
+        <p class="ti0">The following steps utilize the above algorithms:</p>
+        <ul>
+        	<li>The verifier puts in a secret &lambda; value to generate the proving and verifying keys: G(C, &lambda;) = (pk, vk).</li>
+        	<li>The prover must take the pk and prove their statement: prf = P(pk, x, s). Here x is the SHA-256 hash of s.</li>
+        	<li>When prf is sent to the verifier and inserted into the verifying algorithm: V(vk, x, prf) = True if the prover is honest, False otherwise.</li>
+        </ul>
+    </section>
+    <footer>46</footer>
+</page><!-- END #pg46.hf -->
+<!-- Appendix B -->
+<page class="hf">
+	<section>
+    	<h2 id="GDPR">Appendix B - GDPR</h2>
+        <p>The EU’s 2016 General Data Protection Regulation (GDPR) is the forerunner of human-centric data protection regulations.</p>
+        <p class="ti0">While the GDPR was written using technology-agnostic wording, there are two main points of tension between its regulations and DLT:</p>
+        <ul>
+        	<li>The GDPR’s assumption that there is at least one natural or legal person – data controller – whom a data subject can address to enforce their rights over every piece of personal data.</li>
+        	<li>The GDPR requires that data can be modified or erased.</li>
+        </ul>
+        <p class="ti0">GDPR-based rights of a data subject:</p>
+        <ul>
+        	<li>The right to access (Article 1)</li>
+        	<li>The right to rectification (Article 16)</li>
+        	<li>The right to erasure (Article 17)</li>
+        	<li>The right to restriction of processing (Article 18)</li>
+        	<li>The right to portability (Article 20)</li>
+        	<li>The right to object (Article 21)</li>
+        	<li>The right to not be subject to a decision based solely on automated processing, including profiling, which significantly affects them (Article 22)</li>
+        </ul>
+        <p>Blockchains as a whole are not either compliant nor incompliant with the GDPR <a id="link_Finck_2019" href="#Finck_2019">[Finck_2019]</a> since SSI using blockchain technology can be seen as attempting similar purposes as the GDPR. However, further legal cases or further addressing need to be done to prevent the EU from falling behind in technology development.</p>
+        <p class="ti0">Issues that need clarification include the following <a href="#Finck_2019">[Finck_2019]</a>:</p>
+        <ul>
+        	<li>Is anonymization an effective means of provoking the 'erasure' of data for the purposes of Article 17 GDPR?</li>
+        	<li>Can a peppered hash produce anonymous data?</li>
+        	<li>What is the status of the on-chain hash where transactional data is stored off-chain and subsequently erased?</li>
+        	<li>What is the status of anonymity solutions such as zero-knowledge proofs under the GDPR?</li>
+        	<li>Can a data subject be a data controller in relation to personal data that relates to themselves?</li>
+        </ul>
+    </section>
+    <footer>47</footer>
+</page><!-- END #GDPR.hf -->
+<page id="pg48" class="hf">
+	<section>
+    	<ul>
+        	<li>Is the off-chain storage of transactional data a means of complying with the data-minimization principle?</li>
+        	<li>How ought 'erasure' to be interpreted for the purposes of Article 17 GDPR? Can the deletion of a private key satisfy as the erasure of on-chain data?</li>
+        </ul>
+    </section>
+    <footer>48</footer>
+</page><!-- END #pg48.hf -->
+<!-- Appendix C -->
+<page class="hf">
+	<section>
+    	<h2 id="RecoveryKeyManagement">Appendix C - Recovery Key and Backup Management</h2>
+        <p class="ti0">Possible places for wallet backup storage:</p>
+        <ol>
+        	<li>The device itself</li>
+        	<li>The cloud agent</li>
+        	<li>Another device</li>
+        	<li>Peer-to-peer files</li>
+        </ol>
+        <p>The device itself is an easy location to store the encrypted backup. The device agent would initiate an incremental backup of the KMS database. This has an advantage for easy restoration should there be a problem with the wallet app and prepackaging in advance of external (cloud agent) backup. The disadvantage is primarily if the device is lost or irreparably damaged.</p>
+        <p>In the case of a mobile provider, the cloud agent would be an obvious place to store an encrypted backup. The potential risk lies in the cloud agent service operator having access to the data, even in encrypted form, as they could work on cracking the encryption. Alternatively, a separate trusted service such as a bank could potentially offer such services.</p>
+        <p>Another device or other hardware that you own or one controlled by a trusted other could be a valid backup. This could provide a recourse should your primary device be lost or broken.</p>
+        <p>Parts of the backup could be redundantly distributed to different backup holders via a P2P sharing technique, requiring collecting a certain number of the redundant files to restore the backup on the target device.</p>
+        <p class="ti0">Recovery key management is as essential as a reliable backup location. Locations to store include:</p>
+        <ul>
+        	<li>Hot storage – on device: protected via hardware provided protection like biometrics. This would prove moot should the device be lost.</li>
+        	<li>Cold storage – on paper or USB flashdisk: stored to a device that is not online, eliminating remote access by an attacker. On paper could be risky as, over time, the ink may fade. Storage on a USB key could be sufficient, though finding a safe place to store it may be an issue in itself. A bank deposit box or keeping a sealed  copy with a lawyer is a possibility that may be costly. Keeping a copy at work or with a friend/family member or two is another alternative. Though the more</li>
+		</ul>
+    </section>
+    <footer>49</footer>
+</page><!-- END #RecoveryKeyManagement.hf -->
+<page id="pg50" class="hf">
+	<section>
+    	<ul>
+        	<li style="list-style-type:none;">copies around, the higher the risk of unauthorized use.</li>
+        	<li>Sharded hot storage – social recovery: a novel proposal to shard the key into pieces and distribute the pieces amongst a set of holders, requiring only a decided subset of the pieces to combine for full key restoration - see passguardian.com.</li>
+        	<li>Memorizing: this may be difficult to retain as the key must be sufficiently long and random to be effective.</li>
+        </ul>
+        <p>Should all backups and recovery techniques fail or not exist, the wallet would be gone. In that case, a new wallet must be created and all credentials recollected from the various issuers. Presumedly the first credential would be a governmental ID and a degree of hassle and time to get the others in order of importance. Thus, multiple safe backups are necessary.</p>
+    </section>
+    <footer>50</footer>
+</page><!-- END #pg50.hf -->
+<!-- Appendix D -->
+<page class="hf">
+	<section>
+    	<h2 id="IPFS">Appendix D - InterPlanetary File System</h2>
+        <p>HTTP is the protocol behind client-server architecture that we see in the internet of today. However, it has many drawbacks; in particular, the centralized nature of all information that we access to over the web is held on servers that are under control of a central company. This requires trust that the central company will not go offline either through an attack or simple server failure. It also enables censorship, as the data stored on a central server can be easily blocked by ISPs blocking the server’s IP. As all data is stored on the server, if the server goes down that data is no longer accessible.</p> 
+        <p>Inter-Planetary File System (IPFS) introduces a peer-to-peer (P2P) distributed file system, creating a system by combining a P2P BitTorrent swarm with a Git repository. IPFS forms a Merkle DAG data structure upon which one can build distributed versioned file systems, with no need for trust between nodes, thereby escaping a single point of failure(SPF). IPFS aims to replace HTTP by offering an enhanced web combining successful file distribution techniques invented in the past fifteen years <a id="link_Benet_2014" href="#Benet_2014">[Benet_2014]</a>.</p> 
+        <p class="ti0">A summary of the successful techniques that IPFS incorporates:</p>
+        <h5>Block Exchanges – BitTorrent</h5>
+        <p class="ti0">BitTorrent <a id="link_Cohen_2003" href="#Cohen_2003">[Cohen_2003]</a> is a P2P filesharing system that coordinates untrusted peers (swarms) to distribute pieces of files collaboratively. Features from the BitTorrent ecosystem that IPFS assimilates include:</p> 
+        <ul>
+        	<li>BitTorrent’s data exchange protocol that rewards nodes who contribute to each other and punishes nodes who only leach.</li> 
+        	<li>Bit Torrent peers track availability of file pieces and prioritize the rarest pieces to be downloaded first. This allows leaching peers (those that do not have a full copy) to be capable of trading with each other.</li>
+        </ul> 
+        <h5>Distributed Hash Tables</h5> 
+        <p>Distributed Hash Tables (DHT) regulate and maintain metadata for P2P filesystems. BitTorrent uses MainlineDHT to track peers that are part of a torrent swarm.</p>
+        <h5>Version Control Systems – Git</h5> 
+        <p>Version Control Systems model files changing over time and distribute all versions accurately. Git provides a Merkle DAG <a id="link_Becker_2008" href="#Becker_2008">[Becker_2008]</a> object model that captures changes to a file system tree. Files are objects that are content-addressed via a cryptographic hash of their contents. Links to other objects are embedded in a Merkle DAG. Versioning metadata, including branches and tags, are pointer references which are low in memory and thus easy to create and update. Version changes update references or add objects. Distributing version changes is a simple transfer of objects and update of remote references.</p> 
+        <h5>Self-Certified Filesystems – SFS</h5>
+        <p>SFS proposed a global file system separated from key management. In SFS, file names contain the public keys thereby making them self-certifying pathnames. Key management occurs in user generated procedures outside the SFS file system, enabling a versatile file system with interchangeable key management mechanisms <a id="link_Mazières_1998" href="#Mazières_1998">[Mazières_1998,</a> <a id="link_Mazières_2000" href="#Mazières_2000">Mazières_2000]</a>. SFS allows distributed systems outside of centralized control <a href="#Merkle_1990">[Merkle_1990]</a>.</p> 
+        <p class="ti0">SFS introduced the following remote filesystem-addressing scheme:</p>
+        <code>/sfs/<Location>:<HostID></code> 
+        <p class="ti0">where Location is the server network address and HostID = hash(PublicKey, Location).</p>
+        <p>The name of an SFS file system certifies its server by offering the server’s public key that can be verified by the user. SFS instances have cryptographic namespace rather than one controlled by centralized authorities.</p>
+        <h5>Content-Based addressing vs Location-Based addressing</h5>
+        <p>In the web of today, individuals browse to a Location (e.g. https://www.someserver.com/somefile.html) where they can access the information that is stored on the server, and their browser then stores a copy in their cache. Unless the Location points to a static file that some user has recently stored in their uncleared cache, that information will be unobtainable should the server go down.</p>
+        <p>More significantly, if one user had a cached copy of a static file they would be unable to share it with another user without retrieving the static copy from their cache and hosting the copy on another server (dismissing copyright infringement). In the event that a user would re-host the file on a different server, the Location would be different, and thus would be inaccessible to any user who only had the Location of the unobtainable server.</p>
+        <p>IPFS introduces Content-Based Addressing (CBA), also know as Name Driven Networking (NDN). With CBA when requesting a specific resource, the exact file by its hash (aka. fingerprint) is what is needed rather than the Location. When the IPFS network is asked for a file by a requester and someone on the IPFS network provides the resource, the resource will be copied to requester’s cache allowing the requester to provide a future requester the same content. This system will increase in speed should the file be shared amongst a larger quantity of nodes.</p> 
+        <p>The security ensuring that a file has not been tampered is the hash, or content name. When asking for a specific hash name, the file received can be checked to confirm that it has the same hash. If the hashes are equivalent, the file has not been altered.</p> 
+        <p>IPFS also provides deduplication. If multiple users post the same file, it is stored only once in the IPFS network as it has the same hash. This improves efficiency across the network.</p>
+        <h5>IPFS Design</h5>
+        <p class="ti0">The IPFS protocol is a stack of sub-protocols that handle functionality <a id="link_Benet_2014" href="#Benet_2014">[Benet_2014]</a>:</p>
+        <ol>
+        	<li><b>Identities</b> – node identity formation and validation</li> 
+        	<li><b>Network</b> – administers connections between peers</li>
+        	<li><b>Routing</b> – manages information to locate peers and objects</li>
+        	<li><b>Exchange</b> – a block-exchange protocol (BitSwap) that conducts productive block distribution</li>
+        	<li><b>Objects</b> – a Merkle DAG of links to content-addressed immutable objects</li>
+        	<li><b>Files</b> – Git-like versioned file system</li>
+        	<li><b>Naming</b> – self-certifying mutable name system</li>
+        </ol>
+        <h5>Identities</h5> 
+        <p>A cryptographic hash of a public key, NodeId, identifies nodes. Although users are able to reinitialize a new identity on each launch, they are incentivized to retain the same identity due to loss of accrued network benefits. On first connection, peers exchange public keys and check if the hash other.PublicKey is equal to other.NodeID.</p> 
+        <p class="ti0">Hash values are stored in multihash format:</p>
+        <code><function code><digest length><digest bytes></code>
+        <p>Multihash enables system flexibility to change function depending on the use case and allow for future upgrades.</p> 
+        <h5>Network</h5> 
+        <p>IPFS connects hundreds of nodes in the network or across the internet.</p>
+        <p class="ti0">Including features:</p>
+        <ul>
+        •	<li><b>Transport:</b> using any transport protocol</li>
+        •	<li><b>Reliability:</b> using UTP if underlying networks do not supply another</li>
+        •	<li><b>Connectivity:</b> using ICE NAT traversal techniques</li>
+        •	<li><b>Integrity:</b> optionally checks messages against a hash checksum</li>
+        •	<li><b>Authenticity:</b> optionally digitally signs messages with sender’s private key</li>
+        </ul>
+        <h5>Routing</h5> 
+        <p>In order to provide nodes with connections to other peers’ objects and determine which peers can serve desired objects, IPFS uses a DSHT based on a combination of S/Kademlia and Coral. Values <= 1KB are stored directly on the DHT, and for larger values a reference (NodeIds of peers who can serve the block) is stored on the DHT. </p>
+        <p>IPFS uses BitSwap, based on BitTorrent, as a transport protocol for exchange. BitSwap peers have two sets of blocks ( {want_list}, {have_list} ). Contrary to BitTorrent, BitSwap is not limited to blocks in the same torrent. BitSwap operates as a marketplace for all blocks where nodes can acquire necessary blocks. Nodes barter in the marketplace for block exchange. See Filecoin [Filecoin] for current development. In basic use, peers must have blocks that its peers want in order for complementary exchange. This aims to incentivize nodes to cache rare pieces to use for exchange even if they have no need for the pieces directly.</p>
+        <h5>Objects</h5> 
+        <p class="ti0">IPFS builds a Merkle DAG with links between objects as cryptographic hashes. This provides:</p>
+        <ul>
+        •	<li>Content addressing, with all content uniquely identified by its hash checksum.</li>
+        •	<li>Tamper resistance, with all content verified by its checksum and invalid or tampered data is rejected.</li>
+        •	<li>Deduplication, with all objects that have the same checksum stored only once.</li>
+        </ul>
+        <p>Each Object stores 256kb of data. An object can also contain a link to another IPFS Object, making it possible to store data that is larger than 265kb. A larger file would be broken into as many Objects necessary to hold the file size, and an Empty object linking to all the Objects that the file was broken into.</p>
+        <h5>Files</h5> 
+        <p class="ti0">IPFS defines a versioned filesystem on top of the Merkle DAG similar to Git:</p>
+        <ul>
+        	<li><b>File Object:</b> blob – contains an addressable unit of data representing a file.</li>
+        	<li><b>File Object:</b> list – represents a collection made up of IPFS blobs or list objects concatenated together. An IPFS list functions like a filesystem file with indirect blocks. Directed graphs where the same node appear in multiple places allows in-file deduplication.</li>
+        	<li><b>File Object:</b> tree – represents a directory or map of names to hashes that represent blobs, lists, other trees, or commits.</li>
+        	<li><b>File Object:</b> commit – represents a snapshot in the version history of an object.</li>
+        </ul>
+        <h5>Naming</h5> 
+        <p>Inter Planetary Naming System (IPNS) tracks immutable IPFS objects with a mutable global namespace, following the naming scheme from SFS.</p> 
+        <p>In IPFS, NodeId = hash(node.PubKey). Every user is assigned a mutable namespace ( <code>/ipns/<NodeId></code> ) which enables them to publish an object signed by user’s private key. Other users can verify the object and confirm that it matches the public key and NodeId to verify the authenticity of mutable state retrieval.</p>
+        <p>The separate prefix allows distinction between mutable (<code>ipns</code>) and immutable (<code>ipfs</code>) paths. The process follows publishing the object as an immutable IPFS object and then publishing its hash on the routing system as a metadata value. An optional commit object to store a version history is advised when necessary.</p>
+
+        
+    </section>
+    <footer>?</footer>
+</page><!-- END #IPFS.hf -->
 
 
 
@@ -1180,6 +1341,4 @@ Use of ZKP from Hyperledger Ursa.</td>
 </page><!-- END #.hf -->
 
 </body>
-<!--<script src="js/jquery-3.6.0.min.js"></script>
-<script src="./js/scripts.js"></script>-->
 </html>
