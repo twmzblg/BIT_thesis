@@ -2,6 +2,8 @@
 .tac{text-align:center;}
 .fwb{font-weight:bold}
 .ti0{text-indent:0;}
+.talj{text-align-last:justify;}
+.lstn{list-style-type:none}
 
 
 .printShow{
@@ -17,7 +19,7 @@ body{
   margin:0;
   padding:0;
   background:rgb(204,204,204);
-  font-size:12pt;
+  font-size:10pt;
   font-family:"Times New Roman", serif;
   text-align:left;
   line-height:150%;
@@ -35,7 +37,7 @@ page{
 }
 
 page > section{
-	padding: 10mm;
+	padding:7.5mm;
 	height: 257mm;
 }
 
@@ -47,10 +49,9 @@ page.hf section::before{
 	position:relative;
 	display:block;
 	top:-1cm;
-	font-size:10pt;
+	font-size:8pt;
     text-align: center;
     border-bottom: 1px solid #000;
-    font-size: 10pt;
 }
 page.hf footer{
 	position:relative;
@@ -61,21 +62,22 @@ page.hf footer{
 
 h1,h2,h3,h4,h5,h6{
 	text-align:center;
+	margin:0.75em 0;
 }
 h1{
  	font-size:2.2em;
 	font-weight:bold;
 }
 h2{
-	font-size:20pt;
+	font-size:2em;
 	font-weight:bold;
 }
 h3{
-	font-size:1.5em;
+	font-size:1.75em;
 	font-weight:normal;
 }
 h4{
-	font-size:1.25em;
+	font-size:1.5em;
 	font-weight:bold;
 	text-align:left;
 }
@@ -93,6 +95,13 @@ h6{
 }
 p{
 	text-indent:3em;
+}
+.title{
+	text-indent:0;
+	margin-bottom:0;
+}
+ul{
+	margin-top:5px;
 }
 
 a:link, a:visited, a:link:active, a:visited:active{
@@ -120,13 +129,12 @@ span.ul{
 	margin-top:0;
 }
 
-article{
+article,
+.article{
 	display:block;
 	width:100%;
-}
-/*article > div{
 	float:left;
-}*/
+}
 
 
 .details{
@@ -165,7 +173,7 @@ article{
 	margin:0;
 	overflow:hidden;
 	white-space:nowrap;
-	padding:0.75em 0;
+	padding:0.4em 0;
 }
 .toc ul li p a{
 	width:96%;
@@ -289,6 +297,8 @@ article{
 	margin-bottom:0;
 }
 .code pre{
+	font-size:12px;
+	line-height:140%;
 	margin-top:0;
 	background-color:#eee;
 	overflow: auto;
@@ -305,7 +315,7 @@ article{
 	text-align:left;
 	word-wrap:break-word;
 }
-.references section p:first-child{
+.references section *:first-child{
 	margin-top:0;
 }
 
