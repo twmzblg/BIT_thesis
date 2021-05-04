@@ -27,13 +27,13 @@ body{
 }
 page{ 
   width:170mm;
-  height:257mm; 
-  background:#fff;
+  height:257mm;
   display:block;
   margin:0 auto;
   margin-bottom:5mm;
   box-shadow:0 0 0.5cm rgba(0,0,0,0.5);
   padding:20mm;
+  background:#fff;
 }
 
 page > section{
@@ -335,8 +335,8 @@ article,
 	width:initial;
 	min-height:initial;
 	box-shadow:initial;
-	background:initial;
-	page-break-after:always
+	background:#fff;
+	page-break-after:always;
   }
   @page {
 	size:A4;

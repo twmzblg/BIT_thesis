@@ -15,10 +15,10 @@
         <h3 style="margin-top:125pt;">June 2021</h3>
     </section>
 </page><!-- END #Front -->
-<page id="Details" class="hf">
+<page id="Details">
 	<section>
     	<h1>Comprehensive overview of frontier research related to Self-Sovereign Identities</h1>
-        <article class="details">
+        <div class="details">
           <div class="dots" style="width:45%;">
               <p>Candidate</p>
               <p>School of Study</p>
@@ -39,10 +39,10 @@
               <p>Computer Science and Technology</p>
               <p>June 2021</p>
           </div>
-        </article>
+        </div><!-- .details -->
     </section>
 </page><!-- END #Details -->
-<page id="DeclarationAuthorization" class="hf">
+<page id="DeclarationAuthorization">
 	<section>
     	<h2>Declaration of Originality</h2>
     	<p>I hereby declare that this thesis is the result of an independent research that I have made under the supervision of my supervisor. To the best of my knowledge and belief, it does not contain any other published or unpublished research work of others, or any material which has been accepted for the award of another degree or diploma at Beijing Institute of Technology or other educational institutions, except where due acknowledgment has been made in the text. Whoever has contributed to this study is explicitly identified and appreciated in the Acknowledgements of the thesis.</p>
@@ -55,7 +55,7 @@
         <p>Supervisor’s signature: <span class="ul"></span> Date: <span class="ul"></span></p>
     </section>
 </page><!-- END #DeclarationAuthorization -->
-<page id="Acknowledgments" class="hf">
+<page id="Acknowledgments">
 	<section>
     	<h2>Acknowledgments</h2>
     	<p>I have been brought to this point due to the support, influence, and contribution of many people, contributing in their way. In particular, I would like to thank: (1) My family that supported my education and I accompanied with on our first journey to China in 2000. (2) Lin Crowley and her encouragement in improving my Chinese during my undergraduate education. (3) The Confucious Institute that sponsored my first visit to BIT as a month-long Chinese language program during summer 2018 ~; without that visit, I would not have known of BIT or been kept informed for future opportunities here. (4) My professors and staff at BIT for their advice, support, and inspiration adapting to my studies. (5) The People's Republic of China and the China Scholarship Council for their gracious acceptance of me for this scholarship program and accomodating and welcoming nature.</p>
@@ -261,7 +261,7 @@
 <page class="hf">
 	<section>
         <h4 id="DAG">2.2 - Directed Acyclic Graph</h4>
-        <article>
+        <div class="article">
             <div style="width:58%;float:left;margin-right:4%;">
                 <p>Another form of DLT, DAG is a topological directed graph that prevents closed loops. Topological ordering requires that the starting vertex comes before the ending vertex, thus eliminating loops. Rather than building a chain of blocks linked to the previous one, a new transaction must link to one or two other transactions to be processed and confirmed. Only newly added transactions are confirmed, indirectly confirming the entire transaction history.</p>
                 <p style="margin-bottom:0;">Notably, with a DAG, there is no global network state. Each network participant stores only</p>
@@ -272,7 +272,7 @@
                     <p><b>Figure 2:</b> Topological Ordering DAG <a href="https://en.wikipedia.org/wiki/File:Topological_Ordering.svg">[David Eppstein]</a></p>
                 </div>
             </div>
-        </article>
+        </div><!-- .article -->
         <p class="ti0">their neighbors’ local data, relying on other regions to do the same. This has advantages as there are low resource requirements. Transactions can be added in parallel, thereby increasing the overall speed.</p>
         <h4>Chapter 2 Key Takeaways</h4>
         <ul>
