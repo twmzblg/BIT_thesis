@@ -335,7 +335,7 @@ article,
 	background:#fff;
 	page-break-after:always;
   }
-  @section.page {
+  @page {
 	size:A4;
 	margin:0
   }
