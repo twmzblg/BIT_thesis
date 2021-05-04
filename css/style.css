@@ -25,7 +25,7 @@ body{
   line-height:150%;
   text-align:justify;
 }
-page{ 
+section.page{ 
   width:170mm;
   height:257mm;
   display:block;
@@ -36,15 +36,12 @@ page{
   background:#fff;
 }
 
-page > section{
+section.page > section{
 	padding:7.5mm;
 	height: 257mm;
 }
 
-page.hf{
-	background:#fff;
-}
-page.hf section::before{
+section.page.hf section::before{
 	content: "Beijing Institute of Technology Master Degree Thesis";
 	position:relative;
 	display:block;
@@ -53,7 +50,7 @@ page.hf section::before{
     text-align: center;
     border-bottom: 1px solid #000;
 }
-page.hf footer{
+section.page.hf footer{
 	position:relative;
 	display:block;
 	top:-12mm;
@@ -322,13 +319,13 @@ article,
 }
 
 @media print{
-  body,html,page{
+  body,html,section.page{
 	width:210mm;
 	height:297mm
 	margin:0;
 	box-shadow:0;
   }
-  page {
+  section.page {
 	margin:0;
 	border:initial;
 	border-radius:initial;
@@ -338,7 +335,7 @@ article,
 	background:#fff;
 	page-break-after:always;
   }
-  @page {
+  @section.page {
 	size:A4;
 	margin:0
   }

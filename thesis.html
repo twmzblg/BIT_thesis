@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Thesis of Matthew David Lowdermilk</title>
@@ -7,15 +7,15 @@
 </head>
 
 <body>
-<page id="Front">
+<section id="Front" class="page">
 	<section>
         <h1>Comprehensive overview of frontier research related to Self-Sovereign Identities</h1>
         <h3 style="margin-top:270pt;">Matthew David Lowdermilk</h3>
         <h3>(唐无名)</h3>
         <h3 style="margin-top:125pt;">June 2021</h3>
     </section>
-</page><!-- END #Front -->
-<page id="Details">
+</section><!-- END #Front -->
+<section id="Details" class="page">
 	<section>
     	<h1>Comprehensive overview of frontier research related to Self-Sovereign Identities</h1>
         <div class="details">
@@ -41,8 +41,8 @@
           </div>
         </div><!-- .details -->
     </section>
-</page><!-- END #Details -->
-<page id="DeclarationAuthorization">
+</section><!-- END #Details -->
+<section id="DeclarationAuthorization" class="page">
 	<section>
     	<h2>Declaration of Originality</h2>
     	<p>I hereby declare that this thesis is the result of an independent research that I have made under the supervision of my supervisor. To the best of my knowledge and belief, it does not contain any other published or unpublished research work of others, or any material which has been accepted for the award of another degree or diploma at Beijing Institute of Technology or other educational institutions, except where due acknowledgment has been made in the text. Whoever has contributed to this study is explicitly identified and appreciated in the Acknowledgements of the thesis.</p>
@@ -54,18 +54,18 @@
         <p>Student’s signature: <span class="ul" style="width:160px"></span> Date: <span class="ul"></span></p>
         <p>Supervisor’s signature: <span class="ul"></span> Date: <span class="ul"></span></p>
     </section>
-</page><!-- END #DeclarationAuthorization -->
-<page id="Acknowledgments">
+</section><!-- END #DeclarationAuthorization -->
+<section id="Acknowledgments">
 	<section>
     	<h2>Acknowledgments</h2>
     	<p>I have been brought to this point due to the support, influence, and contribution of many people, contributing in their way. In particular, I would like to thank: (1) My family that supported my education and I accompanied with on our first journey to China in 2000. (2) Lin Crowley and her encouragement in improving my Chinese during my undergraduate education. (3) The Confucious Institute that sponsored my first visit to BIT as a month-long Chinese language program during summer 2018 ~; without that visit, I would not have known of BIT or been kept informed for future opportunities here. (4) My professors and staff at BIT for their advice, support, and inspiration adapting to my studies. (5) The People's Republic of China and the China Scholarship Council for their gracious acceptance of me for this scholarship program and accomodating and welcoming nature.</p>
-        <p>I am grateful for all the intelligent and kind friends I have met during my studies at BIT. And the advice from second-year students - particularly Ian Wesson and his advice to use HTML/CSS to layout this thesis - and so many more whose words and actions brought me to this point.</p>
+        <p>I am grateful for all the intelligent and kind friends I have met during my studies at BIT. And the advice from second-year students - particularly Ian Wesson (安龙) and his advice to use HTML/CSS to layout this thesis - and so many more whose words and actions brought me to this point.</p>
         <p>I am sincerely grateful to all who aided me in getting here.</p>
         <p>- Matthew David Lowdermilk (唐无名)</p>
     </section>
     <footer>I</footer>
-</page><!-- END #Acknowledgements.hf -->
-<page class="hf">
+</section><!-- END #Acknowledgements.hf -->
+<section class="page hf">
 	<section>
     	<h2 id="Abstract">Abstract</h2>
     	<p>Distributed Ledger Technology (DLT) refers to the broader class of distributed ledgers that include blockchain and directed acyclic graphs. Blockchain, the most familiar form of DLT, has transitioned from cryptocurrencies to Smart Contracts and current further development resolving deficiencies in scalability, interoperability, sustainability, privacy, and governance.</p>
@@ -76,8 +76,8 @@
     	<p class="title"><b>Key Words:</b> Distributed Ledger Technology; Blockchain; Blockchain 3.0 – Scalability, Interoperability, Sustainability, Privacy, and Governance; Self-Sovereign Identities; Decentralized Identifiers; Verifiable Credentials; Identity Agents; Hyperledger Identity Stack; Atala Prism; Decentralized Identity Foundation;</p>
     </section>
     <footer>II</footer>
-</page><!-- END #Abstract.hf -->
-<page id="TOC" class="hf toc">
+</section><!-- END #Abstract.hf -->
+<section id="TOC" class="page hf toc">
 	<section>
     	<h2>Table of Contents</h2>
     	<ul>
@@ -174,9 +174,9 @@
         </ul>
     </section>
     <footer>III</footer>
-</page><!-- END #TOC.hf -->
+</section><!-- END #TOC.hf -->
 <!-- Chapter 1 -->
-<page id="Introduction" class="hf">
+<section id="Introduction" class="page hf">
 	<section>
     	<h2>1 - Introduction</h2>
         <p>We live at a time where the world is driven by big data, transforming systems across society, including traffic, health, government, logistics, and national defense. This data is currently concentrated in “islands” by governments, internet giants, and communications institutes. However, these islands lack data credibility as there is no quality verification, and as such, they are not conducive to scientific research <a id="link_Li_2017" href="#Li_2017">[Li_2017]</a>.</p>
@@ -192,9 +192,9 @@
 		</ul>
     </section>
     <footer>1</footer>
-</page><!-- END #Introduction.hf -->
+</section><!-- END #Introduction.hf -->
 <!-- Chapter 2 -->
-<page id="DLTfundamentals" class="hf">
+<section id="DLTfundamentals" class="page hf">
 	<section>
        <h2>2 - Distributed Ledger Technology Fundamentals</h2>
        <p> DLT has come to describe a broader class of technology that includes BC and directed acyclic graph (DAG). The most popular definition of a BC is “a distributed or decentralized ledger” <a id="link_Frizzo-Barker_2019" href="#Frizzo-Barker_2019">[Frizzo-Barker_2019]</a>. However, BC is a subset of distributed ledgers.</p>
@@ -219,8 +219,8 @@
         <p>On a BC, a data block is divided into two parts: header and body. The body’s transactions are each hashed, and the Merkle Root <a id="link_Merkle_1990" href="#Merkle_1990">[Merkle_1990]</a> is the combination of all sub hashes. The header contains the hash of the previous block as well as the Merkle root of the body. This allows for the chaining of blocks and confirmation that all sub-data is verifiably unchanged, see Figure 1.</p>
     </section>
     <footer>2</footer>
-</page><!-- END #DLTfundamentals.hf -->
-<page class="hf">
+</section><!-- END #DLTfundamentals.hf -->
+<section class="page hf">
 	<section>
         <div class="image" style="padding:0 5%;">
         	<img src="imgs/Figure_01.png" alt="Figure 1: Simplified blockchain structure showing Merkle root hash structure."/>
@@ -236,12 +236,12 @@
         <p>Since PoW resembles a lottery for the winning miner if more than one miner guesses the correct nonce a fork could be created. Bitcoin deals with this issue by having honest miners choose to append new blocks and validate the longest chain. Alternate correct guesses that have a shorter chain, and are unused, are called uncles.</p>
     </section>
     <footer>3</footer>
-</page><!-- END #BC.hf -->
-<page id="pg4" class="hf">
+</section><!-- END #BC.hf -->
+<section id="pg4" class="page hf">
 	<section>
         <p class="title">PoW has the current drawbacks:</p>
         <ul>
-			<li>Waste of electricity, as miners spend large amounts of computing power for essentially a lottery ticket <a id="link_Stoll_2019" href="#Stoll_2019">[Stoll_2019,</a> <a id="link_Sutherland_2019" href="#Sutherland_2019">Sutherland_2019]</a>. However, as pointed out in <a id="link_Frizzo-Barker_2019" href="#Frizzo-Barker_2019">[Frizzo-Barker_2019</a>], creating fiat currency also uses significant power.</li>
+			<li>Waste of electricity, as miners spend large amounts of computing power for essentially a lottery ticket <a id="link_Stoll_2019" href="#Stoll_2019">[Stoll_2019,</a> <a id="link_Sutherland_2019" href="#Sutherland_2019">Sutherland_2019]</a>. However, as pointed out in <a href="#Frizzo-Barker_2019">[Frizzo-Barker_2019</a>], creating fiat currency also uses significant power.</li>
         	<li>Slower throughput. Bitcoin has the difficulty set to one block every 10 minutes corresponding with current computing power.</li>
 		</ul>
         
@@ -257,8 +257,8 @@
         <p>PBFT is unique in that only one network member becomes the primary participant who communicates with all other participants to validate a specific block, removing the chance of a fork. PBFT and its variants are widely used in consortium (private) chains with foreknowledge of a fixed (smaller) number of known participants. They can tolerate up to a third of participants having any form of Byzantine fault <a id="link_Castro_1999" href="#Castro_1999">[Castro_1999]</a>.</p>
     </section>
     <footer>4</footer>
-</page><!-- END #pg4.hf -->
-<page class="hf">
+</section><!-- END #pg4.hf -->
+<section class="page hf">
 	<section>
         <h4 id="DAG">2.2 - Directed Acyclic Graph</h4>
         <div class="article">
@@ -286,9 +286,9 @@
 		</ul>
     </section>
     <footer>5</footer>
-</page><!-- END #DAG.hf -->
+</section><!-- END #DAG.hf -->
 <!-- Chapter 3 -->
-<page class="hf">
+<section class="page hf">
 	<section>
     	<h2 id="GenerationsOfBC">3 - Generations of Blockchain</h2>
         <p>BC takes its place as the fifth disruptive computing paradigm following mainframes, PCs, the Internet, and mobile/social networking <a id="link_Swan_2015" href="#Swan_2015">[Swan_2015]</a>. BC’s generations started with Bitcoin, a cryptocurrency enabling transactions between two parties without a trusted third party: Blockchain 1.0. Adding terms and conditions to cryptocurrency transactions by embedding a programming language, Ethereum took its place issuing in Blockchain 2.0. Blockchain 3.0 is a catchall term relating to work in progress to ensure sufficient infrastructure for mainstream use of BC, solving scalability, interoperability, sustainability, privacy, and governability.</p>
@@ -298,15 +298,15 @@
         <p>While Bitcoin offers pseudonymity, users are not entirely anonymous. If a user posts their public address (key) on social media, their transactions can be monitored even with the use of Coinjoin or another mixer. If a user desires to use cryptocurrency for the sake of anonymity, such as through utilizing Tor, Bitcoin should be used with caution. Suppose a user chooses to use Bitcoin for the sake of anonymity. In that case, they should not post any knowledge of their account on any social media as it can be traced in logs that are publicly accessible. Transactions on BCs (www.blockchain.com/api) include both the timestamp of the transaction as well as the relay IP address. <a id="link_Cui_2019" href="#Cui_2019">[Cui_2019,</a> <a id="link_Jawaheri_2020" href="#Jawaheri_2020">Jawaheri_2020]</a>.</p>
         
         <h4 id="BC2.0">3.2 - Blockchain 2.0: Smart Contracts</h4>
-        <p>SCs were introduced by Nick Szabo in 1996 <a id="link_Szabo_1996" href="#Szabo_1996">[Szabo_1996]</a> as a means to facilitate, verify, or enforce the terms of an agreement without the need of a third party, giving an example of a vending machine <a id="link_Szabo_1997" href="#Szabo_1997">[Szabo_1997]</a>. Being the forerunner of BC, Bitcoin implemented simple SCs on a stack-based design.  However, Blockchain 2.0 typically refers to Ethereum and the innovation of Turing-complete SCs on the Ethereum virtual machine (EVM) <a id="link_Wood_2014" href="#Wood_2014">[Wood_2014]</a>. EVM set the stage with smart contracts growing more complex and intricate. Dapps, DAOs, DACs, and DASs are some examples, with BC transactions no longer restricted to payments and currency transfers <a id="link_Swan_2015" href="#Swan_2015">[Swan_2015]</a>.</p>
+        <p>SCs were introduced by Nick Szabo in 1996 <a id="link_Szabo_1996" href="#Szabo_1996">[Szabo_1996]</a> as a means to facilitate, verify, or enforce the terms of an agreement without the need of a third party, giving an example of a vending machine <a id="link_Szabo_1997" href="#Szabo_1997">[Szabo_1997]</a>. Being the forerunner of BC, Bitcoin implemented simple SCs on a stack-based design.  However, Blockchain 2.0 typically refers to Ethereum and the innovation of Turing-complete SCs on the Ethereum virtual machine (EVM) <a id="link_Wood_2014" href="#Wood_2014">[Wood_2014]</a>. EVM set the stage with smart contracts growing more complex and intricate. Dapps, DAOs, DACs, and DASs are some examples, with BC transactions no longer restricted to payments and currency transfers <a href="#Swan_2015">[Swan_2015]</a>.</p>
         <ul>
         	<li>Decentralized application (Dapp): A Dapp is an application that runs on a network in a distributed fashion with participant’s information securely protected. Operation execution happens automatically at the fulfillment of preset conditions. </li>
         	<li>Decentralized autonomous organization (DAO) and decentralized autonomous corporation (DAC): DAOs and DACs are more complex forms of decentralized apps. To become an organization or corporation, a Dapp might adopt a constitution that would outline its governance publicly on the BC, defining a means to finance its operations.</li>
         </ul>
     </section>
     <footer>6</footer>
-</page><!-- END #GenerationsOfBC#BC1.0#BC2.0.hf -->
-<page id="pg7" class="hf">
+</section><!-- END #GenerationsOfBC#BC1.0#BC2.0.hf -->
+<section id="pg7" class="page hf">
 	<section>
     	<ul>
         	<li>Decentralized autonomous societies (DAS): DAS refers to the idea of self-bootstrapping software to crowdfund itself based on a mission statement.</li>
@@ -323,8 +323,8 @@
         <p>Cardano SCs are scheduled to go mainnet and be available at the end of July 2021, following the testnet release and active development at the end of April to early May 2021. The SC programming platform for Cardano is called Plutus <a id="link_Input-Output-HK" href="#Input-Output-HK">[Input-Output-HK]</a>, based on Lambda Calculus and Haskell. Haskell is a purely functional programming language, offering deterministic stateless functions typically with no side effects. All code is written in Haskell, with off-chain code compiled by Haskell’s GHC compiler and on-chain code with the Plutus compiler.  In addition to the Plutus platform, Cardano offers Marlowe, a special-purpose programming language for financial contracts. The Marlowe playground is available for writing Marlowe contracts in several ways, allowing the analysis of smart contract behavior by simulating participants’ activity. Marlowe contracts can be written directly as Marlowe text or with Blockly, a visual drag and drop programming tool for non-developers. Alternatively, as Marlowe is embedded in Haskell and JavaScript, those programming languages can be used initially and converted to Marlowe and Blockly through the Marlowe playground <a id="link_iohkdev.io" href="#iohkdev.io">[iohkdev.io]</a>.</p>
     </section>
     <footer>7</footer>
-</page><!-- END #pg7.hf -->
-<page class="hf">
+</section><!-- END #pg7.hf -->
+<section class="page hf">
 	<section>
         <h4 id="BC3.0">3.3 - Blockchain 3.0: Scalability, Interoperability, Sustainability,<br/> Privacy, and Governance</h4>
         <p>There are many limitations with BC 1.0 and BC 2.0 prerequisite to bringing BC into widespread use. Most notably, scalability, interoperability, sustainability, privacy, and governance, which BC 3.0 aims to resolve. There are many competitors to that title, but as of yet, solutions are only theoretical as they are under construction. Some of the techniques designed to resolve these limitations, and BCs that are developing them, will be listed here.</p>
@@ -337,8 +337,8 @@
         <p class="talj">Ethereum 2.0 has multiple types of layer two solutions, including Rollups (zk-Rollups and Optimistic rollups), Plasma, and others <a id="link_Wackerow_2021" href="#Wackerow_2021">[Wackerow_2021]</a>. Rollups allow transaction execution outside layer one, data or proof of transactions on layer one, and a rollup smart contract on layer one that enforces correct transaction execution through using the transaction data on layer one. Operators are required to stake a bond in the contract. Zk-rollups run computation off-chain and submit a validity proof to the chain. Optimistic rollups assume valid transactions and compute a fraud proof if challenged. Plasma allows layer two blocks on top of the Ethereum BC in the form of multiple side chains.  However, these plasma chains only support basic</p>
     </section>
     <footer>8</footer>
-</page><!-- END #BC3.0.hf -->
-<page id="pg9" class="hf">
+</section><!-- END #BC3.0.hf -->
+<section id="pg9" class="page hf">
 	<section>
     	<p class="ti0">token transfers, swaps, and a few other predicate logic-based transaction types. <a id="link_Jones_2019" href="#Jones_2019">[Jones_2019]</a>.</p>
         <p>Hydra is Cardano’s layer two solution, allowing coins from multiple parties to be transferred to the second layer Hydra head for rapid processing. Once the head closes, the layer one redistributes the resulting location of the same quantity that was first transferred to the head when it opened. Hydra uses state channels that allow a smaller group of parties to agree on without interaction with the underlying BC. These state channels also enable the execution of SCs using as-is the SCs written on layer one.</p>
@@ -352,8 +352,8 @@
         <p>Polkadot created a network protocol to transfer all data across public permissionless as well as private permissioned BCs. The relay chain, the heart of Polkadot, connects to Parachains, sovereign BCs, and Parathreads, economical BCs that don’t need continuous connectivity, using Bridges to connect and communicate. Polkadot does not have a SC platform itself. Instead, it links to Parachains that do, allowing full interoperability and data transfer between chains <a id="link_Polkadot_wiki" href="#Polkadot_wiki">[Polkadot_wiki]</a>.</p>
     </section>
     <footer>9</footer>
-</page><!-- END #pg9.hf -->
-<page id="pg10" class="hf">
+</section><!-- END #pg9.hf -->
+<section id="pg10" class="page hf">
 	<section>
         <p>Interoperability between BCs is one matter; adding additional programming languages to the writing of SCs is another. The KEVM testnet was released in 2018, enabling a correct-by-construction version of the EVM specified in the K-framework. This allows SCs written for EVM to be rigorously proved that they work correctly and can be run on the Cardano BC. The Cardano BC SC layer is scheduled to be released in iterative stages from the end of April through September 2021. The testnet for Plutus SCs is expected at the end of April to early May, followed by Q&amp;A testing and creation of NFT marketplaces, etc. Around the end of June it will be feature-frozen for four weeks for partners (Coinbase, Binance, Yoroi, etc.) to integrate infrastructure before the hard-fork to mainnet.</p>
         <p>In September, the first version of the translator from LLVM to IELE without library support is scheduled. IELE is a K-framework mapping supporting a register-based virtual machine. The K-framework is a more mathematical higher-level mapping between the programming language and the LLVM lower-level / machine language mapping. The LLVM backend for K means that any programming language defined in K can be automatically translated to the LLVM. As IELE was defined in K, therefore, it has an automatic translation to LLVM. Essentially, through IELE, using any programming language directly, developers can write, compile and execute SCs <a id="link_IOHK_March2021" href="#IOHK_March2021">[IOHK_March2021]</a>.</p>
@@ -374,8 +374,8 @@
         
     </section>
     <footer>10</footer>
-</page><!-- END #pg10.hf -->
-<page id="pg11" class="hf">
+</section><!-- END #pg10.hf -->
+<section id="pg11" class="page hf">
 	<section>
     	<p class="ti0">are available for anyone to view online freely. This lack of privacy is of concern to some individuals and much more so to organizations and businesses.</p>
         <p>Several cryptocurrencies that take privacy as an imperative, including various degrees of anonymity: Monero, Dash, and Zcash. However, though these are not competitors to the BC 3.0 title, their privacy principles are being adapted into many contenders for the BC 3.0 title.</p>
@@ -389,8 +389,8 @@
         <p>Polkadot provides a sophisticated governance system allowing it to evolve under the direction of the majority of its stakeholders. Changes are made to the network by combining votes of active token holders and the council, a fixed number of seats (expected to increase to 24). Anyone can propose a referendum to the council by depositing a minimum number of tokens to support it. A proposal can be seconded by an agreeing member depositing the same number of tokens. The proposal with the highest amount of bonded tokens will be selected for inclusion as a referendum in the next voting cycle. There can only be a maximum of 100 public proposals in the proposal queue. There is also a council queue for proposals requiring a majority (51%) approval to be included as a referendum, with council members elected for the term of one week by token holders. One active referendum can be in progress at any given time, excluding the case of an emergency referendum - an accelerated proposal by the council or technical committee. The referendum is chosen as the top proposal, backed by the most bonded stake, and alternates between the two queues <a id="link_Governance-Polkadot_wiki" href="#Governance-Polkadot_wiki">[Governance-Polkadot_wiki]</a>.</p>
     </section>
     <footer>11</footer>
-</page><!-- END #pg11.hf -->
-<page id="pg12" class="hf">
+</section><!-- END #pg11.hf -->
+<section id="pg12" class="page hf">
 	<section>
         <table class="table">
         <thead>
@@ -471,8 +471,8 @@
         </ul>
     </section>
     <footer>12</footer>
-</page><!-- END #pg12.hf -->
-<page id="pg13" class="hf">
+</section><!-- END #pg12.hf -->
+<section id="pg13" class="page hf">
 	<section>
     	<ul>
         	<li>Privacy is vital as most BCs are public, permissionless, meaning all transactions and wallet amounts are visible to anyone. Zero-knowledge proofs (ZKP) prove ownership of a piece of knowledge without disclosing the knowledge itself.</li>
@@ -480,12 +480,12 @@
         </ul>
     </section>
     <footer>13</footer>
-</page><!-- END #pg13.hf -->
+</section><!-- END #pg13.hf -->
 <!-- Chapter 4 -->
-<page class="hf">
+<section class="page hf">
 	<section>
     <h2 id="SSI">4 - Self-Sovereign Identities</h2>
-    <p>Identity is an inherent human condition; it is not conditional on outside administration. Self-sovereign identity is based upon the following principles <a id="link_Allen_2016" href="#Allen_2016">[Allen_2016,</a> <a id="link_Tobin_2016" href="#Tobin_2016">Tobin_2016]</a>:</p>
+    <p>Identity is an inherent human condition; it is not conditional on outside administration. Self-sovereign identity is based upon the following principles <a href="#Allen_2016">[Allen_2016,</a> <a id="link_Tobin_2016" href="#Tobin_2016">Tobin_2016]</a>:</p>
     <table class="table">
     <thead>
         <tr>
@@ -512,15 +512,15 @@
         </tr>
     </tbody>
     </table>
-    <p>In the connected world of the Internet, digital identity has progressed from a centralized authority (e.g., IANA, ICANN) to administrative control by multiple federated authorities (e.g., Microsoft Passport, Liberty Alliance, Facebook Login), and on to user-centric individual control (e.g., OpenID, OAuth, FIDO). The concept of a self-sovereign identity is now coming into attention, requiring that the user is the ruler of their own identity <a id="link_Allen_2016" href="#Allen_2016">[Allen_2016]</a>. With the recent refugee crisis, resulting in multiple people without a recognized identity, and the European Union’s General Data Protection Regulation’s (GDPR) attempt to regulate customer data and privacy abuses, the need for a digital Self-Sovereign Identifier (SSI) is emphasized. For more regarding GDPR and its relation to BC, see <a href="#GDPR">Appendix B</a>.</p>
+    <p>In the connected world of the Internet, digital identity has progressed from a centralized authority (e.g., IANA, ICANN) to administrative control by multiple federated authorities (e.g., Microsoft Passport, Liberty Alliance, Facebook Login), and on to user-centric individual control (e.g., OpenID, OAuth, FIDO). The concept of a self-sovereign identity is now coming into attention, requiring that the user is the ruler of their own identity <a href="#Allen_2016">[Allen_2016]</a>. With the recent refugee crisis, resulting in multiple people without a recognized identity, and the European Union’s General Data Protection Regulation’s (GDPR) attempt to regulate customer data and privacy abuses, the need for a digital Self-Sovereign Identifier (SSI) is emphasized. For more regarding GDPR and its relation to BC, see <a href="#GDPR">Appendix B</a>.</p>
     <p>The current system of siloed identities and passwords has existed since the Internet was first built as “the Internet was created without an identity layer <a id="link_Cameron_2005" href="#Cameron_2005">[Cameron_2005]</a>.” A much-needed evolution of the internet is creating a common identity layer allowing people, organizations, and things to have their own discrete SSI. This SSI ecosystem can now be built on top of DLT.</p>
     <p>The premise of SSI is that it is an identity wholly owned by the individual without authorization or management by a central entity. To use an SSI, the holder presents claims about their identity that can be cryptographically verified by the verifier that desires to check them <a id="link_Govind_2020" href="#Govind_2020">[Govind_2020]</a>.</p> 
     <p>The future of an active SSI ecosystem will include changes across the Internet. Most notably, there will be changes in how Big Data is collected and whether it will retain its ability to be collected legally or otherwise – e.g., through privacy-preserving zero-knowledge-proofs (ZKP). Investigation and documentation of changes and potential workarounds for big data collection are needed to anticipate when SSI use becomes standard across the web.</p>
     <p>SSIs are sometimes referred to as Decentralized Identities. An SSI includes the following three components: Decentralized Identifiers (DIDs), Verifiable Credentials (VCs), and Identity Agents.</p>
     </section>
     <footer>14</footer>
-</page><!-- END #SSI.hf -->
-<page class="hf">
+</section><!-- END #SSI.hf -->
+<section class="page hf">
 	<section>
         <h4 id="DIDs">4.1. Decentralized Identifiers</h4>
         <p>The W3C is outlining DIDs as a new type of identifier that enables verifiable decentralized digital identities <a id="link_Reed_2021" href="#Reed_2021">[Reed_2021]</a>. A DID controller decides the subject that the DID identifies (e.g., a person, organization, thing, data model, etc.). DIDs are designed to enable individuals and organizations to create and prove control over their own identifiers, rather than relying on management by centralized authorities.</p>
@@ -550,8 +550,8 @@
     	</article>
     </section>
     <footer>15</footer>
-</page><!-- END #DIDs.hf -->
-<page class="hf">
+</section><!-- END #DIDs.hf -->
+<section class="page hf">
 	<section>
         <h4 id="VCs">4.2 - Verifiable Credentials</h4>
         <p>VCs are a means to express credentials on the Web in a cryptographically secure and machine-verifiable way while respecting privacy. VCs are the digital equivalents of paper credentials like driver’s licenses, government-issued IDs, and university degrees <a id="link_Sporny_2019" href="#Sporny_2019">[Sporny_2019]</a>.</p>
@@ -569,8 +569,8 @@
         <p>A Credential is a set of one or more claims made by the same entity (Issuer) and may contain an identifier and other metadata describing the credential’s properties.</p>
     </section>
     <footer>16</footer>
-</page><!-- END #VCs.hf -->
-<page id="pg17" class="hf">
+</section><!-- END #VCs.hf -->
+<section id="pg17" class="page hf">
 	<section>
         <div class="image" style="padding:0 27%;">
             <img src="./imgs/Figure_06.svg" alt="Components of a Verifiable Credential: Credential Metadata + Claim(s) + Proof(s)">
@@ -649,8 +649,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
     	<p>The digital proof attached to the VC allows presenting a verifiable presentation to a verifier, attaching a digital signature at the end. See Example 3.</p>
     </section>
     <footer>17</footer>
-</page><!-- END #pg17.hf -->
-<page id="pg18" class="hf">
+</section><!-- END #pg17.hf -->
+<section id="pg18" class="page hf">
 	<section>
         <article class="code">
             <h5>Example 3: Example of a verifiable presentation [Sporny_2019]</h5>
@@ -763,8 +763,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
     	</article>
     </section>
     <footer>18</footer>
-</page><!-- END #pg18.hf -->
-<page class="hf">
+</section><!-- END #pg18.hf -->
+<section class="page hf">
 	<section>
         <h4 id="IDAgents">4.3 - Identity Agents</h4>
         <p>Identity Agents are the interfaces (e.g., mobile wallets) that humans will use to interact with their identity, offering an interface to manage DIDs and VCs. However,</p>
@@ -787,9 +787,9 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 		</ul>
     </section>
     <footer>19</footer>
-</page><!-- END #IDAgents.hf -->
+</section><!-- END #IDAgents.hf -->
 <!-- Chapter 5 -->
-<page class="hf">
+<section class="page hf">
 	<section>
     	<h2 id="SSI_WIP" style="margin-top:0;">5 - SSI Ecosystem - Work in Progress</h2>
         
@@ -808,8 +808,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         </ul>
     </section>
     <footer>20</footer>
-</page><!-- END #SSI_WIP+#HyperledgerIDStack.hf -->
-<page id="pg21" class="hf">
+</section><!-- END #SSI_WIP+#HyperledgerIDStack.hf -->
+<section id="pg21" class="page hf">
 	<section>
         <ul>
             <li><b>Credential Definitions:</b> The DID of the issuer, the schema for the credentials, and the public keys (one per claim) used to sign the claims to issue a credential MUST be written to the BC.</li>
@@ -831,8 +831,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p>The controller provides the rules defining what actions the agent initiates and how it will respond to events. In a mobile agent, the controller is a user interface presenting the options to a person. An issuer/verifier enterprise agent might be a legacy database system that manages consumer data, potentially enabling customers to submit data by presenting claims rather than typing the information in a web form.</p>
     </section>
     <footer>21</footer>
-</page><!-- END #pg21.hf -->
-<page id="pg22" class="hf">
+</section><!-- END #pg21.hf -->
+<section id="pg22" class="page hf">
 	<section>
         <p>For development, an Aries Agent can be divided into two logical components: framework and controller. The framework corresponds to the standard capabilities provided to enable the Aries agent to interact with its surroundings: ledgers, storage, and other agents. The controller is the customizable component designed to handle rules for that particular agent.</p>
         <p>Aries frameworks for edge development are currently available in .NET <a id="link_Hyperledger_Aries-framework-dotnet" href="#Hyperledger_Aries-framework-dotnet">[Hyperledger_Aries-framework-dotnet]</a> and golang <a id="link_Hyperledger_Aries-framework-go" href="#Hyperledger_Aries-framework-go">[Hyperledger_Aries-framework-go]</a>, and there is work on Java and JavaScript based. For cloud development that is not designed for mobile devices is available in Python: Aries Cloud Agent Python <a id="link_Hyperledger_ACA-Py" href="#Hyperledger_ACA-Py">[Hyperledger_ACA-Py]</a>. The frameworks for edge development are embedded in the controller enabling the use of DIDComm and other Aries protocols.</p> 
@@ -843,8 +843,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         </div>
     </section>
     <footer>22</footer>
-</page><!-- END #pg22.hf -->
-<page class="hf">
+</section><!-- END #pg22.hf -->
+<section class="page hf">
     <section>
         <div class="image">
           <img src="./imgs/Figure_08.gif" alt="Figure 8: Faber create-invitation demo">
@@ -861,8 +861,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p class="talj">Atala, an enterprise BC framework similar to Hyperledger Fabric used by IBM BC, was developed by IOHK to onboard governments in developing countries. Atala was built to handle real-world use cases such as property registration, voting systems, and supply chain management, focusing on digital currency adoption. Starting with Addis Ababa, Ethiopia’s capital, MoUs have been signed to create a digital payment system, allowing six million users to pay power and electricity bills with cryptocurrency, eventually combining this system with an identity card <a id="link_Wolfson_2019" href="#Wolfson_2019">[Wolfson_2019]</a>. In the Republic of Georgia, Atala is teaming up with the Ministry of Education and universities to enable students to receive, store and send their achievements from their phones. This eliminates the need for background checks and saves time for</p>
         </section>
     <footer>23</footer>
-</page><!-- END #AtalaPrism.hf -->
-<page id="pg24" class="hf">
+</section><!-- END #AtalaPrism.hf -->
+<section id="pg24" class="page hf">
     <section>
         <p class="ti0" style="margin-top:0;">universities and employers.</p>
         <p>As enterprises and governments want more control over data for legal and regulatory reasons, Atala was developed as a permissioned system based on Cardano. Cardano, in its initial era (Byron era), was a permissioned system. Currently, Atala focuses on layer two solutions such as Prism for SSI and economic identity, Hydra for scaling, and more. These layer two solutions are blockchain agnostic, and as such, can be used on both permissioned (Atala) and permissionless (Cardano). Since Atala and Cardano are very similar, when Cardano improves, Atala will also improve through downstream contributions such as the EUTXO model and Plutus SCs. IOHK is working with the Hyperledger Foundation to onboard Gerolamo, a unification of permissioned and permissionless chains for fluid portability between enterprise and public usage of the Cardano BC <a id="link_Hoskinson_2020" href="#Hoskinson_2020">[Hoskinson_2020]</a>.</p>
@@ -876,8 +876,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 		<p>The demonstration follows the process for Jo to get four credentials: Government ID, University Degree,  Proof of Employment and Health Insurance. In the initial steps concatenated in Figure 11, a QR code is provided to be scanned by the mobile app Atala Prism. After scanning, on the mobile device is a confirmation to accept connection with the Metropol City Government. On confirmation, the Metropol City Government is added as a contact, and the Government ID in the far right of Figure 11 is available as a credential.</p>
     </section>
     <footer>24</footer>
-</page><!-- END #pg24.hf -->
-<page id="pg25" class="hf">
+</section><!-- END #pg24.hf -->
+<section id="pg25" class="page hf">
     <section>
         <div class="image">
           <img src="./imgs/Figure_11.gif" alt="Figure 11: Atala Prism initial sequence for Jo to get a Government ID, for the illustrated Metropol City">
@@ -891,8 +891,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p>A similar procedure is followed for Jo to get a job. In that step, both the Government ID and the University Degree credentials are requested. Once given, and presumably, Decentralized Inc. agrees to hire her, a Proof of Employment credential is provided. This Proof of Employment credential is then needed for the Health Insurance certificate. Figure 13 shows the final process with all four credentials received and shown on the far right.</p>
     </section>
     <footer>25</footer>
-</page><!-- END #pg25.hf -->
-<page id="pg26" class="hf">
+</section><!-- END #pg25.hf -->
+<section id="pg26" class="page hf">
     <section>
         <div class="image">
           <img src="./imgs/Figure_13.gif" alt="Figure 13: Atala Prism demo final showing or all four credentials for Jo">
@@ -914,8 +914,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 		<p>Another prominent project from DIF is Sidetree, a BC agnostic layer two protocol for PKI. The Sidetree protocol defines state change operations (i.e., Create, Read, Update, or Deactivate) to mutate a DID’s DIDdoc. Sidetree nodes anchor Content-Addressable Storage (CAS) references to the underlying anchoring system (e.g., DLT), offering an immutable chronology that all nodes can validate.</p>
     </section>
     <footer>26</footer>
-</page><!-- END #pg26.hf -->
-<page class="hf">
+</section><!-- END #pg26.hf -->
+<section class="page hf">
 	<section>
         <div class="article">
         <div style="width:50%;float:left;margin-right:2%;">
@@ -992,8 +992,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         </table>
     </section>
     <footer>27</footer>
-</page><!-- END #DecentralizedIdentityFoundation.hf -->
-<page id="pg28" class="hf">
+</section><!-- END #DecentralizedIdentityFoundation.hf -->
+<section id="pg28" class="page hf">
     <section>
         <h4 style="margin-bottom:0;">Chapter 5 Key Takeaways</h4>
         <ul>
@@ -1012,9 +1012,9 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         </ul>
 	</section>
     <footer>28</footer>
-</page><!-- END #pg28hf -->
+</section><!-- END #pg28hf -->
 <!-- Conclusion -->
-<page class="hf">
+<section class="page hf">
 	<section>
     	<h2 id="Conclusion">Conclusion</h2>
         <p>The SSI ecosystem being developed will bring significant changes to digital identity. Through the use of DLT, we have the technological infrastructure on which to build decentralized identities. On the one hand, decentralized identities place control back into the hands of the identity holders or controllers in the case of non-animate subjects, and on the other hand, allow verifiable traceability for identity data. Verifiable traceability improves big data quality from its collection in centralized, unverifiable islands to one that is straight from the source with consent receipts attached.</p>
@@ -1022,9 +1022,9 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p>In future research, when the SSI infrastructure has developed further, exploration of uncorrelatable links to SSI claims through ZKP can be used to store knowledge of preferences in a globally accessible way (e.g., movie ratings categorized by age, gender, nationality, etc.).</p>
     </section>
     <footer>29</footer>
-</page><!-- END #Conclusion.hf -->
+</section><!-- END #Conclusion.hf -->
 <!-- References -->
-<page id="References" class="references hf">
+<section id="References" class="page references hf">
 	<section>
     	<h2>References</h2>
     	<p><a id="Allen_2016" href="#link_Allen_2016">[Allen_2016]</a> Allen, Christopher. “The Path to Self-Sovereign Identity.” lifewithalacrity.com, April 2016. http://www.lifewithalacrity.com/2016/04/the-path-to-self-soverereign-identity.html.</p>
@@ -1046,8 +1046,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p><a id="Frizzo-Barker_2019" href="#link_Frizzo-Barker_2019">[Frizzo-Barker_2019]</a> Frizzo-Barker, Julie, Peter A. Chow-White, Philippa R. Adams, Jennifer Mentanko, Dung Ha, and Sandy Green. “Blockchain as a Disruptive Technology for Business: A Systematic Review.” International Journal of Information Management 51 (October 2019): 102029. https://doi.org/10.1016/j.ijinfomgt.2019.10.014.</p>
     </section>
     <footer>30</footer>
-</page><!-- END #References.references.hf -->
-<page id="References1" class="references hf">
+</section><!-- END #References.references.hf -->
+<section id="References1" class="page references hf">
 	<section>
         <p><a id="Giancaspro_2017" href="#link_Giancaspro_2017">[Giancaspro_2017]</a> Giancaspro, Mark. “Is a ‘Smart Contract’ Really a Smart Idea? Insights from a Legal Perspective.” Computer Law &amp; Security Review 33, no. 6 (2017): 825–35. https://doi.org/10.1016/j.clsr.2017.05.007.</p>
         <p><a id="Governance-Polkadot_wiki" href="#link_Governance-Polkadot_wiki">[Governance-Polkadot_wiki]</a> Governance · Polkadot Wiki. · Polkadot Wiki, n.d. https://wiki.polkadot.network/docs/en/learn-governance.</p>
@@ -1069,8 +1069,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p><a id="Jones_2019" href="#link_Jones_2019">[Jones_2019]</a> Jones, Ben, Dan Robinson, Georgios Konstantopoulos, Joseph Poon, Karl Floersch, Kelvin Fichter, Vitalik Buterin, and Xuanji Li. Plasma Contracts. plasma.io, 2019. https://plasma.io/plasma-contracts.html.</p>
     </section>
     <footer>31</footer>
-</page><!-- END #References1.references.hf -->
-<page id="References2" class="references hf">
+</section><!-- END #References1.references.hf -->
+<section id="References2" class="page references hf">
 	<section>
         <p><a id="Karafiloski_2017" href="#link_Karafiloski_2017">[Karafiloski_2017]</a> Karafiloski, Elena, and Anastas Mishev. “Blockchain Solutions for Big Data Challenges: A Literature Review.” IEEE EUROCON 2017 -17th International Conference on Smart Technologies, 2017, 763–68. https://doi.org/10.1109/eurocon.2017.8011213.</p>
         <p><a id="Kiayias_2016" href="#link_Kiayias_2016">[Kiayias_2016]</a> Kiayias, Aggelos, Alexander Russell, Bernardo David, and Roman Oliynykov. Ouroboros: A Provably Secure Proof-of-Stake Blockchain Protocol, 2016. https://eprint.iacr.org/2016/889.</p>
@@ -1089,8 +1089,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p><a id="Reed_2021" href="#link_Reed_2021">[Reed_2021]</a> Reed, Drummond, Manu Sporny, Dave Longley, Christopher Allen, Ryan Grant, and Markus Sabadello. Decentralized Identifiers (DIDs) v1.0. W3C Working Draft 09 March 2021. W3C, 2021. https://www.w3.org/TR/2021/WD-did-core-20210309/.</p>
     </section>
     <footer>32</footer>
-</page><!-- END #References2.references.hf -->
-<page id="References3" class="references hf">
+</section><!-- END #References2.references.hf -->
+<section id="References3" class="page references hf">
 	<section>
         <p><a id="Sabadello_2021" href="#link_Sabadello_2021">[Sabadello_2021]</a> Sabadello, Markus, and Dmitri Zagidulin. Decentralized Identifier Resolution (DID Resolution) v0.2. Credentials Community Group, 2021. https://w3c-ccg.github.io/did-resolution/.</p>
         <p><a id="Simmons_2021" href="#link_Simmons_2021">[Simmons_2021]</a> Simmons, Jake. “Demand for Cardano’s Atala PRISM Outpaces Labor Supply.” Crypto News Flash, April 2021. https://www.crypto-news-flash.com/demand-by-fortune-500-governments-for-cardanos-atala-prism-outpaces-labor-supply/.</p>
@@ -1110,8 +1110,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p><a id="Wood_2014" href="#link_Wood_2014">[Wood_2014]</a> Wood, Gavin. "Ethereum: A secure decentralised generalised transaction ledger." Ethereum project yellow paper 151, no. 2014 (2014): 1-32.</p>
     </section>
     <footer>33</footer>
-</page><!-- END #References3.references.hf -->
-<page id="References4" class="references hf">
+</section><!-- END #References3.references.hf -->
+<section id="References4" class="page references hf">
 	<section>
         <p><a id="Zachariadis_2019" href="#link_Zachariadis_2019">[Zachariadis_2019]</a> Zachariadis, Markos, Garrick Hileman, and Susan V Scott. “Governance and Control in Distributed Ledgers: Understanding the Challenges Facing Blockchain Technology in Financial Services.” Information and Organization 29, no. 2 (June 2019): 105–17. https://doi.org/10.1016/j.infoandorg.2019.03.001.</p>
         <p><a id="Zhang_2019" href="#link_Zhang_2019">[Zhang_2019]</a> Zhang, Bingsheng, Roman Oliynykov, and Hamed Balogun. “A Treasury System for Cryptocurrencies: Enabling Better Collaborative Intelligence.” In The Network and Distributed System Security Symposium 2019, 2019. https://doi.org/10.14722/ndss.2019.23024.</p>
@@ -1119,10 +1119,10 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p><a id="Zilliqa_2017" href="#link_Zilliqa_2017">[Zilliqa_2017]</a> Zilliqa, Team and others. “The Zilliqa Technical Whitepaper.” 2019.</p>
     </section>
     <footer>34</footer>
-</page><!-- END #References4.references.hf -->
+</section><!-- END #References4.references.hf -->
 <!-- Appendices -->
 <!-- Appendix A -->
-<page class="hf">
+<section class="page hf">
 	<section>
     	<h2 id="ZKP">Appendix A - Zero-Knowledge Proofs and zk&#8209;SNARKs</h2>
         
@@ -1142,8 +1142,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p>Since a single attempt by the verifier, checking adjacent nodes of one edge is not probabilistically certain, the verifier must be allowed as many checks till satisfaction. However, if the verifier were to record the colors and check all edges secretly, they would consequently have violated the zero-knowledge principle. To rectify this, the verifier must leave the room after validating an edge. The prover may then switch the colors of the balls, maintaining the pattern. Thus, proving that all edges chosen consistently have two different colored edges but maintaining zero knowledge of the exact pattern. This can be done until the verifier has certainty that there is only negligible error.</p> 
     </section>
     <footer>35</footer>
-</page><!-- END #ZKP.hf -->
-<page id="pg36" class="hf">
+</section><!-- END #ZKP.hf -->
+<section id="pg36" class="page hf">
 	<section>
         <p>The problem with traditional ZKP is that it is an interactive system, requiring Prover and Verifier’s presence, and as such is not scalable. Zk-SNARKs or zero-knowledge Succinct Non-interactive ARguments of Knowledge provides an algorithmic formation using cryptographic hash functions.</p>
         <p class="ti0">The three algorithms in zk-SNARK:</p>
@@ -1160,9 +1160,9 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         </ul>
     </section>
     <footer>36</footer>
-</page><!-- END #pg36.hf -->
+</section><!-- END #pg36.hf -->
 <!-- Appendix B -->
-<page class="hf">
+<section class="page hf">
 	<section>
     	<h2 id="GDPR">Appendix B - GDPR</h2>
         <p>The EU’s 2016 General Data Protection Regulation (GDPR) is the forerunner of human-centric data protection regulations.</p>
@@ -1194,9 +1194,9 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         </ul>
     </section>
     <footer>37</footer>
-</page><!-- END #GDPR.hf -->
+</section><!-- END #GDPR.hf -->
 <!-- Appendix C -->
-<page class="hf">
+<section class="page hf">
 	<section>
     	<h2 id="RecoveryKeyManagement">Appendix C - Recovery Key and Backup Management</h2>
         <p class="ti0">Possible places for wallet backup storage:</p>
@@ -1220,9 +1220,9 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p>Should all backups and recovery techniques fail or not exist, the wallet would be gone. In that case, a new wallet must be created and all credentials recollected from the various issuers. Presumedly the first credential would be a governmental ID and a degree of hassle and time to get the others in order of importance. Thus, multiple safe backups are necessary.</p>
     </section>
     <footer>38</footer>
-</page><!-- END #RecoveryKeyManagement.hf -->
+</section><!-- END #RecoveryKeyManagement.hf -->
 <!-- Appendix D -->
-<page class="hf">
+<section class="page hf">
 	<section>
     	<h2 id="IPFS">Appendix D - InterPlanetary File System</h2>
         <p>HTTP is the protocol behind client-server architecture that we see in the internet of today. However, it has many drawbacks; in particular, the centralized nature of all information that we access to over the web is held on servers that are under control of a central company. This requires trust that the central company will not go offline either through an attack or simple server failure. It also enables censorship, as the data stored on a central server can be easily blocked by ISPs blocking the server’s IP. As all data is stored on the server, if the server goes down that data is no longer accessible.</p> 
@@ -1242,11 +1242,11 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p>SFS proposed a global file system separated from key management. In SFS, file names contain the public keys thereby making them self-certifying pathnames. Key management occurs in user generated procedures outside the SFS file system, enabling a versatile file system with interchangeable key management mechanisms <a id="link_Mazières_1998" href="#Mazières_1998">[Mazières_1998,</a> <a id="link_Mazières_2000" href="#Mazières_2000">Mazières_2000]</a>. SFS allows distributed systems outside of centralized control <a href="#Merkle_1990">[Merkle_1990]</a>.</p>
     </section>
     <footer>39</footer>
-</page><!-- END #IPFS.hf -->
-<page id="pg40" class="hf">
+</section><!-- END #IPFS.hf -->
+<section id="pg40" class="page hf">
 	<section>
         <p class="ti0">SFS introduced the following remote filesystem-addressing scheme:</p>
-        <code>/sfs/<Location>:<HostID></code> 
+        <code>/sfs/&lt;Location&gt;:&lt;HostID&gt;</code> 
         <p class="ti0">where Location is the server network address and HostID = hash(PublicKey, Location).</p>
         <p>The name of an SFS file system certifies its server by offering the server’s public key that can be verified by the user. SFS instances have cryptographic namespace rather than one controlled by centralized authorities.</p>
         <h5>Content-Based addressing vs Location-Based addressing</h5>
@@ -1256,7 +1256,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p>The security ensuring that a file has not been tampered is the hash, or content name. When asking for a specific hash name, the file received can be checked to confirm that it has the same hash. If the hashes are equivalent, the file has not been altered.</p> 
         <p>IPFS also provides deduplication. If multiple users post the same file, it is stored only once in the IPFS network as it has the same hash. This improves efficiency across the network.</p>
         <h5>IPFS Design</h5>
-        <p class="ti0">The IPFS protocol is a stack of sub-protocols that handle functionality <a id="link_Benet_2014" href="#Benet_2014">[Benet_2014]</a>:</p>
+        <p class="ti0">The IPFS protocol is a stack of sub-protocols that handle functionality <a href="#Benet_2014">[Benet_2014]</a>:</p>
         <ol>
         	<li><b>Identities</b> – node identity formation and validation</li> 
         	<li><b>Network</b> – administers connections between peers</li>
@@ -1268,13 +1268,13 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         </ol>
 	</section>
     <footer>40</footer>
-</page><!-- END #pg40.hf -->
-<page id="pg41" class="hf">
+</section><!-- END #pg40.hf -->
+<section id="pg41" class="page hf">
 	<section>
         <h5>Identities</h5> 
         <p>A cryptographic hash of a public key, NodeId, identifies nodes. Although users are able to reinitialize a new identity on each launch, they are incentivized to retain the same identity due to loss of accrued network benefits. On first connection, peers exchange public keys and check if the hash other.PublicKey is equal to other.NodeID.</p> 
         <p class="ti0">Hash values are stored in multihash format:</p>
-        <code><function code><digest length><digest bytes></code>
+        <code>&lt;function code&gt;&lt;digest length&gt;&lt;digest bytes&gt;</code>
         <p>Multihash enables system flexibility to change function depending on the use case and allow for future upgrades.</p> 
         <h5>Network</h5> 
         <p>IPFS connects hundreds of nodes in the network or across the internet.</p>
@@ -1287,7 +1287,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         	<li><b>Authenticity:</b> optionally digitally signs messages with sender’s private key</li>
         </ul>
         <h5>Routing</h5> 
-        <p>In order to provide nodes with connections to other peers’ objects and determine which peers can serve desired objects, IPFS uses a DSHT based on a combination of S/Kademlia and Coral. Values <= 1KB are stored directly on the DHT, and for larger values a reference (NodeIds of peers who can serve the block) is stored on the DHT. </p>
+        <p>In order to provide nodes with connections to other peers’ objects and determine which peers can serve desired objects, IPFS uses a DSHT based on a combination of S/Kademlia and Coral. Values &lt;= 1KB are stored directly on the DHT, and for larger values a reference (NodeIds of peers who can serve the block) is stored on the DHT. </p>
         <p>IPFS uses BitSwap, based on BitTorrent, as a transport protocol for exchange. BitSwap peers have two sets of blocks ( {want_list}, {have_list} ). Contrary to BitTorrent, BitSwap is not limited to blocks in the same torrent. BitSwap operates as a marketplace for all blocks where nodes can acquire necessary blocks. Nodes barter in the marketplace for block exchange. See Filecoin [Filecoin] for current development. In basic use, peers must have blocks that its peers want in order for complementary exchange. This aims to incentivize nodes to cache rare pieces to use for exchange even if they have no need for the pieces directly.</p>
         <h5>Objects</h5> 
         <p class="ti0">IPFS builds a Merkle DAG with links between objects as cryptographic hashes. This provides:</p>
@@ -1299,8 +1299,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p>Each Object stores 256kb of data. An object can also contain a link to another IPFS Object, making it possible to store data that is larger than 265kb. A larger file would be broken into as many Objects necessary to hold the file size, and an Empty object linking to all the Objects that the file was broken into.</p>
 	</section>
     <footer>41</footer>
-</page><!-- END #pg41.hf -->
-<page id="pg42" class="hf">
+</section><!-- END #pg41.hf -->
+<section id="pg42" class="page hf">
 	<section>
         <h5>Files</h5> 
         <p class="ti0">IPFS defines a versioned filesystem on top of the Merkle DAG similar to Git:</p>
@@ -1312,11 +1312,11 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         </ul>
         <h5>Naming</h5> 
         <p>Inter Planetary Naming System (IPNS) tracks immutable IPFS objects with a mutable global namespace, following the naming scheme from SFS.</p> 
-        <p>In IPFS, NodeId = hash(node.PubKey). Every user is assigned a mutable namespace ( <code>/ipns/<NodeId></code> ) which enables them to publish an object signed by user’s private key. Other users can verify the object and confirm that it matches the public key and NodeId to verify the authenticity of mutable state retrieval.</p>
+        <p>In IPFS, NodeId = hash(node.PubKey). Every user is assigned a mutable namespace ( <code>/ipns/&lt;NodeId&gt;</code> ) which enables them to publish an object signed by user’s private key. Other users can verify the object and confirm that it matches the public key and NodeId to verify the authenticity of mutable state retrieval.</p>
         <p>The separate prefix allows distinction between mutable (<code>ipns</code>) and immutable (<code>ipfs</code>) paths. The process follows publishing the object as an immutable IPFS object and then publishing its hash on the routing system as a metadata value. An optional commit object to store a version history is advised when necessary.</p>
     </section>
     <footer>42</footer>
-</page><!-- END #pg42.hf -->
+</section><!-- END #pg42.hf -->
 
 </body>
 </html>
