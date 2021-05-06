@@ -1,0 +1,349 @@
+@charset "utf-8";
+.tac{text-align:center;}
+.fwb{font-weight:bold}
+.ti0{text-indent:0;}
+.talj{text-align-last:justify;}
+.lstn{list-style-type:none}
+
+
+.printShow{
+ 	display:none;
+}
+.printHide{
+ 	display:block;
+}
+
+body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  background:rgb(204,204,204);
+  font-size:10pt;
+  font-family:"Times New Roman", serif;
+  text-align:left;
+  line-height:150%;
+  text-align:justify;
+}
+section.page{ 
+  width:170mm;
+  height:257mm;
+  display:block;
+  margin:0 auto;
+  margin-bottom:5mm;
+  box-shadow:0 0 0.5cm rgba(0,0,0,0.5);
+  padding:20mm;
+  background:#fff;
+}
+
+section.page > section{
+	padding:7.5mm;
+	height: 257mm;
+}
+
+section.page.hf section::before{
+	content: "Beijing Institute of Technology Master Degree Thesis";
+	position:relative;
+	display:block;
+	top:-1cm;
+	font-size:8pt;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+section.page.hf footer{
+	position:relative;
+	display:block;
+	top:-12mm;
+	text-align:center;
+}
+
+h1,h2,h3,h4,h5,h6{
+	text-align:center;
+	margin:0.75em 0;
+}
+h1{
+ 	font-size:2.2em;
+	font-weight:bold;
+	line-height:150%;
+}
+h2{
+	font-size:2em;
+	font-weight:bold;
+	line-height:110%;
+}
+h3{
+	font-size:1.75em;
+	font-weight:normal;
+}
+h4{
+	font-size:1.5em;
+	font-weight:bold;
+	text-align:left;
+}
+h5{
+	font-size:1em;
+	font-weight:bold;
+	text-align:left;
+	margin-bottom:0;
+}
+h6{
+	text-align:center;
+	font-weight:bold;
+	font-size:1.1em;
+	margin:0;
+}
+p{
+	text-indent:3em;
+}
+.title{
+	text-indent:0;
+	margin-bottom:0;
+}
+ul{
+	margin-top:5px;
+}
+
+a:link, a:visited, a:link:active, a:visited:active{
+	color:#33f;
+	text-decoration:none;
+}
+
+/* line for date &amp; signatures */
+span.ul{
+	width:140px;
+	display:inline-block;
+	border-bottom:1px solid #000;
+}
+
+/* basic image wrapper for figures and captions */
+.image{
+	padding:0 1em;
+}
+.image img{
+	width:100%;
+}
+.image p{
+	text-align:center;
+	text-indent:0;
+	margin-top:0;
+}
+
+article,
+.article{
+	display:block;
+	width:100%;
+	float:left;
+}
+
+
+.details{
+	width:100%;
+	margin-top:270pt;
+	font-size:14pt;
+}
+.details div{
+	display:inline-block;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.details p{
+	margin-bottom:10pt;
+	text-indent:0;
+}
+.details .dots p::after{
+	content:".............................................................................";
+}
+
+
+/* Table of contents */
+.toc p {
+	text-indent:0;
+}
+.toc ul{
+	list-style-type:none;
+}
+.toc section>ul{
+	padding-left:0;
+}
+.toc ul li{
+}
+.toc ul li p{
+	width:100%;
+	margin:0;
+	overflow:hidden;
+	white-space:nowrap;
+	padding:0.4em 0;
+}
+.toc ul li p a{
+	width:96%;
+	float:left;
+	overflow:hidden;
+}
+.toc ul li p a::after{
+	content:".........................................................................................................................................................................................................";
+}
+.toc ul li span{
+	height:inherit;
+	float:right;
+	text-align:right;
+	bottom:0;
+}
+
+
+/* Table1 grid-container  */
+.table1.grid-container .item0{grid-area:placeholder;}
+.table1.grid-container .item1{grid-area:vertical;}
+.table1.grid-container .item2{grid-area:header;}
+.table1.grid-container .item3{grid-area:label0;}
+.table1.grid-container .item4{grid-area:label1;}
+.table1.grid-container .item5{grid-area:label2;}
+.table1.grid-container .item6{grid-area:label3;}
+.table1.grid-container .item7{grid-area:main0;}
+.table1.grid-container .item8{grid-area:main1;}
+.table1.grid-container .item9{grid-area:main2;}
+.table1.grid-container .item10{grid-area:main3;}
+.table1.grid-container .item11{grid-area:caption;}
+
+.table1.grid-container{
+	display:grid;
+	grid:
+	'placeholder header header'
+	'vertical label0 label1'
+	'label2 main0 main1'
+	'label3 main2 main3'
+	'caption caption caption';
+	text-align:center;
+}
+.table1.grid-container p{
+	text-indent:0;
+}
+.table1.grid-container .item2{
+	padding-top:.75em;
+}
+.table1.grid-container .item5 p,
+.table1.grid-container .item6 p{
+	text-indent:0;
+}
+.table1.grid-container .item1 h6{
+	position:relative;
+	top: 140px;
+	left:-40px;
+}
+.table1.grid-container .item5 p,
+.table1.grid-container .item6 p{
+	text-align:right;
+	padding-right:1em;
+}
+.table1.grid-container .item9,
+.table1.grid-container .item10{
+	background-color:#eee;
+}
+.table1.grid-container .item3,
+.table1.grid-container .item4{
+	font-weight:bold;
+	border-bottom:1px solid #000;
+}
+.table1.grid-container .item5,
+.table1.grid-container .item6{
+	font-weight:bold;
+	border-right:1px solid #000;
+}
+.table1.grid-container .item11{
+	padding-top:5px;
+}
+
+/* .table styles */
+.table{
+	width:100%;
+	text-align:center;
+  	border-collapse: collapse;
+}
+.table th,
+.table td{
+	width:18%;
+	padding:1%;
+	vertical-align:top;
+	border:0;
+}
+.table th{
+	font-weight:bold;
+}
+.table tbody th{
+	text-align:right;
+}
+.table thead{
+	border-bottom:1px solid #000;
+}
+.table tbody th{
+	border-right:1px solid #000;
+}
+.table tbody tr:nth-child(2n) td{
+	background-color:#eee;
+	
+}
+.table.reverseBg tbody tr:nth-child(2n-1) td{
+	background-color:#eee;
+}
+.table.reverseBg tbody tr:nth-child(2n) td{
+	background-color:transparent;
+}
+
+/* .code for code examples */
+.code h5{
+	background-color:#777;
+	color:#fff;
+	padding:0.25em;
+	margin-bottom:0;
+}
+.code pre{
+	font-size:12px;
+	line-height:140%;
+	margin-top:0;
+	background-color:#eee;
+	overflow: auto;
+}
+@media print {
+  .code pre{
+	  white-space:pre;
+  }
+}
+
+.references p{
+	text-indent:0;
+	margin:0.75em 0;
+	text-align:left;
+	word-wrap:break-word;
+}
+.references section *:first-child{
+	margin-top:0;
+}
+
+@media print{
+  body,html,section.page{
+	width:210mm;
+	height:297mm
+	margin:0;
+	box-shadow:0;
+  }
+  section.page {
+	margin:0;
+	border:initial;
+	border-radius:initial;
+	width:initial;
+	min-height:initial;
+	box-shadow:initial;
+	background:#fff;
+	page-break-after:always;
+  }
+  @page {
+	size:A4;
+	margin:0
+  }
+  .printShow{
+	display:block;
+  }
+  .printHide{
+	display:none;
+  }
+}
+
