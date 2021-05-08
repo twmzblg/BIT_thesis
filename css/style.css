@@ -4,7 +4,7 @@
 .ti0{text-indent:0;}
 .talj{text-align-last:justify;}
 .lstn{list-style-type:none}
-
+p.tac{text-indent:0;}
 
 .printShow{
  	display:none;
@@ -64,6 +64,9 @@ h1,h2,h3,h4,h5,h6{
 /*h2:first-child{
 	margin-top:0;
 }*/
+h4:not(h4:first-child){
+	margin-top:1.5em;
+}
 h1{
  	font-size:2.2em;
 	font-weight:bold;
