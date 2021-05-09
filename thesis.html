@@ -195,7 +195,7 @@
                 <p><a href="#RecoveryKeyManagement">Appendix C - Recovery Key and Backup Management</a><span>?</span></p>
             </li>
             <li>
-                <p><a href="#IPFS">Appendix D - InterPlanetary File System</a><span>?</span></p>
+                <p><a href="#IPFS_info">Appendix D - InterPlanetary File System</a><span>?</span></p>
             </li>
         </ul>
     
@@ -232,15 +232,25 @@ In the connected world of the Internet, digital identity has progressed from a c
 <section id="pg3" class="page hf">
 	<section>
         <p class="ti0">HTTPS connection. However, the public-key infrastructure (PKI) supplied by CA ar cumbersome, costly, and centralized – so companies, not individuals, are the purchasers of digital certificates.</p>
-        <p>DLT, specifically a public BC, offers a decentralized PKI (DPKI) that nobody owns and everyone can use. This can replace trust in humans to verify identification claims, to one where cryptography, in a machine-readable way, is stored immutably <a id="link_Sovrin_2019" href="#Sovrin_2019">[Sovrin_2019]</a>.</p>
+        <p>DLT, specifically a public BC, offers a decentralized PKI (DPKI) that nobody owns and everyone can use. This can replace trust in humans to verify identification claims, to one where cryptography, in a machine-readable way, is stored immutably.</p>
+        <p>Through DLT, the same process can be used to verify identity online that has been used offline for centuries. Every decentralized identifier (DID) has an associated public-private key pair. As long as the verifier can access the DID of the issuer (recorded publicly on a BC) shown on the digital credential, it is quick and easy to look up the issuer and verify the signature on the claims. Following this process, there is no need for identity federations or islands of identity for PKI <a id="link_Sovrin_2019" href="#Sovrin_2019">[Sovrin_2019]</a>.</p>
+        
         <p class="ti0">All blockchains follow the following procedure:</p>
         <ol>
             <li>The originator digitally signs each transaction in the BC.</li>
             <li>Each transaction is stored in blocks that are chained to the previous block via a digital hash.</li>
-            <li>Validated via a consensus algorithm (see 2.1.1.1), transactions are replicated across all nodes (machines) that store the BC (i.e., all PC-based wallets).</li>
+            <li>Validated via a consensus algorithm (see <a href="#MoC">section 2.1.1.1</a>), transactions are replicated across all nodes (machines) that store the BC (i.e., all PC-based wallets).</li>
         </ol>
-        <p>DLT and BC are explained in greater depth in section 2.1. Stated simply, they allow the foundation on which SSI can be built. An SSI is divided into the following components: Decentralized Identifiers (DIDs), Verifiable Credentials (VCs), and Identity – explored in section 2.3.</p>
-        <p>Identity is an inherent human condition; it is not conditional on outside administration. Self-sovereign identity is based upon the following principles <a href="#Allen_2016">[Allen_2016,</a> <a id="link_Tobin_2016" href="#Tobin_2016">Tobin_2016]</a>:</p>
+        <p>DLT and BC are explained in greater depth in <a href="#DLT">section 2.1</a>. Stated simply, they allow the foundation on which SSI can be built. An SSI is divided into the following components: Decentralized Identifiers (DIDs), Verifiable Credentials (VCs), and Identity – explored in <a href="#SSI_components">section 2.3</a>.</p>
+        <p>Identity is an inherent human condition; it is not conditional on outside administration. However, granting control of digital identities to centralized authorities leaves users locked to a single authority that can deny their identity or confirm a false identity. Centralization gives power to the centralized authorities, not the users. In the creation of an SSI, the individual must be carefully protected. The goal of digital identity is to make identity information widely available, crossing international boundaries, without losing user control, redefining modern concepts of identity. An SSI must be transportable, not locked down to one site or locale <a href="#Allen_2016">[Allen_2016]</a>.</p>
+        <p class="talj">Identity also needs to be widely available for everyone, no matter their location or situation. According to the World Bank, almost 15% of the world’s population was without ID <a id="link_Desai_2017" href="#Desai_2017">[Desai_2017]</a>. In addition, more than half of the world is currently offline. Banking the</p>
+    </section>
+    <footer>3</footer>
+</section><!-- END #pg3.page.hf -->
+<section id="pg4" class="page hf">
+	<section>
+        <p class="ti0">unbanked, as Cardano is attempting to do through their Atala Prism (see Section 3.2), is partly done through giving people without ID an SSI. Many of those without ID live in remote areas with little access to electricity, mobile service, or even wired telephone service. This makes inclusion for all people difficult. Cardano is making strides in that direction in Africa, partnering with World Mobile, which aims to connect the unconnected by providing decentralized low-cost, sustainable, and profitable internet to remote villages across Tanzania and eventually other areas. Cardano then provides them with an SSI through Atala Prism, giving them further financial opportunities <a id="link_Desai_2017" href="#Desai_2017">[Cardano_2021]</a>.</p>
+        <p>The problems SSI aims to resolve are based  on the following principles <a id="link_Tobin_2016" href="#Tobin_2016">[Tobin_2016]</a>:</p>
         <table class="table">
         <thead>
             <tr>
@@ -268,11 +278,6 @@ In the connected world of the Internet, digital identity has progressed from a c
         </tbody>
         </table>
         <p>With the recent refugee crisis, resulting in multiple people without a recognized identity, and the European Union’s General Data Protection Regulation’s (GDPR) attempt to regulate customer data and privacy abuses, the need for a digital Self-Sovereign Identifier (SSI) is emphasized.</p>
-    </section>
-    <footer>3</footer>
-</section><!-- END #pg3.page.hf -->
-<section id="pg4" class="page hf">
-	<section>
         <p>One main issue that the GDPR demands is the “right to erasure” or “right to be forgotten,” allowing users to request the company “forgets” them, removing every instance of their data from the company’s system. This presents several challenges for data collectors:
         </p><ul>
             <li>Checking to confirm the is a request from the actual user.</li>
@@ -280,6 +285,11 @@ In the connected world of the Internet, digital identity has progressed from a c
             <li>Finding all iterations of that data across their servers in different locations and successfully deleting it.</li>
         </ul>
         <p>For more regarding GDPR and its applicability regarding BC, see <a href="#GDPR">Appendix B</a>.</p>
+	</section>
+    <footer>4</footer>
+</section><!-- END #pg4.page.hf -->
+<section id="pg5" class="page hf">
+	<section>
         <p>The premise of SSI is that it is an identity wholly owned by the controller without authorization or management by a central entity. An SSI controller could be an individual controlling their personal data, the owner of the IoT device keeping its data guarded against outside access, or an employee/manager of an entity (e.g., government department, licensing department, corporation, business, etc.). To use an SSI, the controller/holder presents claims about their identity that can be cryptographically verified by the verifier that desires to check them <a id="link_Govind_2020" href="#Govind_2020">[Govind_2020]</a>.</p>
         <p>The future of an active SSI ecosystem will include changes across the Internet. Most notably, there will be changes in how Big Data is collected and whether it will retain its ability to be collected legally or otherwise – e.g., through privacy-preserving zero-knowledge-proofs (ZKP). Investigation and documentation of changes and potential workarounds for big-data collection are needed to anticipate when SSI use becomes standard across the web.</p>
         <p class="ti0">SSI targets include:</p>
@@ -294,26 +304,19 @@ In the connected world of the Internet, digital identity has progressed from a c
             </li>
             <li>Not more information is given than is strictly necessary for intended purposes.</li>
             <li>Giving ownership of digital data back to the individual stored on their device(s) (e.g., phone) instead of that data being maintained and owned by a third-party service provider offering the individual a “free service.”</li>
-        </ul>
-
-	</section>
-    <footer>4</footer>
-</section><!-- END #pg4.page.hf -->
-<section id="pg5" class="page hf">
-	<section>
-        <ul>
             <li>Maintaining a data minimization policy to avoid the current situation of third-party ‘honeypots’ that are targets of hackers.</li>
             <li>Allowing identity data, in the hands of the individual, to be a portable, acceptable proof of identity between businesses, cities, and even countries (e.g., refugees).</li>
             <li>Avoiding centralization of identity data through the use of Distributed Ledger Technology (DLT).</li>
         </ul>
         
         <p>In addition to the targets mentioned above, globally verifiable unique identities using DLT allow for transparent, open-source data collection leaving data sources un-targetable. This could be beneficial for numerous academic studies, such as anthropological studies, and for individuals seeking to expand their horizons or seek fellow-minded others.</p>
-        <p>This SSI ecosystem is still under development that should be available for everyday use in the next 5-15 years, depending on where in the world one is, but this marks a future as full of potential as the beginnings of the world wide web.</p>
 	</section>
     <footer>5</footer>
 </section><!-- END #pg5.page.hf -->
+
 <section id="pg6" class="page hf">
 	<section>
+        <p>This SSI ecosystem is still under development and should be available for everyday use in the next 5-15 years, depending on where in the world one is. This marks a future as full of potential as the beginnings of the world wide web.</p>
 	</section>
     <footer>6</footer>
 </section><!-- END #pg6.page.hf -->
@@ -1026,34 +1029,48 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
             <li><b>Credential Definitions:</b> The DID of the issuer, the schema for the credentials, and the public keys (one per claim) used to sign the claims to issue a credential MUST be written to the BC.</li>
             <li><b>Revocation Registry:</b> The issuer MAY require the ability to revoke credentials, and if so, they must write a revocation registry to the ledger before issuing credentials. The revocation registry links to the credential definition, allowing the issuer to revoke credentials independent of the holders. The revoked credentials are not listed for public visibility, rather using ZKP, a holder can prove, and a verifier can verify that the holder’s unrevoked credential has not been revoked.</li>
         </ul>
-        <p>Aries is meant to be BC agnostic, and as mentioned above, Aries is what most developers will build on. An Aries agent is a piece of software that handles VCs for an entity (person, organization, or thing), allowing the holder to receive VCs from issuers and provide verifiable presentations to verifiers – a digital wallet. Agents use private, pairwise DIDs for every relationship, providing end-to-end encryption, allowing certain knowledge of who is on the other end of the connection.</p>
-        <h5>Types of agents:</h5>
-        <ul>
-        	<li><b>Personal Agents/Edge Agents:</b> a mobile or PC app to establish connections and exchange messages such as offers of credentials and requests to prove claims from credentials. Personal agents could also be operated and run by a cloud service, but this would require trust in the service as it would have control of all keys.</li>
-        </ul>
+        <p>Identity holders can issue all their attributes on all credentials by creating ZKPs to prove attributes using one or more of the following means [Sovrin_2018]:</p>
+        <ol>
+        	<li><b>Equality:</b> If the attribute requested is equal to one held by the identity holder, the holder can just reveal this equality itself in the proof.<br>Example: [Are you employed?] = ZKP: [Yes]</li>
+        	<li><b>Inequality:</b> If an attribute lies in a specific range. This can be used when dealing with something that has a numerical attribute like age or money.<br>Example: [Are you over 21] = ZKP [Age >= 21]</li>
+        	<li><b>Set membership:</b> If a value is within a certain set, the exact value does not need to be revealed.</li>            
+        </ol>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
+    	<ul>
+        	<li class="lstn">Example: [Do you live in Europe?] ZKP: [Country of residence is: a European country] or [Country of residence is: not in a European country]</li>
+        </ul>
+        <p>With Aries as an open-source repository hosted by Hyperledger, the entire community has access to groundbreaking ZKP technology, not only those specific BCs that have them inbuilt. Through Aries other BCs using their own ledgers can take advantage of prebuild messaging using ZKPs and be compatible with others. Aries with ZKPs allows data sharing to be autonomous, which reduces the data hoarding problem by only needing to store what is necessary, avoiding data other than financial data being exploited for advertising.</p>
+        <p>Aries is meant to be BC agnostic, and as mentioned above, Aries is what most developers will build on. An Aries agent is a piece of software that handles VCs for an entity (person, organization, or thing), allowing the holder to receive VCs from issuers and provide verifiable presentations to verifiers – a digital wallet. Agents use private, pairwise DIDs for every relationship, providing end-to-end encryption, allowing certain knowledge of who is on the other end of the connection.</p>
+        <h5>Types of agents:</h5>
         <ul>
+        	<li><b>Personal Agents/Edge Agents:</b> a mobile or PC app to establish connections and exchange messages such as offers of credentials and requests to prove claims from credentials. Personal agents could also be operated and run by a cloud service, but this would require trust in the service as it would have control of all keys.</li>
         	<li><b>Enterprise Agents:</b> run on servers to verify claims and issue credentials to clients. An enterprise will use VCs for received licenses and permits.  </li>
         	<li><b>Device Agents:</b> IoT devices can put sensor data into VCs to prevent tampering.</li>
         	<li><b>Routing Agent/Cloud Agents:</b> serve as intermediaries to facilitate the flow of encrypted messages between other types of agents.</li>
         </ul>
         <p>Aries agents are divided into the following components: KMS, messaging interface, ledger interface, and controller.</p> 
-        <p>An Aries agent has secure storage called the key management service (KMS) to store all information collected by the agent. An Aries KMS is wrapper code around a database (e.g., SQLite, PostgreSQL) that contains DIDs, keys, credentials, etc., that are stored encrypted. The KMS key pair encrypts all other keys and data, and the KMS access key is protected by the app platform’s capable means (e.g., fingerprint, facial recognition, etc.). For backup purposes, not only must the database be backed up, but the keys to decrypt the database entries must be backed up. These must be packaged, encrypted, and protected by a recovery key pair and must be held safely, separately from the backup until it is needed to restore. For possible ways to manage backup and recovery key storage, see Appendix 2.</p>
-        <p>Aries uses transport-agnostic DID Communication (DIDComm) messaging protocols to enable P2P messaging. The message is encrypted via Ursa and assembled into a JSON Web Encryption (JWE) structure by the DIDComm envelope protocol and decrypted at the other end by the intended recipient.</p>
-        <p>The Aries ledger interface is pluggable, allowing an Aries agent to interact with multiple ledgers and VC ecosystems. However, Indy is the only ledger interface implementation currently.</p>
-        <p>The controller provides the rules defining what actions the agent initiates and how it will respond to events. In a mobile agent, the controller is a user interface presenting the options to a person. An issuer/verifier enterprise agent might be a legacy database system that manages consumer data, potentially enabling customers to submit data by presenting claims rather than typing the information in a web form.</p>
-        <p>For development, an Aries Agent can be divided into two logical components: framework and controller. The framework corresponds to the standard capabilities provided to enable the Aries agent to interact with its surroundings: ledgers, storage, and other agents. The controller is the customizable component designed to handle rules for that particular agent.</p>
+        <p class="talj">An Aries agent has secure storage called the key management service (KMS) to store all information collected by the agent. An Aries KMS is wrapper code around a database (e.g., SQLite, PostgreSQL) that contains DIDs, keys, credentials, etc., that are stored encrypted. The KMS key pair encrypts all other keys and data, and the KMS access key is protected by the app platform’s capable means (e.g., fingerprint, facial recognition, etc.). For backup purposes, not only must the database be backed up, but the keys to decrypt the database entries must be backed up. These must be packaged, encrypted, and</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
+        <p class="ti0">protected by a recovery key pair and must be held safely, separately from the backup until it is needed to restore. For possible ways to manage backup and recovery key storage, see <a id="RecoveryKeyManagement" href="link_RecoveryKeyManagement">Appendix C</a>.</p>
+        <p>Aries uses transport-agnostic DID Communication (DIDComm) messaging protocols to enable P2P messaging. The message is encrypted via Ursa and assembled into a JSON Web Encryption (JWE) structure by the DIDComm envelope protocol and decrypted at the other end by the intended recipient.</p>
+        <p>The Aries ledger interface is pluggable, allowing an Aries agent to interact with multiple ledgers and VC ecosystems. However, Indy is the only ledger interface implementation currently.</p>
+        <p>The controller provides the rules defining what actions the agent initiates and how it will respond to events. In a mobile agent, the controller is a user interface presenting the options to a person. An issuer/verifier enterprise agent might be a legacy database system that manages consumer data, potentially enabling customers to submit data by presenting claims rather than typing the information in a web form.</p>
+        <p>For development, an Aries Agent can be divided into two logical components: framework and controller. The framework corresponds to the standard capabilities provided to enable the Aries agent to interact with its surroundings: ledgers, storage, and other agents. The controller is the customizable component designed to handle rules for that particular agent.</p>
         <p>Aries frameworks for edge development are currently available in .NET <a id="link_Hyperledger_Aries-framework-dotnet" href="#Hyperledger_Aries-framework-dotnet">[Hyperledger_Aries-framework-dotnet]</a> and golang <a id="link_Hyperledger_Aries-framework-go" href="#Hyperledger_Aries-framework-go">[Hyperledger_Aries-framework-go]</a>, and there is work on Java and JavaScript based. For cloud development that is not designed for mobile devices is available in Python: Aries Cloud Agent Python <a id="link_Hyperledger_ACA-Py" href="#Hyperledger_ACA-Py">[Hyperledger_ACA-Py]</a>. The frameworks for edge development are embedded in the controller enabling the use of DIDComm and other Aries protocols.</p> 
         <p>Aries Cloud Agent Python can be accessed through an Open-API/Swagger UI, allowing manual simulation of a connection between Faber college and Alice <a id="link_Hyperledger_AriesOpenAPIDemo" href="#Hyperledger_AriesOpenAPIDemo">[Hyperledger_AriesOpenAPIDemo]</a>. The ledger used in this demo is the GreenLight Dev Ledger, an open public ledger contributed and operated by the Province of British Columbia <a id="link_Greenlight" href="#Greenlight">[Greenlight]</a>. The protocols for connection can be seen in Fig. 7, followed by Faber sending Alice an invitation in Fig. 8 and Alice receiving the invitation in Fig. 9.</p>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
         <div class="image">
           <img src="./imgs/Figure_07.gif" alt="Figure 7: OpenAPI/Swagger UL connection management">
           <p><b>Figure 7:</b> Swagger UI Connection management</p>
@@ -1061,6 +1078,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
+
 <section id="" class="page hf">
 	<section>
         <div class="image" style="padding:0 5%;">
@@ -1070,7 +1088,6 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-
 <section id="" class="page hf">
 	<section>
         <div class="image" style="padding:0 5%;">
@@ -1121,6 +1138,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
+
 <section class="page hf">
 	<section>
         <div class="image">
@@ -1143,7 +1161,6 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 	</section>
     <footer>?</footer>
 </section><!-- END #DecentralizedIdentityFoundation.page.hf -->
-
 <section id="" class="page hf">
 	<section>
         <p class="ti0">for more than development use, as being on a single server, the dev UR centralizes an intended decentralized infrastructure. When the SSI ecosystem is closer to final development, multiple servers will offer their own UR. The universal resolver protocol and appropriate drives are meant to be downloaded and run on more instances to maintain the distributed nature of the SSI ecosystem <a id="link_DIF_Universal_Resolver" href="#DIF_Universal_Resolver">[DIF_Universal_Resolver]</a>.</p>
@@ -1187,11 +1204,50 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 	</section>
     <footer>?</footer>
 </section><!-- END #SoftwareDnD#HyperledgerIDStack.page.hf -->
-<!-- +8pages  -->
+<!-- +7pages  -->
 
 <!-- Chapter 4 -->
+<section class="page hf">
+	<section>
+    	<h4 id="originalPlan">My untested original plan</h4>
+    	<p>Anticipating claims that there would be a decentralized identifier system/ SSI system available to build on top of in Q4 2020, I structured plans to take it further and create a decentralized rating system. The idea was to start with a nonsensitive topic: movie ratings.</p>
+        <p>The ratings would be submitted with pairwise, uncorrelatable DIDs, allowing the ratings to have attached categories that would otherwise be personally identifiable information (PII). Categories such as age bracket (0-9, 10-19, …, 90-99, or even more general ones: <21, <50, >50), nationality, country of residence, and even more abstract groups such as ‘nerd,’ ‘preppy,’ ‘extrovert,’ etc. All categories would be optionally added to the rating if a user had a VC certifying membership in that category.</p>
+        <p>The assumption that users would be more willing to add these categories to their rating were the ratings not linked to a targetable identifier like an email address or social media account name.</p> 
+        <p>From a larger perspective, ratings of this type would provide a new scheme of video recommendation. One based on user choice, rather than concentrated on what they have previously seen, or tailored to them as an individual, allows decentralized open-source big data that users could query. This does not prevent any user from sticking in a particular group, but in the case of a group event, this new scheme could be used to add categories of all participants and narrow the list to ones that all should like. This new rating scheme could even be used for exploring new genres or exploring what someone on the other side of the world would be interested in out of curiosity.</p>
+        <p>This rating system template could then be used for other areas, such as shopping, clothing preferences, and more. The primary purpose for designing this rating system is to open knowledge to all ordinary individuals. This type of uncontroversial knowledge-gathering could allow similarities to be demonstrated in humans globally or enable people to be more open to encountering people outside of their area of familiarity.</p>
+        <p class="ti0">The original plan asked the following three questions with hypothetical answers:</p>
+        <p><b>Question 1:</b> Is it possible to create a grouping system on IPFS for semi-anonymous data aggregation?</p>
+        <p class="talj"><b>Hypothesis 1:</b> Yes. IPFS creates its own distributed data storage with namespacing by hash-key. Using a newly generated keypair gives pseudonymity to the user as long as</p>
+        
+        
+
+	</section>
+    <footer>?</footer>
+</section><!-- END #originalPlan.page.hf -->
 <section id="" class="page hf">
 	<section>
+    	<p class="ti0">they don’t identify their public key on social medial.</p>
+        <p><b>Question 2:</b> Is there a way to pull ratings to user-chosen groups where rating totals for each group can be seen?</p>
+        <p><b>Hypothesis 2:</b> Yes. This can be done through IPFS groupings pulled and stored by all group members. A copy could potentially be stored on a NoSQL database. An HTTP homepage that pulls data from IPFS could be created.</p>
+        <p><b>Question 3:</b> Can an SSI mechanism be created to collect and distribute ratings to user-chosen groups?</p>
+        <p><b>Hypothesis 3:</b> The SSI frameworks scheduled to be released in late 2020 should have the functionality to develop the necessary structures.</p>
+        
+        <p class="ti0">The initially planned methodology to test hypothesis 1 & 2:</p>
+        <ul>
+        	<li>Create sample user ratings on IPFS (sourced from grouplens.org, randomly selecting groups to attribute to each anonymized rating)</li>
+            <li>Create sample groups and a group template on IPFS</li>
+            <li>Creation of pages for group totals</li>
+            <li>Creation of homepage for groups</li>
+            <p class="ti0">The methodology for hypothesis 3, presuming that 1 and 2 were satisfied:</p>
+            <ul>
+            	<li>Create SSI interface for rating collection</li>
+                <li>Include means for group selection in SSI interface</li>
+            </ul>
+            <p class="ti0">A graphical representation of the plan:</p>
+            <div class="image">
+                <img src="./imgs/Figure_15.svg" alt="Image representing the steps that a user would take">
+                <p><b>Figure 14:</b> A graphical representation of the original plan from a user perspectve</p>
+            </div>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
@@ -1200,6 +1256,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
+<!-- +8pages -->
 
 
 <!-- Conclusion -->
@@ -1225,6 +1282,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p><a id="Chen_2019" href="#link_Chen_2019">[Chen_2019]</a> Chun, Yun, Hui Xie, Kun Lv, Shengjun Wei, and Changzhen Hu. “DEPLEST: A Blockchain-Based Privacy-Preserving Distributed Database toward User Behaviors in Social Networks.” Information Sciences 501 (October 2019): 100–117. https://doi.org/10.1016/j.ins.2019.05.092.</p>
         <p><a id="Cohen_2003" href="#link_Cohen_2003">[Cohen_2003]</a> Cohen, Bram. Incentives Build Robustness in BitTorrent, 2003.</p>
         <p><a id="Cui_2019" href="#link_Cui_2019">[Cui_2019]</a> Cui, Jiaming, Huaying Wu, Luoyi Fu, and Xiaoying Gan. “De-Anonymizing Bitcoin Networks: An IP Matching Method via Heuristic Approach: Poster.” ACM TURC ’19. New York, NY, USA: Association for Computing Machinery, 2019. https://doi.org/10.1145/3321408.3321607.</p>
+        <p><a id="Desai_2017" href="#link_Desai_2017">[Desai_2017]</a> Desai, Vyjayanti T, Matthias Witt, Kamya Chandra, and Jonathan Marskell. “Counting the Uncounted: 1.1 Billion People without IDs.” World Bank Blogs. worldbank.org. June 06, 2017. https://blogs.worldbank.org/digital-development/counting-uncounted-11-billion-people-without-ids. </p>
         <p><a id="DIF" href="#link_DIF">[DIF]</a> DIF. DIF - Decentralized Identity Foundation, n.d. https://identity.foundation/.</p>
         <p><a id="DIF_ION" href="#link_DIF_ION">[DIF_ION]</a> Decentralized-Identity. Decentralized-Identity/Ion, n.d. https://github.com/decentralized-identity/ion.</p>
         <p><a id="DIF_Sidetree" href="#link_DIF_Sidetree">[DIF_Sidetree]</a> DIF. Decentralized-Identity/Sidetree, n.d. https://github.com/decentralized-identity/sidetree.</p>
@@ -1259,6 +1317,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         <p><a id="IOHK_January2021" href="#link_IOHK_January2021">[IOHK_January2021]</a> IOHK. Cardano Monthly Update - January 2021. YouTube, 2021. https://youtu.be/e_C90pUrfKs?t=4536.</p>
         <p><a id="IOHK_March2021" href="#link_IOHK_March2021">[IOHK_March2021]</a> IOHK. “Cardano360 - March 2021.” Youtube, March 2021. https://www.youtube.com/watch?v=ULBLgPgxtN8.</p>
         <p><a id="iohkdev.io" href="#link_iohkdev.io">[iohkdev.io]</a> iohkdev.io. Alpha.Marlowe.Iohkdev.Io. Marlowe Playground, n.d. https://alpha.marlowe.iohkdev.io/.</p>
+        <p><a id="IPFS" href="#link_IPFS">[IPFS]</a> IPFS “IPFS and Privacy.” IPFS Docs. docs.ipfs.io. Accessed December 2020. https://docs.ipfs.io/concepts/privacy/.</p>
         <p><a id="Ivan_2020" href="#link_Ivan_2020">[Ivan_2020]</a> Ivan. “Breaking Down ETH 2.0 - Zk-SNARKS and Zk-Rollups.” Ivan on Tech Blockchain Academy. academy.ivanontech.com, June 25, 2020. https://academy.ivanontech.com/blog/breaking-down-eth-2-0-zk-snarks-and-zk-rollups.</p>
         <p><a id="Jawaheri_2020" href="#link_Jawaheri_2020">[Jawaheri_2020]</a> Jawaheri, Husam Al, Mashael Al Sabah, Yazan Boshmaf, and Aiman Erbad. “Deanonymizing Tor Hidden Service Users through Bitcoin Transactions Analysis.” Computers &amp; Security 89 (February 2020): 101684. https://doi.org/10.1016/j.cose.2019.101684.</p>
         <p><a id="Jones_2019" href="#link_Jones_2019">[Jones_2019]</a> Jones, Ben, Dan Robinson, Georgios Konstantopoulos, Joseph Poon, Karl Floersch, Kelvin Fichter, Vitalik Buterin, and Xuanji Li. Plasma Contracts. plasma.io, 2019. https://plasma.io/plasma-contracts.html.</p>
@@ -1289,6 +1348,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 	<section>
         <p><a id="Sabadello_2021" href="#link_Sabadello_2021">[Sabadello_2021]</a> Sabadello, Markus, and Dmitri Zagidulin. Decentralized Identifier Resolution (DID Resolution) v0.2. Credentials Community Group, 2021. https://w3c-ccg.github.io/did-resolution/.</p>
         <p><a id="Simmons_2021" href="#link_Simmons_2021">[Simmons_2021]</a> Simmons, Jake. “Demand for Cardano’s Atala PRISM Outpaces Labor Supply.” Crypto News Flash, April 2021. https://www.crypto-news-flash.com/demand-by-fortune-500-governments-for-cardanos-atala-prism-outpaces-labor-supply/.</p>
+        <p><a id="Sovrin_2018" href="link_Sovrin_2018">[Sovrin_2018]</a> Sovrin Foundation. “The Sovrin Network and Zero Knowledge Proofs.” Sovrin, October 3, 2018. https://sovrin.org/the-sovrin-network-and-zero-knowledge-proofs/.</p>
         <p><a id="Sovrin_2019" href="#link_Sovrin_2019">[Sovrin_2019]</a> Sovrin Foundation “A Protocol and Token for Self-Sovereign Identity and Decentralized Trust.” Sovrin Protocol and Token White Paper, May 6, 2019. https://sovrin.org/wp-content/uploads/2018/03/Sovrin-Protocol-and-Token-White-Paper.pdf</p>
         <p><a id="Sovrin_2020" href="#link_Sovrin_2020">[Sovrin_2020]</a>Sovrin Foundation. Write to the Sovrin Public Ledger. Sovrin, 2020. https://sovrin.org/issue-credentials/.</p>
         <p><a id="Sporny_2019" href="#link_Sporny_2019">[Sporny_2019]</a> Sporny, Manu, Dave Longley, and David Chadwick. Verifiable Credentials Data Model 1.0. W3C Recommendation 19 November 2019. Verifiable Credentials Data Model 1.0. W3C, 2019. https://www.w3.org/TR/2019/REC-vc-data-model-20191119/.</p>
@@ -1329,8 +1389,8 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         	<li><b>Soundness:</b> Prover can only convince Verifier if they hold the knowledge.</li>
         	<li><b>Zero-knowledge:</b> Verifier does not learn anything about the knowledge, simply that the Prover has said knowledge.</li>
         </ul>
-        <p>As an illustration, Prover is given by Verifier a graph with nodes and edges and is tasked to find a 3-coloring such that no two adjacent nodes have the same color. Imagine Verifier is an organization, and Prover is a freelancer. Prover finds a 3-coloring and must prove that they have done so without showing the result before getting paid.</p>
-        <p>To construct an interactive ZKP protocol, the graph is drawn on the floor in a closed room. Prover, alone,  places colored balls on the nodes according to the discovered pattern and covers the balls with non-transparent bowls. Verifier comes into the room, chooses an edge, and verifies that the attached nodes are different colors. If they are not different, then Prover is disqualified. See Figure A.1.</p> 
+        <p>As a graphic illustration, the prover is given by a verifier a graph with nodes and edges and is tasked to find a 3-coloring such that no two adjacent nodes have the same color. Imagine the verifier is an organization, and the prover is a freelancer. The prover finds a 3-coloring and must prove that they have done so without showing the result before getting paid.</p>
+        <p>To construct an interactive ZKP protocol, the graph is drawn on the floor in a closed room. The prover, alone in the room, places colored balls on the nodes according to the discovered pattern and covers the balls with non-transparent bowls. At the prover’s confirmation that they are finished, the verifier comes into the room, chooses an edge, and verifies that the attached nodes are different colors, see Fig A.1. If they are not different the prover is disqualified.</p> 
 		<div class="image">
           <img src="./imgs/Figure_a1.svg" alt="Interactive ZKP Illustration">
           <p><b>Figure A1:</b> Interactive ZKP Illustration</p>
@@ -1341,7 +1401,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 <section id="ZKP1" class="page hf">
 	<section>
         <p>Since a single attempt by the verifier, checking adjacent nodes of one edge is not probabilistically certain, the verifier must be allowed as many checks till satisfaction. However, if the verifier were to record the colors and check all edges secretly, they would consequently have violated the zero-knowledge principle. To rectify this, the verifier must leave the room after validating an edge. The prover may then switch the colors of the balls, maintaining the pattern. Thus, proving that all edges chosen consistently have two different colored edges but maintaining zero knowledge of the exact pattern. This can be done until the verifier has certainty that there is only negligible error.</p>
-        <p>The problem with traditional ZKP is that it is an interactive system, requiring Prover and Verifier’s presence, and as such is not scalable. Zk-SNARKs or zero-knowledge Succinct Non-interactive ARguments of Knowledge provides an algorithmic formation using cryptographic hash functions.</p>
+        <p>The problem with traditional ZKP is that it is an interactive system, requiring the prover and the verifier’s presence, and as such is not scalable. Zk-SNARKs or zero-knowledge Succinct Non-interactive ARguments of Knowledge provides an algorithmic formation using cryptographic hash functions.</p>
         <p class="ti0">The following algorithms were explained in <a id="link_Ivan_2020" href="#Ivan_2020">[Ivan_2020]</a>.</p>
         <p class="ti0">The three algorithms in zk-SNARK:</p>
         <ul>
@@ -1355,6 +1415,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
         	<li>The prover must take the pk and prove their statement: prf = P(pk, x, s). Here x is the SHA-256 hash of s.</li>
         	<li>When prf is sent to the verifier and inserted into the verifying algorithm: V(vk, x, prf) = True if the prover is honest, False otherwise.</li>
         </ul>
+        <p>A choice example that could be done without interaction is the date of birth. Governmental ID cards are typically used to prove age. Yet this type of ID also contains additional private information such as a person’s home address that is valuable and could be used for identity theft. Using ZKPs, one could use a digital copy (VC) of their ID to quickly, easily, and securely verify that one is over the required age without disclosing the specific date of birth.</p>
     </section>
     <footer>36</footer>
 </section><!-- END #ZKP1.page.hf -->
@@ -1436,7 +1497,7 @@ G_zS245kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
 <!-- Appendix D -->
 <section class="page hf">
 	<section>
-    	<h2 id="IPFS">Appendix D - InterPlanetary File System</h2>
+    	<h2 id="IPFS_info">Appendix D - InterPlanetary File System</h2>
         <p>HTTP is the protocol behind client-server architecture that we see in the internet of today. However, it has many drawbacks; in particular, the centralized nature of all information that we access to over the web is held on servers that are under control of a central company. This requires trust that the central company will not go offline either through an attack or simple server failure. It also enables censorship, as the data stored on a central server can be easily blocked by ISPs blocking the server’s IP. As all data is stored on the server, if the server goes down that data is no longer accessible.</p> 
         <p>Inter-Planetary File System (IPFS) introduces a peer-to-peer (P2P) distributed file system, creating a system by combining a P2P BitTorrent swarm with a Git repository. IPFS forms a Merkle DAG data structure upon which one can build distributed versioned file systems, with no need for trust between nodes, thereby escaping a single point of failure(SPF). IPFS aims to replace HTTP by offering an enhanced web combining successful file distribution techniques invented in the past fifteen years <a id="link_Benet_2014" href="#Benet_2014">[Benet_2014]</a>.</p> 
         <p class="ti0">A summary of the successful techniques that IPFS incorporates:</p>
