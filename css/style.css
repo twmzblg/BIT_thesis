@@ -5,6 +5,7 @@
 .talj{text-align-last:justify;}
 .lstn{list-style-type:none}
 p.tac{text-indent:0;}
+.ti0 p{text-indent:0;}
 
 .printShow{
  	display:none;
@@ -301,15 +302,20 @@ article,
 	margin-bottom:0;
 }
 .code pre{
-	font-size:12px;
+	/*font-size:12px;*/
 	line-height:140%;
 	margin-top:0;
 	background-color:#eee;
 	overflow: auto;
+	padding:0 5px;
 }
 @media print {
+  .code h5{border:1px solid #777;]
   .code pre{
 	  white-space:pre;
+	  background-color:#fff;
+	  border:1px solid #777;
+	  border-top-width:0;
   }
 }
 
