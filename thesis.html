@@ -149,16 +149,13 @@
                         </ul>
             		</li>
             		<li>
-            			<p><a href="#FurtherPrinciples">2.4 - Further principles and regulations</a><span>?</span></p>
+            			<p><a href="#FurtherPrinciples">2.4 - Additional principles</a><span>?</span></p>
                         <ul>
                             <li>
                                 <p><a href="#ZKP">2.4.1 - Zero-Knowledge Proofs and zk-SNARKs</a><span>?</span></p>
                             </li>
                             <li>
                                 <p><a href="#IPFS_info">2.4.2 - InterPlanetary File System</a><span>?</span></p>
-                            </li>
-                            <li>
-                                <p><a href="#GDPR">2.4.3 - GDPR concerns regarding blockchain</a><span>?</span></p>
                             </li>
                         </ul>
             		</li>
@@ -204,11 +201,12 @@
                 <p><a href="#References">References</a><span>?</span></p>
             </li>
             <li>
-                <p><a href="#RecoveryKeyManagement">Appendix C - Recovery Key and Backup Management</a><span>?</span></p>
+                <p><a href="#GDPR">Appendix A - GDPR</a><span>37</span></p>
+            </li>
+            <li>
+                <p><a href="#RecoveryKeyManagement">Appendix B - Recovery Key and Backup Management</a><span>?</span></p>
             </li>
         </ul>
-    
-    
     </section>
     <footer>IV</footer>
 </section><!-- END #TOC2.page.hf -->
@@ -736,11 +734,8 @@ In the connected world of the Internet, digital identity has progressed from a c
             <p>Query: <code>did:example:1234...fghi?versionId=1</code></p>
             <p>Fragment: <code>did:example:1234...fghi#service=agent</code></p>
         </div>
-        
-        <p>The DIDdoc that is resolved with the DID contains the ways to cryptographically authenticate a DID controller, a set of data describing the DID subject, and other information associated with the DID. DIDdocs are most often in the form JSON or JSON-LD. However, developers are permitted to use other forms, such as XML or YAML. In Example 1, under authentication, the encryption type is specified along with the public key to verify the DID.</p>
-        <p>A DID is the digital equivalent of your state ID number.</p>
-        
-        
+    	<p>The DIDdoc that is resolved with the DID contains the ways to cryptographically authenticate a DID controller, a set of data describing the DID subject, and other information associated with the DID. DIDdocs are most often in the form JSON or JSON-LD. However, developers are permitted to use other forms, such as XML or YAML. In Example 1, under authentication, the encryption type is specified along with the public key to verify the DID.</p>
+		<p>A DID is the digital equivalent of your state ID number.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #VCs.page.hf -->
@@ -748,7 +743,7 @@ In the connected world of the Internet, digital identity has progressed from a c
 	<section>
         <article class="code">
             <h5>Example 1: A minimal DID document [Reed_2021]</h5>
-<pre>
+<pre class="printHide">
 {
   "@context": "https://www.w3.org/ns/did/v1",
   "id": "did:example:123456789abcdefghi",
@@ -760,52 +755,58 @@ In the connected world of the Internet, digital identity has progressed from a c
   }]
 }
 </pre>
+<pre class="printShow">
+{
+  "@context": "https://www.w3.org/ns/did/v1",
+  "id": "did:example:123456789abcdefghi",
+  "authentication": [{
+    "id": "did:example:123456789abcdefghi#keys-1",
+    "type": "ed25519verificationkey2020",
+    "controller": "did:example:123456789abcdefghi",
+    "publickeymultibase": "zh3c2avvlmv6gmmnam3uvajzpfkcjcwdwnzn6z
+                          3wxmqpv"
+  }]
+}
+</pre>
     	</article>
 
         
         <h4 id="VCs" style="margin-top:2em;">2.3.2 - Verifiable credentials</h4>
-        <p>VCs are a means to express credentials on the Web in a cryptographically secure and machine-verifiable way while respecting privacy. VCs are the digital equivalents of paper credentials like driver’s licenses, government-issued IDs, and university degrees <a id="link_Sporny_2019" href="#Sporny_2019">[Sporny_2019]</a>.</p>
+        <p>Credentials are routinely used in daily routines. Physical credentials such as driver's licenses, university degrees, government-issued passports, and local IDs are so much a part of life that without them, one is hampered—however, physical credentials lose credibility with online use.</p>
+        <p>At present, expressing third-party verified education qualifications, healthcare data, financial account information, and even government ID info is untrusted, as validation that it is indeed the identified individual is imperfect at best. Thus, it is difficult to receive the same advantages on the Web that paper credentials offer in the physical world.</p>
         <div class="image">
             <img src="./imgs/Figure_04.svg" alt="The roles and information flows forming a VC">
             <p><b>Figure 4:</b> The roles and information flows forming a Verifiable Credential [Sporny_2019]</p>
         </div>
-        <p class="talj">A VC is a tamper-proof credential with the issuer’s authorship, enabling cryptographic verifiability, given to a holder, data subject. The set of claims in a VC can be</p>
-        <p class="ti0">used to build verifiable presentations, which are also cryptographically verified, to be shared with a verifier.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
-        <p>A Claim is expressed using a subject-property-value relationship about a subject used to express a large variety of statements. For example, a claim can be expressed where someone graduated from a particular university, see Fig. 5. Claims from multiple VCs can be combined in a single verifiable presentation.</p>
+        <p>VCs are a means to express credentials on the Web with the same advantages as a paper credential for the digital world, but in a way that is temper-resistant, cryptographically secure, and machine-verifiable, more trustworthy than their physical counterparts, respecting privacy as well. A VC includes a cryptographic signature of the issuer's authorship and cryptographic proof that the VC has not been revoked. A VC may contain an identifier and other metadata describing the credential’s properties <a id="link_Sporny_2019" href="#Sporny_2019">[Sporny_2019]</a>.</p>
+        <div class="image" style="padding:0 15%;">
+            <img src="./imgs/Figure_05.svg" alt="Components of a Verifiable Credential: Credential Metadata + Claim(s) + Proof(s)">
+            <p><b>Figure 5:</b> Components of a Verifiable Credential [Sporny_2019]</p>
+        </div>
+        <p>A claim is expressed using a subject-property-value relationship about a subject used to express a large variety of statements. For example, a claim can specify that someone graduated from a particular university; see Fig. 6.</p>
         <div class="image">
-            <img src="./imgs/Figure_05.svg" alt="A basic claim expressing that Pat is an alumni of 'Example University'">
-            <p><b>Figure 5:</b> A basic claim expressing that Pat is an alumni of "Example University" [Sporny_2019]</p>
+            <img src="./imgs/Figure_06.svg" alt="A basic claim expressing that Pat is an alumni of 'Example University'">
         </div>
-        <p>Some verifiable presentations may contain data in synthesized form, such as for ZKP, rather than the original VC claims.</p>
-        <p>A Credential is a set of one or more claims made by the same entity (Issuer) and may contain an identifier and other metadata describing the credential’s properties.</p>
-        <div class="image" style="padding:0 30%;">
-            <img src="./imgs/Figure_06.svg" alt="Components of a Verifiable Credential: Credential Metadata + Claim(s) + Proof(s)">
-        </div>
-            <p class="tac"><b>Figure 6:</b> Components of a Verifiable Credential [Sporny_2019]</p>
+            <p class="tac"><b>Figure 6:</b> A basic claim expressing that Pat is an alumni of "Example University" [Sporny_2019]</p>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
         <p class="title">A VC is another JSON document that is stored in an Identity Agent:</p>
         <article class="code">
             <h5>Example 2: Example of a verifiable credential [Sporny_2019]</h5>
-<pre>
+<pre class="printHide">
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
     "https://www.w3.org/2018/credentials/examples/v1"
   ],
-</pre>
-		</article>
-	</section>
-    <footer>?</footer>
-</section><!-- END #.page.hf -->
-<section id="" class="page hf">
-	<section>
-        <article class="code">
-<pre class="printHide">
-...
   "id": "http://example.edu/credentials/1872",
   "type": ["VerifiableCredential", "AlumniCredential"],
   "issuer": "https://example.edu/issuers/565049",
@@ -833,7 +834,11 @@ In the connected world of the Internet, digital identity has progressed from a c
 }
 </pre>
 <pre class="printShow">
-...
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://www.w3.org/2018/credentials/examples/v1"
+  ],
   "id": "http://example.edu/credentials/1872",
   "type": ["VerifiableCredential", "AlumniCredential"],
   "issuer": "https://example.edu/issuers/565049",
@@ -864,18 +869,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 }
 </pre>
     	</article>
-    	<p>The digital proof attached to the VC allows presenting a verifiable presentation to a verifier, attaching a digital signature at the end. See Example 3.</p>
-        <article class="code">
-            <h5>Example 3: Example of a verifiable presentation [Sporny_2019]</h5>
-<pre>
-{
-  "@context": [
-    "https://www.w3.org/2018/credentials/v1",
-    "https://www.w3.org/2018/credentials/examples/v1"
-  ],
-  "type": "VerifiablePresentation",
-</pre>
-		</article>
+    	<p>VC holders can either show the VC wholly or generate verifiable presentations using claims from multiple VCs to submit to a verifier to demonstrate necessary competence. As both VCs and verifiable presentations are cryptographically verifiable and can be transmitted rapidly, this alone makes them superior to physical credentials.</p>
         
 	</section>
     <footer>?</footer>
@@ -883,9 +877,18 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 
 <section id="" class="page hf">
 	<section>
+        <p>Some verifiable presentations may contain data in synthesized form, such as ZKP, rather than the original VC claims.</p>
+    	<p>The digital proof attached to the VC allows presenting a verifiable presentation to a verifier, attaching a digital signature at the end. See Example 3.</p>
+
         <article class="code">
+            <h5>Example 3: Example of a verifiable presentation [Sporny_2019]</h5>
 <pre class="printHide">
-...
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://www.w3.org/2018/credentials/examples/v1"
+  ],
+  "type": "VerifiablePresentation",
   "verifiableCredential": [{
     "@context": [
       "https://www.w3.org/2018/credentials/v1",
@@ -912,6 +915,51 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
       "type": "RsaSignature2018",
       "created": "2017-06-18T21:19:10Z",
       "proofPurpose": "assertionMethod",
+</pre>
+<pre class="printShow">
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://www.w3.org/2018/credentials/examples/v1"
+  ],
+  "type": "VerifiablePresentation",
+  "verifiableCredential": [{
+    "@context": [
+      "https://www.w3.org/2018/credentials/v1",
+      "https://www.w3.org/2018/credentials/examples/v1"
+    ],
+    "id": "http://example.edu/credentials/1872",
+    "type": ["VerifiableCredential", "AlumniCredential"],
+    "issuer": "https://example.edu/issuers/565049",
+    "issuanceDate": "2010-01-01T19:73:24Z",
+    "credentialSubject": {
+      "id": "did:example:ebfeb1f712ebc6f1c276e12ec21",
+      "alumniOf": {
+        "id": "did:example:c276e12ec21ebfeb1f712ebc6f1",
+        "name": [{
+          "value": "Example University",
+          "lang": "en"
+        }, {
+          "value": "Exemple d'Université",
+          "lang": "fr"
+        }]
+      }
+    },
+    "proof": {
+      "type": "RsaSignature2018",
+      "created": "2017-06-18T21:19:10Z",
+      "proofPurpose": "assertionMethod",
+</pre>
+    	</article>
+        
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section class="page hf">
+	<section>
+        <article class="code">
+<pre class="printHide">
+...
       "verificationMethod": "https://example.edu/issuers/keys/1",
       "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
     }
@@ -923,35 +971,13 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
     "proofPurpose": "authentication",
     "verificationMethod": "did:example:ebfeb1f712ebc6f1c276e12ec21#keys-1",
     "challenge": "1f44d55f-f161-4938-a659-f8026467f126",
+    "domain": "4jt78h47fh47",
+    "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..kTCYt5XsITJX1CxPCT8yAV-TVIw5WEuts01mq-pQy7UJiN5mgREEMGlv50aqzpqh4Qq_PbChOMqsLfRoPsnsgxD-WUcX16dUOqV0G_zS245-kronKb78cPktb3rk-BuQy72IFLN25DYuNzVBAh4vGHSrQyHUGlcTwLtjPAnKb78"
+  }
+}
 </pre>
 <pre class="printShow">
 ...
-  "verifiableCredential": [{
-    "@context": [
-      "https://www.w3.org/2018/credentials/v1",
-      "https://www.w3.org/2018/credentials/examples/v1"
-    ],
-    "id": "http://example.edu/credentials/1872",
-    "type": ["VerifiableCredential", "AlumniCredential"],
-    "issuer": "https://example.edu/issuers/565049",
-    "issuanceDate": "2010-01-01T19:73:24Z",
-    "credentialSubject": {
-      "id": "did:example:ebfeb1f712ebc6f1c276e12ec21",
-      "alumniOf": {
-        "id": "did:example:c276e12ec21ebfeb1f712ebc6f1",
-        "name": [{
-          "value": "Example University",
-          "lang": "en"
-        }, {
-          "value": "Exemple d'Université",
-          "lang": "fr"
-        }]
-      }
-    },
-    "proof": {
-      "type": "RsaSignature2018",
-      "created": "2017-06-18T21:19:10Z",
-      "proofPurpose": "assertionMethod",
       "verificationMethod": "https://example.edu/issuers/keys/1",
       "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY
       0Il19..TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEut
@@ -969,24 +995,6 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
     	1#keys-1",
     
     "challenge": "1f44d55f-f161-4938-a659-f8026467f126",
-</pre>
-    	</article>
-        
-	</section>
-    <footer>?</footer>
-</section><!-- END #.page.hf -->
-<section class="page hf">
-	<section>
-        <article class="code">
-<pre class="printHide">
-...
-    "domain": "4jt78h47fh47",
-    "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..kTCYt5XsITJX1CxPCT8yAV-TVIw5WEuts01mq-pQy7UJiN5mgREEMGlv50aqzpqh4Qq_PbChOMqsLfRoPsnsgxD-WUcX16dUOqV0G_zS245-kronKb78cPktb3rk-BuQy72IFLN25DYuNzVBAh4vGHSrQyHUGlcTwLtjPAnKb78"
-  }
-}
-</pre>
-<pre class="printShow">
-...
     "domain": "4jt78h47fh47",
     "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0I
     l19..kTCYt5XsITJX1CxPCT8yAV-TVIw5WEuts01mq-pQy7UJiN5mgREEMGlv
@@ -1004,36 +1012,33 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
             <li>Atala Prism: A demo app made by IOHK/IOG is available on the App Store and Google Play - more in <a href="#AtalaPrism">Section 3.2</a>.</li>
             <li>Hyperledger Aries: client-side components working together with Hyperledger Ursa for the cryptographic library and Hyperledger Indy (or another resolver) for distributed ledger purposes.</li>
         </ul>
-        <h4 id="FurtherPrinciples">2.4 - Further principles</h4>
+	</section>
+    <footer>?</footer>
+</section><!-- END #IDAgents#.page.hf -->
+<section class="page hf">
+	<section>
+        <h4 id="FurtherPrinciples">2.4 - Additional principles</h4>
     	<h4 id="ZKP">2.4.1 - Zero-Knowledge Proofs and zk&#8209;SNARKs</h4>
         <p>Researchers at MIT in 1985 first proposed Zero-knowledge proofs (ZKPs). Initially, ZKPs were designed for interactive proof systems, having a Prover and a Verifier. The goal was for the Prover to prove knowledge of information x to the Verifier without communicating any information other than the fact that ‘Prover knows x.’</p>
 		<p class="ti0">By definition, a ZKP must satisfy:</p>
         <ul>
         	<li><b>Completeness:</b> If Prover genuinely holds the knowledge and both parties follow the protocol correctly, Verifier can be eventually convinced without any external help.</li>
         	<li><b>Soundness:</b> Prover can only convince Verifier if they hold the knowledge.</li>
-        </ul>
-	</section>
-    <footer>?</footer>
-</section><!-- END #IDAgents#ZKP.page.hf -->
-<section class="page hf">
-	<section>
-        <ul>
         	<li><b>Zero-knowledge:</b> Verifier does not learn anything about the knowledge, simply that the Prover has said knowledge.</li>
         </ul>
         <p>As a graphic illustration, the prover is given by a verifier a graph with nodes and edges and is tasked to find a 3-coloring such that no two adjacent nodes have the same color. Imagine the verifier is an organization, and the prover is a freelancer. The prover finds a 3-coloring and must prove that they have done so without showing the result before getting paid.</p>
-        <p>To construct an interactive ZKP protocol, the graph is drawn on the floor in a closed room. The prover, alone in the room, places colored balls on the nodes according to the discovered pattern and covers the balls with non-transparent bowls. At the prover’s confirmation that they are finished, the verifier comes into the room, chooses an edge, and verifies that the attached nodes are different colors, see Fig A.1. If they are not different the prover is disqualified.</p> 
-		<div class="image">
-          <img src="./imgs/Figure_a1.svg" alt="Interactive ZKP Illustration">
-          <p><b>Figure A1:</b> Interactive ZKP Illustration</p>
+        <p>To construct an interactive ZKP protocol, the graph is drawn on the floor in a closed room. The prover, alone in the room, places colored balls on the nodes according to the discovered pattern and covers the balls with non-transparent bowls. At the prover’s confirmation that they are finished, the verifier comes into the room, chooses an edge, and verifies that the attached nodes are different colors, see Fig. 7. If they are not different the prover is disqualified.</p> 
+		<div class="image" style="padding:0 10%;">
+          <img src="./imgs/Figure_07.svg" alt="Interactive ZKP Illustration">
+          <p><b>Figure 7:</b> Interactive ZKP Illustration</p>
         </div>
-        <p>Since a single attempt by the verifier, checking adjacent nodes of one edge is not probabilistically certain, the verifier must be allowed as many checks till satisfaction. However, if the verifier were to record the colors and check all edges secretly, they would consequently have violated the zero-knowledge principle. To rectify this, the verifier must leave the room after validating an edge. The prover may then switch the colors of the balls, maintaining the pattern. Thus, proving that all edges chosen consistently have two different colored edges but maintaining zero knowledge of the exact pattern. This can be done until the verifier has certainty that there is only negligible error.</p>
-        <p class="talj">The problem with traditional ZKP is that it is an interactive system, requiring the prover and the verifier’s presence, and as such is not scalable. Zk-SNARKs or</p>
     </section>
     <footer>?</footer>
 </section><!-- END #ZKP.page.hf -->
 <section id="" class="page hf">
 	<section>
-        <p class="ti0">zero-knowledge Succinct Non-interactive ARguments of Knowledge provides an algorithmic formation using cryptographic hash functions.</p>
+        <p>Since a single attempt by the verifier, checking adjacent nodes of one edge is not probabilistically certain, the verifier must be allowed as many checks till satisfaction. However, if the verifier were to record the colors and check all edges secretly, they would consequently have violated the zero-knowledge principle. To rectify this, the verifier must leave the room after validating an edge. The prover may then switch the colors of the balls, maintaining the pattern. Thus, proving that all edges chosen consistently have two different colored edges but maintaining zero knowledge of the exact pattern. This can be done until the verifier has certainty that there is only negligible error.</p>
+        <p >The problem with traditional ZKP is that it is an interactive system, requiring the prover and the verifier’s presence, and as such is not scalable. Zk-SNARKs or zero-knowledge Succinct Non-interactive ARguments of Knowledge provides an algorithmic formation using cryptographic hash functions that does not require interaction.</p>
         <p class="ti0">The following algorithms were explained in <a id="link_Ivan_2020" href="#Ivan_2020">[Ivan_2020]</a>.</p>
         <p class="ti0">The three algorithms in zk-SNARK:</p>
         <ul>
@@ -1047,16 +1052,16 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         	<li>The prover must take the pk and prove their statement: prf = P(pk, x, s). Here x is the SHA-256 hash of s.</li>
         	<li>When prf is sent to the verifier and inserted into the verifying algorithm: V(vk, x, prf) = True if the prover is honest, False otherwise.</li>
         </ul>
-        <p>A choice example that could be done without interaction is the date of birth. Governmental ID cards are typically used to prove age. Yet this type of ID also contains additional private information such as a person’s home address that is valuable and could be used for identity theft. Using ZKPs, one could use a digital copy (VC) of their ID to quickly, easily, and securely verify that one is over the required age without disclosing the specific date of birth.</p>
-        
-    	<h4 id="IPFS_info">2.4.2 - InterPlanetary File System</h4>
-        <p class="talj">HTTP is the protocol behind client-server architecture that we see in the internet of today. However, it has many drawbacks; in particular, the centralized nature of all information that we access to over the web is held on servers that are under control of a central company. This requires trust that the central company will not go offline either through an attack or simple server failure. It also enables censorship, as the data stored on a</p>
+        <p class="talj">A choice example that could be done without interaction is the date of birth. Governmental ID cards are typically used to prove age. Yet this type of ID also contains additional private information such as a person’s home address that is valuable and could</p>
     </section>
     <footer>?</footer>
-</section><!-- END #IPFS.page.hf -->
+</section><!-- END #.page.hf -->
 <section class="page hf">
 	<section> 
-        <p class="ti0">central server can be easily blocked by ISPs blocking the server’s IP. As all data is stored on the server, if the server goes down that data is no longer accessible.</p>
+        <p class="ti0">be used for identity theft. Using ZKPs, one could use a digital copy (VC) of their ID to quickly, easily, and securely verify that one is over the required age without disclosing the specific date of birth.</p>
+        
+    	<h4 id="IPFS_info">2.4.2 - InterPlanetary File System</h4>
+        <p class="talj">HTTP is the protocol behind client-server architecture that we see in the internet of today. However, it has many drawbacks; in particular, the centralized nature of all information that we access to over the web is held on servers that are under control of a central company. This requires trust that the central company will not go offline either through an attack or simple server failure. It also enables censorship, as the data stored on a central server can be easily blocked by ISPs blocking the server’s IP. As all data is stored on the server, if the server goes down that data is no longer accessible.</p>
         <p>Inter-Planetary File System (IPFS) introduces a peer-to-peer (P2P) distributed file system, creating a system by combining a P2P BitTorrent swarm with a Git repository. IPFS forms a Merkle DAG data structure upon which one can build distributed versioned file systems, with no need for trust between nodes, thereby escaping a single point of failure(SPF). IPFS aims to replace HTTP by offering an enhanced web combining successful file distribution techniques invented in the past fifteen years <a id="link_Benet_2014" href="#Benet_2014">[Benet_2014]</a>.</p> 
         <p class="ti0">A summary of the successful techniques that IPFS incorporates:</p>
         <h5>Block Exchanges – BitTorrent</h5>
@@ -1067,13 +1072,15 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         </ul> 
         <h5>Distributed Hash Tables</h5> 
         <p>Distributed Hash Tables (DHT) regulate and maintain metadata for P2P filesystems. BitTorrent uses MainlineDHT to track peers that are part of a torrent swarm.</p>
-        <h5>Version Control Systems – Git</h5> 
-        <p>Version Control Systems model files changing over time and distribute all versions accurately. Git provides a Merkle DAG <a id="link_Becker_2008" href="#Becker_2008">[Becker_2008]</a> object model that captures changes to a file system tree. Files are objects that are content-addressed via a cryptographic hash of their contents. Links to other objects are embedded in a Merkle DAG. Versioning metadata, including branches and tags, are pointer references which are low in memory and thus easy to create and update. Version changes update references or add objects. Distributing version changes is a simple transfer of objects and update of remote references.</p> 
     </section>
     <footer>?</footer>
-</section><!-- END #.page.hf -->
+</section><!-- END #IPFS.page.hf -->
+
 <section id="" class="page hf">
 	<section>
+        <h5>Version Control Systems – Git</h5> 
+        <p>Version Control Systems model files changing over time and distribute all versions accurately. Git provides a Merkle DAG <a id="link_Becker_2008" href="#Becker_2008">[Becker_2008]</a> object model that captures changes to a file system tree. Files are objects that are content-addressed via a cryptographic hash of their contents. Links to other objects are embedded in a Merkle DAG. Versioning metadata, including branches and tags, are pointer references which are low in memory and thus easy to create and update. Version changes update references or add objects. Distributing version changes is a simple transfer of objects and update of remote references.</p>
+        
         <h5>Self-Certified Filesystems – SFS</h5>
         <p>SFS proposed a global file system separated from key management. In SFS, file names contain the public keys thereby making them self-certifying pathnames. Key management occurs in user generated procedures outside the SFS file system, enabling a versatile file system with interchangeable key management mechanisms <a id="link_Mazières_1998" href="#Mazières_1998">[Mazières_1998,</a> <a id="link_Mazières_2000" href="#Mazières_2000">Mazières_2000]</a>. SFS allows distributed systems outside of centralized control <a href="#Merkle_1990">[Merkle_1990]</a>.</p>
         <p class="ti0">SFS introduced the following remote filesystem-addressing scheme:</p>
@@ -1082,13 +1089,14 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p>The name of an SFS file system certifies its server by offering the server’s public key that can be verified by the user. SFS instances have cryptographic namespace rather than one controlled by centralized authorities.</p>
         <h5>Content-Based addressing vs Location-Based addressing</h5>
         <p>In the web of today, individuals browse to a Location <span style="letter-spacing:-0.5px;">(e.g. https://www.someserver.com/somefile.html)</span> where they can access the information that is stored on the server, and their browser then stores a copy in their cache. Unless the Location points to a static file that some user has recently stored in their uncleared cache, that information will be unobtainable should the server go down.</p>
-        <p>More significantly, if one user had a cached copy of a static file they would be unable to share it with another user without retrieving the static copy from their cache and hosting the copy on another server (dismissing copyright infringement). In the event that a user would re-host the file on a different server, the Location would be different, and thus would be inaccessible to any user who only had the Location of the unobtainable server.</p>
-        <p>IPFS introduces Content-Based Addressing (CBA), also know as Name Driven Networking (NDN). With CBA when requesting a specific resource, the exact file by its hash (aka. fingerprint) is what is needed rather than the Location. When the IPFS network is asked for a file by a requester and someone on the IPFS network provides the resource, the resource will be copied to requester’s cache allowing the requester to provide a future requester the same content. This system will increase in speed should the file be shared amongst a larger quantity of nodes.</p>
+        <p class="talj">More significantly, if one user had a cached copy of a static file they would be unable to share it with another user without retrieving the static copy from their cache and</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
+        <p class="ti0">hosting the copy on another server (dismissing copyright infringement). In the event that a user would re-host the file on a different server, the Location would be different, and thus would be inaccessible to any user who only had the Location of the unobtainable server.</p>
+        <p>IPFS introduces Content-Based Addressing (CBA), also know as Name Driven Networking (NDN). With CBA when requesting a specific resource, the exact file by its hash (aka. fingerprint) is what is needed rather than the Location. When the IPFS network is asked for a file by a requester and someone on the IPFS network provides the resource, the resource will be copied to requester’s cache allowing the requester to provide a future requester the same content. This system will increase in speed should the file be shared amongst a larger quantity of nodes.</p>
         <p>The security ensuring that a file has not been tampered is the hash, or content name. When asking for a specific hash name, the file received can be checked to confirm that it has the same hash. If the hashes are equivalent, the file has not been altered.</p> 
         <p>IPFS also provides deduplication. If multiple users post the same file, it is stored only once in the IPFS network as it has the same hash. This improves efficiency across the network.</p>
         <h5>IPFS Design</h5>
@@ -1103,17 +1111,17 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         	<li><b>Naming</b> – self-certifying mutable name system</li>
         </ol>
         <h5>Identities</h5> 
-        <p>A cryptographic hash of a public key, NodeId, identifies nodes. Although users are able to reinitialize a new identity on each launch, they are incentivized to retain the same identity due to loss of accrued network benefits. On first connection, peers exchange public keys and check if the hash other.PublicKey is equal to other.NodeID.</p> 
-        <p class="ti0">Hash values are stored in multihash format:</p>
-        <code>&lt;function code&gt;&lt;digest length&gt;&lt;digest bytes&gt;</code>
-        <p>Multihash enables system flexibility to change function depending on the use case and allow for future upgrades.</p>
-        <h5 style="margin-top:0;">Network</h5> 
-        <p>IPFS connects hundreds of nodes in the network or across the internet.</p>
+        <p>A cryptographic hash of a public key, NodeId, identifies nodes. Although users are able to reinitialize a new identity on each launch, they are incentivized to retain the same identity due to loss of accrued network benefits. On first connection, peers exchange public keys and check if the hash other.PublicKey is equal to other.NodeID.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
+        <p class="ti0">Hash values are stored in multihash format:</p>
+        <code>&lt;function code&gt;&lt;digest length&gt;&lt;digest bytes&gt;</code>
+        <p>Multihash enables system flexibility to change function depending on the use case and allow for future upgrades.</p>
+        <h5 style="margin-top:0;">Network</h5> 
+        <p>IPFS connects hundreds of nodes in the network or across the internet.</p>
         <p class="ti0">Including features:</p>
         <ul>
         	<li><b>Transport:</b> using any transport protocol</li>
@@ -1129,15 +1137,18 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p class="ti0">IPFS builds a Merkle DAG with links between objects as cryptographic hashes. This provides:</p>
         <ul>
         	<li>Content addressing, with all content uniquely identified by its hash checksum.</li>
-        	<li>Tamper resistance, with all content verified by its checksum and invalid or tampered data is rejected.</li>
-        	<li>Deduplication, with all objects that have the same checksum stored only once.</li>
         </ul>
-        <p>Each Object stores 256kb of data. An object can also contain a link to another IPFS Object, making it possible to store data that is larger than 265kb. A larger file would be broken into as many Objects necessary to hold the file size, and an Empty object linking to all the Objects that the file was broken into.</p>
     </section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
+        <ul>
+        	<li>Tamper resistance, with all content verified by its checksum and invalid or tampered data is rejected.</li>
+        	<li>Deduplication, with all objects that have the same checksum stored only once.</li>
+        </ul>
+        <p>Each Object stores 256kb of data. An object can also contain a link to another IPFS Object, making it possible to store data that is larger than 265kb. A larger file would be broken into as many Objects necessary to hold the file size, and an Empty object linking to all the Objects that the file was broken into.</p>
+        
         <h5>Files</h5> 
         <p class="ti0">IPFS defines a versioned filesystem on top of the Merkle DAG similar to Git:</p>
         <ul>
@@ -1150,54 +1161,14 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p>Inter Planetary Naming System (IPNS) tracks immutable IPFS objects with a mutable global namespace, following the naming scheme from SFS.</p> 
         <p>In IPFS, NodeId = hash(node.PubKey). Every user is assigned a mutable namespace ( <code>/ipns/&lt;NodeId&gt;</code> ) which enables them to publish an object signed by user’s private key. Other users can verify the object and confirm that it matches the public key and NodeId to verify the authenticity of mutable state retrieval.</p>
         <p>The separate prefix allows distinction between mutable (<code>ipns</code>) and immutable (<code>ipfs</code>) paths. The process follows publishing the object as an immutable IPFS object and then publishing its hash on the routing system as a metadata value. An optional commit object to store a version history is advised when necessary.</p>
-        
-    	<h4 id="GDPR">2.4.2 - GDPR concerns regarding blockchain</h4>
-        <p>The EU’s 2016 General Data Protection Regulation (GDPR) is the forerunner of human-centric data protection regulations.</p>
-        <p class="ti0">While the GDPR was written using technology-agnostic wording, there are two main points of tension between its regulations and DLT:</p>
-        <ul>
-        	<li>The GDPR’s assumption that there is at least one natural or legal person – data controller – whom a data subject can address to enforce their rights over every piece of personal data.</li>
-        </ul>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-<section class="page hf">
-	<section>
-        <ul>
-        	<li>The GDPR requires that data can be modified or erased.</li>
-        </ul>
-        <p class="ti0">GDPR-based rights of a data subject:</p>
-        <ul>
-        	<li>The right to access (Article 1)</li>
-        	<li>The right to rectification (Article 16)</li>
-        	<li>The right to erasure (Article 17)</li>
-        	<li>The right to restriction of processing (Article 18)</li>
-        	<li>The right to portability (Article 20)</li>
-        	<li>The right to object (Article 21)</li>
-        	<li>The right to not be subject to a decision based solely on automated processing, including profiling, which significantly affects them (Article 22)</li>
-        </ul>
-        <p>Blockchains as a whole are not either compliant nor incompliant with the GDPR <a id="link_Finck_2019" href="#Finck_2019">[Finck_2019]</a> since SSI using blockchain technology can be seen as attempting similar purposes as the GDPR. However, further legal cases or further addressing need to be done to prevent the EU from falling behind in technology development.</p>
-        <p class="ti0">Issues that need clarification include the following <a href="#Finck_2019">[Finck_2019]</a>:</p>
-        <ul>
-        	<li>Is anonymization an effective means of provoking the 'erasure' of data for the purposes of Article 17 GDPR?</li>
-        	<li>Can a peppered hash produce anonymous data?</li>
-        	<li>What is the status of the on-chain hash where transactional data is stored off-chain and subsequently erased?</li>
-        	<li>What is the status of anonymity solutions such as zero-knowledge proofs under the GDPR?</li>
-        	<li>Can a data subject be a data controller in relation to personal data that relates to themselves?</li>
-        	<li>Is the off-chain storage of transactional data a means of complying with the data-minimization principle?</li>
-        	<li>How ought 'erasure' to be interpreted for the purposes of Article 17 GDPR? Can the deletion of a private key satisfy as the erasure of on-chain data?</li>
-        </ul>
-        
-        <h4>Chapter 2 Key Takeaways</h4>
-        <ul>
-            <li>Distributed Ledger Technology (DLT) is the broader class of distributed ledgers that include blockchain and directed acyclic graphs (DAG).</li>
-        </ul>
-    </section>
-    <footer>?</footer>
-</section><!-- END #GDPR.page.hf -->
-
 <section id="" class="page hf">
 	<section>
+    	<h4>Chapter 2 Key Takeaways</h4>
         <ul>
+        	<li>Distributed Ledger Technology (DLT) is the broader class of distributed ledgers that include blockchain and directed acyclic graphs (DAG).</li>
             <li>DLT realizes 'a single version of truth' linked from the origin (genesis block) in a P2P network with no central authority.</li>
             <li>Distributed ledgers come with permissionless and permissioned validation (write) and public and private access (read).</li>
             <li>Blockchain is an append-only chain of transactions with each block header containing the previous block's hash.</li>
@@ -1213,26 +1184,34 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         	<li>Scalability or transactions per second (tps) is a significant hindrance. Bitcoin processes 7tps and Ethereum can process 20tps while PayPal handles 200tps and VISA 20,000. Solutions include sharding, layer two fixes, and use of DAG instead of BC.</li>
         	<li>Interoperability between BCs is necessary for mainstream adoption.</li>
         	<li>Sustainability for ongoing funding of further development is necessary to prevent a BC from becoming obsolete.</li>
-        	<li>Privacy is vital as most BCs are public, permissionless, meaning all transactions and wallet amounts are visible to anyone. Zero-knowledge proofs (ZKP) prove ownership of a piece of knowledge without disclosing the knowledge itself.</li>
-        	<li>Governance allows a decentralized BC to be controlled via the democratic direction of stakeholders rather than a centralized authority.</li>
         </ul>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
+
 <section id="" class="page hf">
 	<section>
     	<ul>
+        	<li>Privacy is vital as most BCs are public, permissionless, meaning all transactions and wallet amounts are visible to anyone. Zero-knowledge proofs (ZKP) prove ownership of a piece of knowledge without disclosing the knowledge itself.</li>
+        	<li>Governance allows a decentralized BC to be controlled via the democratic direction of stakeholders rather than a centralized authority.</li>
             <li>In the connected world of the Internet, digital identity has progressed from a centralized authority to federated authorities and user-centric individual control. The Self-Sovereign Identity (SSI) ecosystem is being created for individuals' full identity ownership without centralized authorization or control.</li>
             <li>An SSI (aka Decentralized Identities) is comprised of three components: Decentralized Identifiers (DIDs), Verifiable Credentials (VCs), and Identity Agents.</li>
             <li>The W3C is standardizing DIDs as a globally unique URI for an identity that resolves to a DID document containing ways to authenticate the DID controller cryptographically.</li>
             <li>VCs, also being standardized by the W3C, are a cryptographically secure, machine-verifiable set of claims about the holder.</li>
             <li>Claims from multiple VCs can be combined into a verifiable presentation to be presented to a verifier for cryptographic verification.</li>
 <li>Identity Agents are interfaces (e.g., mobile wallets) that humans use to interact with their identity and manage DIDs and VCs.</li>
+			<li>ZKPs were originally designed to be interactive proof systems having a Prover and a Verifier. The prover must prove a piece of knowledge (&lambda;) to the verifier without disclosing any more information than 'Prover knows &lambda;.'</li>
+            <li>A ZKP must satisfy: Completeness - if the prover holds the knowledge and both parties correctly follow the protocol, the verifier can be eventually convinced without outside involvement. Soundness - the prover can only convince the verifier if they indeed hold the knowledge. Zero-Knowledge - the verifier learns nothing more than that the prover hold said knowledge.</li>
+            <li>zk-SNARKs (zero-knowledge Succinct Non-interactive ARguments of Knowledge) perform a similar zero-knowledge process using algorithms that is non-interactive.</li>
+            <li>InterPlanetary File System (IPFS) uses content-based addressing (CBA), aka name-driven networking (NDN). IPFS is a collection of other file distribution techniques intended to offer an enhanced replacement for HTTP.</li>
+            <li>In short, IPFS is a peer-to-peer (P2P) single BitTorrent swarm combined with a Git repository - creating a distributed versioned file system with no need for trust between nodes and escaping a single point of failure.</li>
+            <li>IPFS uses self-certified pathnames with file names public keys.</li>
+            <li>IPFS uses a de-duplication system to store a file by hash. All future uploaded copies by any node will be linked to the same file as long as the hash is consistent.</li>
         </ul>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-<!-- +2pages -->
+<!-- +1pages -->
 
 <!-- Chapter 3 -->
 <section class="page hf">
@@ -1295,15 +1274,15 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p>The controller provides the rules defining what actions the agent initiates and how it will respond to events. In a mobile agent, the controller is a user interface presenting the options to a person. An issuer/verifier enterprise agent might be a legacy database system that manages consumer data, potentially enabling customers to submit data by presenting claims rather than typing the information in a web form.</p>
         <p>For development, an Aries Agent can be divided into two logical components: framework and controller. The framework corresponds to the standard capabilities provided to enable the Aries agent to interact with its surroundings: ledgers, storage, and other agents. The controller is the customizable component designed to handle rules for that particular agent.</p>
         <p>Aries frameworks for edge development are currently available in .NET <a id="link_Hyperledger_Aries-framework-dotnet" href="#Hyperledger_Aries-framework-dotnet">[Hyperledger_Aries-framework-dotnet]</a> and golang <a id="link_Hyperledger_Aries-framework-go" href="#Hyperledger_Aries-framework-go">[Hyperledger_Aries-framework-go]</a>, and there is work on Java and JavaScript based. For cloud development that is not designed for mobile devices is available in Python: Aries Cloud Agent Python <a id="link_Hyperledger_ACA-Py" href="#Hyperledger_ACA-Py">[Hyperledger_ACA-Py]</a>. The frameworks for edge development are embedded in the controller enabling the use of DIDComm and other Aries protocols.</p> 
-        <p>Aries Cloud Agent Python can be accessed through an Open-API/Swagger UI, allowing manual simulation of a connection between Faber college and Alice <a id="link_Hyperledger_AriesOpenAPIDemo" href="#Hyperledger_AriesOpenAPIDemo">[Hyperledger_AriesOpenAPIDemo]</a>. The ledger used in this demo is the GreenLight Dev Ledger, an open public ledger contributed and operated by the Province of British Columbia <a id="link_Greenlight" href="#Greenlight">[Greenlight]</a>. The protocols for connection can be seen in Fig. 7, followed by Faber sending Alice an invitation in Fig. 8 and Alice receiving the invitation in Fig. 9.</p>
+        <p>Aries Cloud Agent Python can be accessed through an Open-API/Swagger UI, allowing manual simulation of a connection between Faber college and Alice <a id="link_Hyperledger_AriesOpenAPIDemo" href="#Hyperledger_AriesOpenAPIDemo">[Hyperledger_AriesOpenAPIDemo]</a>. The ledger used in this demo is the GreenLight Dev Ledger, an open public ledger contributed and operated by the Province of British Columbia <a id="link_Greenlight" href="#Greenlight">[Greenlight]</a>. The protocols for connection can be seen in Fig. 8, followed by Faber sending Alice an invitation in Fig. 9 and Alice receiving the invitation in Fig. `0.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
         <div class="image">
-          <img src="./imgs/Figure_07.gif" alt="Figure 7: OpenAPI/Swagger UL connection management">
-          <p><b>Figure 7:</b> Swagger UI Connection management</p>
+          <img src="./imgs/Figure_08.gif" alt="Figure 8: OpenAPI/Swagger UL connection management">
+          <p><b>Figure 8:</b> Swagger UI Connection management</p>
         </div>
 	</section>
     <footer>?</footer>
@@ -1312,8 +1291,8 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 <section id="" class="page hf">
 	<section>
         <div class="image" style="padding:0 5%;">
-          <img src="./imgs/Figure_08.gif" alt="Figure 8: Faber create-invitation demo">
-          <p><b>Figure 8:</b> Faber create-invitation demo</p>
+          <img src="./imgs/Figure_09.gif" alt="Figure 9: Faber create-invitation demo">
+          <p><b>Figure 9:</b> Faber create-invitation demo</p>
         </div>
 	</section>
     <footer>?</footer>
@@ -1321,8 +1300,8 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 <section id="" class="page hf">
 	<section>
         <div class="image" style="padding:0 5%;">
-          <img src="./imgs/Figure_09.gif" alt="Figure 9: Alice receive-invitation demo">
-          <p><b>Figure 9:</b> Alice receive-invitation demo</p>
+          <img src="./imgs/Figure_10.gif" alt="Figure 10: Alice receive-invitation demo">
+          <p><b>Figure 10:</b> Alice receive-invitation demo</p>
         </div>
 	</section>
     <footer>?</footer>
@@ -1343,28 +1322,28 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 <section id="" class="page hf">
 	<section>
         <p>The Cardano and Atala teams aim to provide the technology for digital identity to bank the unbanked and offer the means for developing countries to leapfrog legacy systems directly to the integrated digital world. In banking the unbanked and giving them access to a cryptocurrency for authenticating the supply chain, there comes an avenue to supply loans to local farmers and others.</p>
-        <p>Atala Prism is still under development, and the code has not yet been released open-source <a id="link_IOHK_January2021" href="#IOHK_January2021">[IOHK_January2021]</a>. The following is the available demonstration part on web, part on a mobile device <a id="link_IOHK_AtalaPrism" href="#IOHK_AtalaPrism">[IOHK_AtalaPrism]</a>.</p>
+        <p>Atala Prism is still under development, and the code has not yet been released open-source <a id="link_IOHK_January2021" href="#IOHK_January2021">[IOHK_January2021]</a>. The following is the available demonstration part online, part on a mobile device <a id="link_IOHK_AtalaPrism" href="#IOHK_AtalaPrism">[IOHK_AtalaPrism]</a>, and it is a good demonstration, from a user's perspective,  of the intended ease of working with SSI .</p>
         <div class="image" style="padding:0 10%;">
-          <img src="./imgs/Figure_10.gif" alt="Figure 10. Atala Prism demo on www.atalaprism.io">
-          <p><b>Figure 10:</b> Atala Prism demo on www.atalaprism.io</p>
+          <img src="./imgs/Figure_11.gif" alt="Figure 11. Atala Prism demo on www.atalaprism.io">
+          <p><b>Figure 11:</b> Atala Prism demo on www.atalaprism.io</p>
         </div>
         <p>When the mobile app is installed on a phone, there is an initial seed phrase of 12 words you are instructed to save. If the phone is lost or broken, it is the only way to recover the account. If the seed phrase is lost, all contacts and VCs will have to be collected from scratch.</p>
-		<p>The demonstration follows the process for Jo to get four credentials: Government ID, University Degree,  Proof of Employment and Health Insurance. In the initial steps concatenated in Figure 11, a QR code is provided to be scanned by the mobile app Atala Prism. After scanning, on the mobile device is a confirmation to accept connection with the Metropol City Government. On confirmation, the Metropol City Government is added as a contact, and the Government ID in the far right of Figure 11 is available as a credential.</p>
+		<p>The demonstration follows the process for Jo to get four credentials: Government ID, University Degree, Proof of Employment, and Health Insurance. In the initial steps concatenated in Figure 12, a QR code is provided to be scanned by the mobile app Atala Prism. After scanning, on the mobile device is a confirmation to accept connection with the Metropol City Government. On confirmation, the Metropol City Government is added as a contact, and the Government ID in the far right of Figure 12 is available as a credential.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
         <div class="image">
-          <img src="./imgs/Figure_11.gif" alt="Figure 11: Atala Prism initial sequence for Jo to get a Government ID, for the illustrated Metropol City">
-          <p><b>Figure 11:</b> Atala Prism initial sequence for Jo to get a Government ID, for the illustrated Metropol City</p>
+          <img src="./imgs/Figure_12.gif" alt="Figure 12: Atala Prism initial sequence for Jo to get a Government ID, for the illustrated Metropol City">
+          <p><b>Figure 12:</b> Atala Prism initial sequence for Jo to get a Government ID, for the illustrated Metropol City</p>
         </div>
-        <p style="margin-top:-10px;">Once the Government ID has been accepted, the process for getting degree credentials becomes available, as seen in Figure 12. In this process, the University requests the Government ID credential, which, when provided, adds the University as another contact and provides the University Degree as a credential on the mobile device.</p>
+        <p style="margin-top:-10px;">Once the Government ID has been accepted, the process for getting degree credentials becomes available, as seen in Figure 13. In this process, the University requests the Government ID credential, which, when provided, adds the University as another contact and provides the University Degree as a credential on the mobile device.</p>
         <div class="image">
-          <img src="./imgs/Figure_12.gif" alt="Figure 12: Atala Prism demo showing Jo applying for her University credential">
-          <p><b>Figure 12:</b> Atala Prism demo showing Jo applying for her University credential</p>
+          <img src="./imgs/Figure_13.gif" alt="Figure 13: Atala Prism demo showing Jo applying for her University credential">
+          <p><b>Figure 13:</b> Atala Prism demo showing Jo applying for her University credential</p>
         </div>
-        <p>A similar procedure is followed for Jo to get a job. In that step, both the Government ID and the University Degree credentials are requested. Once given, and presumably, Decentralized Inc. agrees to hire her, a Proof of Employment credential is provided. This Proof of Employment credential is then needed for the Health Insurance certificate. Figure 13 shows the final process with all four credentials received and shown on the far right.</p>
+        <p>The following step is for Jo to get a job. On the mobile device, 'Jo' is requested to share the VC of her University Degree and Government ID. Once consent is given, and presumably, Decentralized Inc. agrees to hire her, a Proof of Employment credential is provided - seen in Figure 14.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
@@ -1372,8 +1351,23 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 <section class="page hf">
 	<section>
         <div class="image">
-          <img src="./imgs/Figure_13.gif" alt="Figure 13: Atala Prism demo final showing or all four credentials for Jo">
-          <p><b>Figure 13:</b> Atala Prism demo final showing or all four credentials for Jo</p>
+          <img src="./imgs/Figure_14.gif" alt="Figure 14: Atala Prism demo third step showing Jo getting a job at Decentralized Inc.">
+          <p><b>Figure 14:</b> Atala Prism demo third step, following Jo, newly hired, receiving a "Proof of Employment" at Decentralized Inc.</p>
+        </div>
+        <p>The fourth and final step is for Jo to apply for health insurance. For this, "proof of employment" and "government ID" are requested to be shown. Upon sharing those VCs, 'Jo' is granted her health insurance, with the policy number and expiry date seen on the left of Figure 15.</p>
+        <div class="image">
+          <img src="./imgs/Figure_15.gif" alt="Figure 15: Atala Prism demo fourth and final step with Jo getting health insurance">
+          <p><b>Figure 15:</b> Atala Prism demo fourth and final step as Jo recieves health insurance</p>
+        </div>
+        <p>Figure 16 shows the process completion and all four credentials on the mobile wallet that 'Jo' received on the right.</p>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
+        <div class="image" style="padding:0 10%;">
+          <img src="./imgs/Figure_16.gif" alt="Figure 16: Atala Prism demo process completion showing all four recieved credentials">
+          <p><b>Figure 16:</b> Atala Prism demo final showing or all four credentials Jo received</p>
         </div>
         <p>Anonymized threshold proofs are intended as the next level for Atala Prism, allowing specific characteristics to be proven without disclosing other data. This “where Prism is going as a product year 3 to year 5”, says Hoskinson <a id="link_Simmons_2021" href="#Simmons_2021">[Simmons_2021]</a>.</p>
     	<h4 id="DecentralizedIdentityFoundation">3.3 - Decentralized Identity Foundation</h4>
@@ -1387,20 +1381,18 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         	<li><b>Sidetree:</b> blockchain agnostic, layer two, DID Method <a id="link_DIF_Sidetree" href="#DIF_Sidetree">[DIF_Sidetree]</a></li>
         	<li><b>Secure Data Storage:</b> formulizing specifications for a foundational secure data storage layer</li>
         </ul>
-        <p class="talj">The majority of the content from the above working groups is standardization. However, one notable contribution comes in the form of a Universal Resolver (UR). The UR is a foundational piece of infrastructure for the SSI ecosystem by resolving the DIDdoc from a supplied DID <a id="link_Sabadello_2021" href="#Sabadello_2021">[Sabadello_2021]</a>. Currently, the development UR (https://dev.uniresolver.io) can support 42 DID Methods. This is not intended </p>
+        <p class="talj">The majority of the content from the above working groups is standardization. However, one notable contribution comes in the form of a Universal Resolver (UR). The UR is a foundational piece of infrastructure for the SSI ecosystem by resolving the DIDdoc from a supplied DID <a id="link_Sabadello_2021" href="#Sabadello_2021">[Sabadello_2021]</a>. Currently, the development UR</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #DecentralizedIdentityFoundation.page.hf -->
 <section id="" class="page hf">
 	<section>
-        <p class="ti0">for more than development use, as being on a single server, the dev UR centralizes an intended decentralized infrastructure. When the SSI ecosystem is closer to final development, multiple servers will offer their own UR. The universal resolver protocol and appropriate drives are meant to be downloaded and run on more instances to maintain the distributed nature of the SSI ecosystem <a id="link_DIF_Universal_Resolver" href="#DIF_Universal_Resolver">[DIF_Universal_Resolver]</a>.</p>
+        <p class="ti0">(https://dev.uniresolver.io) can support 42 DID Methods. This is not intended for more than development use, as being on a single server, the dev UR centralizes an intended decentralized infrastructure. When the SSI ecosystem is closer to final development, multiple servers will offer their own UR. The universal resolver protocol and appropriate drives are meant to be downloaded and run on more instances to maintain the distributed nature of the SSI ecosystem <a id="link_DIF_Universal_Resolver" href="#DIF_Universal_Resolver">[DIF_Universal_Resolver]</a>.</p>
 		<p>Another prominent project from DIF is Sidetree, a BC agnostic layer two protocol for PKI. The Sidetree protocol defines state change operations (i.e., Create, Read, Update, or Deactivate) to mutate a DID’s DIDdoc. Sidetree nodes anchor Content-Addressable Storage (CAS) references to the underlying anchoring system (e.g., DLT), offering an immutable chronology that all nodes can validate.</p>
-        <p class="talj">Building on Sidetree, Microsoft, a member of DIF, has been working on ION <a id="link_DIF_ION" href="#DIF_ION">[DIF_ION]</a>. ION uses Bitcoin as the underlying DLT and uses IPFS (see appendix 3) for</p>
-    	<p class="ti0">CAS storage of DID operations (Fig. 14). Since ION nodes process transactions on layer two, it is possible to anchor tens of thousands of DID/DPKI operations in a single on-chain transaction. ION nodes can fetch, process, and assemble DID states in parallel, solving the scalability problem.</p>
-    
-    	<div class="image" style="padding:0 20%;">
-            <img src="./imgs/Figure_14.png" alt="Figure 14: ION overview">
-            <p><b>Figure 14:</b> ION overview [source Microsoft techcommunity]</p>
+        <p>Building on Sidetree, Microsoft, a member of DIF, has been working on ION <a id="link_DIF_ION" href="#DIF_ION">[DIF_ION]</a>. ION uses Bitcoin as the underlying DLT and uses IPFS (see appendix 3) for CAS storage of DID operations (Fig. 14). Since ION nodes process transactions on layer two, it is possible to anchor tens of thousands of DID/DPKI operations in a single on-chain transaction. ION nodes can fetch, process, and assemble DID states in parallel, solving the scalability problem.</p>
+    	<div class="image" style="padding:0 22%;">
+            <img src="./imgs/Figure_17.png" alt="Figure 17: ION overview">
+            <p><b>Figure 17:</b> ION overview [source Microsoft techcommunity]</p>
         </div>
 	</section>
     <footer>?</footer>
@@ -1413,7 +1405,12 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
             <li>OpenID Connect Self-Issued DID authentication with sites, apps, and services that implement the draft specification</li>
             <li>DID creation and cryptographic linking to controlled web domains for companies and individuals</li>
             <li>Use DIDs to issue VCs</li>
-        </ul>      
+        </ul>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
         <h4>Chapter 3 Key Takeaways</h4>
         <ul>
         	<li>The Linux Foundation set up the Hyperledger project in 2015 to advance cross-industry collaboration developing blockchains and distributed ledgers for non-cryptocurrency use.</li>
@@ -1429,12 +1426,10 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         	<li>The DIF contributed a Universal Resolver (UR) to resolve the DIDdoc from a supplied DID.</li>
         	<li>Building on the DIF project, Sidetree, Microsoft, a member of DIF, has launched V1 of ION. ION is a layer two DPKI on Bitcoin, the underlying DLT, and uses IPFS for content-addressable storage (CAS) of DID operations.</li>
         </ul>
-        
-        
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-<!-- -7pages  -->
+<!-- -6/5 pages  -->
 
 <!-- Chapter 4 -->
 <section class="page hf">
@@ -1446,12 +1441,15 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p>The ratings would be submitted with K-anonymity to the degree desired by the user, contributing to the privacy of the rater. The ratings would have attached user-chosen categories that would otherwise be personally identifiable information (PII). Categories such as age bracket (0-9, 10-19, …, 90-99, or even more general ones: &lt;21, &lt;50, &gt;50), nationality, country of residence, occupation, and even more abstract groups such as ‘nerd,’ ‘jock,’ ‘cheerleader,’ ‘soccer mom,’ ‘extrovert,’ ‘introvert,’ ‘trendy,’ ‘armchair philosopher,’  etc. All available categories could be added to the rating if a user had a VC certifying membership in that category. The assumption being that users would be more willing to add multiple categories to their rating were the ratings not linked to a targetable identifier like an email address or social media account name.</p>
         <p>The ratings with those added categories would be added to logs calculating the totals of viewer appreciation from all different groups at the rater's consent. These logs would be made publicly available both on IPFS and HTTP.</p>
         <p>From a larger perspective, ratings of this type would provide a new scheme of video recommendation. Based on user choice, rather than concentrating on what they have previously seen, or tailored to them as an individual, allows decentralized open-source big data that users could query. This does not prevent any user from sticking in a particular group, but in the case of a group event, this new scheme could be used to add categories of all participants and narrow the list to ones that all should like. This new rating scheme could also be used for exploring new genres or exploring what someone on the other side of the world would be interested in out of curiosity.</p>
-        <p>This rating system template could then be used for other areas, such as shopping, clothing preferences, and more. The primary purpose for designing this rating system is to open knowledge for academic purposes, businesses, and ordinary individuals. This type of uncontroversial knowledge-gathering could allow similarities to be demonstrated in humans globally or enable people to be more open to encountering people outside of their area of familiarity.</p>
+        <p class="talj">This rating system template could then be used for other areas, such as shopping, clothing preferences, and more. The primary purpose for designing this rating system is to open knowledge for academic purposes, businesses, and ordinary individuals. This type of</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #originalPlan.page.hf -->
 <section id="" class="page hf">
-	<section><h5>Original plan</h5>
+	<section>
+        <p class="ti0">uncontroversial knowledge-gathering could allow similarities to be demonstrated in humans globally or enable people to be more open to encountering people outside of their area of familiarity.</p>
+        
+    	<h5>Original plan</h5>
         <p class="ti0">The original plan asked the following three questions with anticipated, hypothetical answers:</p>
         <p><b>Question 1:</b> Is it possible to create a grouping system on IPFS for semi-anonymous data aggregation?</p>
         <p><b>Hypothesis 1:</b> Yes. IPFS creates its own distributed data storage with namespacing by hash-key. Using a newly generated keypair gives pseudonymity to the user as long as they don’t identify their public key on social medial.</p>
@@ -1479,8 +1477,8 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 	<section>
         <p class="ti0">A graphical representation of the plan:</p>
         <div class="image">
-            <img src="./imgs/Figure_15.svg" alt="Image representing the steps that a user would take">
-            <p><b>Figure 14:</b> A graphical representation of the original plan from a user perspectve</p>
+            <img src="./imgs/Figure_18.svg" alt="Image representing the steps that a user would take">
+            <p><b>Figure 18:</b> A graphical representation of the original plan from a user perspectve</p>
         </div>
     	<h5>Required changes to original idea</h5>
     	<p>The SSI ecosystem was not built to the degree required in time for this thesis. After exploring in-depth, with the available information, the three forerunners mentioned in chapter 3, several points in the original idea should be revised before this proposal is constructed.</p>
@@ -1624,6 +1622,45 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 </section><!-- END #References5.references.page.hf -->
 <!-- Appendices -->
 <!-- Appendix A -->
+<section class="page hf">
+	<section>
+    	<h2 id="GDPR">Appendix A - GDPR concerns regarding blockchain</h2>
+        <p>The EU’s 2016 General Data Protection Regulation (GDPR) is the forerunner of human-centric data protection regulations.</p>
+        <p class="ti0">While the GDPR was written using technology-agnostic wording, there are two main points of tension between its regulations and DLT:</p>
+        <ul>
+        	<li>The GDPR’s assumption that there is at least one natural or legal person – data controller – whom a data subject can address to enforce their rights over every piece of personal data.</li>
+        	<li>The GDPR requires that data can be modified or erased.</li>
+        </ul>
+        <p class="ti0">GDPR-based rights of a data subject:</p>
+        <ul>
+        	<li>The right to access (Article 1)</li>
+        	<li>The right to rectification (Article 16)</li>
+        	<li>The right to erasure (Article 17)</li>
+        	<li>The right to restriction of processing (Article 18)</li>
+        	<li>The right to portability (Article 20)</li>
+        	<li>The right to object (Article 21)</li>
+        	<li>The right to not be subject to a decision based solely on automated processing, including profiling, which significantly affects them (Article 22)</li>
+        </ul>
+        <p>Blockchains as a whole are not either compliant nor incompliant with the GDPR <a id="link_Finck_2019" href="#Finck_2019">[Finck_2019]</a> since SSI using blockchain technology can be seen as attempting similar purposes as the GDPR. However, further legal cases or further addressing need to be done to prevent the EU from falling behind in technology development.</p>
+        <p class="ti0">Issues that need clarification include the following <a href="#Finck_2019">[Finck_2019]</a>:</p>
+        <ul>
+        	<li>Is anonymization an effective means of provoking the 'erasure' of data for the purposes of Article 17 GDPR?</li>
+        	<li>Can a peppered hash produce anonymous data?</li>
+        	<li>What is the status of the on-chain hash where transactional data is stored off-chain and subsequently erased?</li>
+        	<li>What is the status of anonymity solutions such as zero-knowledge proofs under the GDPR?</li>
+        	<li>Can a data subject be a data controller in relation to personal data that relates to themselves?</li>
+        	<li>Is the off-chain storage of transactional data a means of complying with the data-minimization principle?</li>
+        	<li>How ought 'erasure' to be interpreted for the purposes of Article 17 GDPR? Can the deletion of a private key satisfy as the erasure of on-chain data?</li>
+        </ul>
+        
+        <h4>Chapter 2 Key Takeaways</h4>
+        <ul>
+            <li>Distributed Ledger Technology (DLT) is the broader class of distributed ledgers that include blockchain and directed acyclic graphs (DAG).</li>
+        </ul>
+    </section>
+    <footer>?</footer>
+</section><!-- END #GDPR.page.hf -->
+<!-- Appendix B -->
 <section class="page hf">
 	<section>
     	<h2 id="RecoveryKeyManagement">Appendix A - Recovery Key and Backup Management</h2>
