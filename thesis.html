@@ -192,6 +192,10 @@
             		<li>
             			<p><a href="#originalPlan">4.1 - My untested original plan</a><span>?</span></p>
             		</li>
+                    
+            		<li>
+            			<p><a href="#SSI_underDevelopment">4.2 - SSI extensions under development</a><span>?</span></p>
+            		</li>
             	</ul>
             </li>
             <li>
@@ -1434,7 +1438,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 <!-- Chapter 4 -->
 <section class="page hf">
 	<section>
-    	<h2 id="SoftwareDnD">Chapter 3 - Software design and development</h2>
+    	<h2 id="SSI_furtherUses">Chapter 4 - Potential further uses of SSI</h2>
         
     	<h4 id="originalPlan">My untested original plan</h4>
     	<p>Anticipating claims that there would be a decentralized identifier system/ SSI system available to build on top of in Q4 2020, I structured plans to take it further and create a decentralized rating system. The idea was to start with a nonsensitive topic: movie ratings.</p>
@@ -1492,16 +1496,50 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p class="ti0">the content hash (CID). This could be of concern as data profiling would still be possible by ISPs and other unidentified profiling organizations, which would go contrary to the GDPR standards, or other hackers who may have personal or paid interest to target a particular group. Although IPFS is still in its early formulation and may resolve these issues later, as of now, it is not anonymous enough. Thus Hypothesis 1 is contradicted.</p>
         <p>One possible way to resolve this would be to make an HTTP page where the logs would originally be totaled. Rather than storing the individual ratings on IPFS, instead, allow timestamped query results from the HTTP totals page to be exported to NoSQL and stored on IPFS. Any individual that wishes to maintain their privacy can store a copy of multiple query results on their IPFS, so even if their IP is available, targeting them would be a matter of speculation that they hold membership in any of those groups. Thus Question, and Hypothesis 2, could be applicably adjusted, and Question 1 could be reformulated.</p>
         <p>Finally, in regards to Question 3, there are demonstrations (i.e., Atala Prism) of using SSI to register DIDs, accept and request VCs, and use said VCs to prove necessary claims. However, as to this point, Atala Prism is only available as a demonstration model, not one that can be used to develop on top of. Other privacy principles, such as pairwise DIDs that Hyperledger Identity Stack recommends, cannot be confirmed that Atala Prism implements. Although there are claims that Atala is open-source, the code is not yet released for public access. Hyperledger Aries is working on the underlying DIDcomm, but there are no available GUIs yet. Although the DIDcomm protocols already defined could presumably be used to simulate the concept of submitting a rating as simple text with claims attached, it would be far too primitive and take too much time to do in time for a master’s thesis. ION claims to have released a basic framework at the end of March, but that release was too late to provide enough time to develop on top of it.</p>
-        <p>Further, SSIs, or DIDs, are not specific for human individuals but for things and organizations too. Another proposal would be to give each film its own DID to which ratings would be attached. This could be advantageous for a film to demonstrate acclaim among different audiences. The disadvantage would be that with an SSI, the ratings would be at the disclosure of the controller of that SSI, so the controller may choose not to release all reviews, only the positive ones. Since SSIs are linked to a public BC, there may be ways to compare the total of data transactions to the film's DID to the total amounts of votes displayed. However, there are many ways the SSI controller could excuse this without permitting full transparency.</p>
+        <p>Further, SSIs, or DIDs, are not specific for human individuals but for things and organizations too. Another proposal would be to give each film its own DID to which ratings would be attached. This could be advantageous for a film to demonstrate acclaim among different audiences. The disadvantage would be that with an SSI, the ratings would be at the disclosure of the controller of that SSI, so the controller may choose not to release all reviews, only the positive ones. Since SSIs are linked to a public BC, there may be ways to compare the total of data transactions to the film's DID to the total amounts of votes displayed. However, there are many ways the film's SSI controller could excuse this without permitting full transparency.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-<!-- -6pages -->
 <section id="" class="page hf">
 	<section>
+    	<h4 id="SSI_underDevelopment">4.2 - SSI extensions under development</h4>
+        <p>SSIs go beyond simply providing entities with a digital identity. A digital identity is a solid foundation for improved digital versions of legacy paper documents and trusted solutions for the global economy. The following section will explore several pathways under development.</p>
+        <h5>Education</h5>
+        <p>The issuance of academic certification is centralized by each school. If a diploma, degree, or other credential is lost or damaged, it is typically costly to request a replacement. What if the issuing institute no longer exists? The original copy or a re-issued one, being on paper, are difficult to share when needed and almost certainly require an in-person visit. On behalf of the verifier, verification of the academic certificate is time-consuming at best or impossible if the issuing institute is no longer in business.</p>
+        <p>These issues can be resolved through the use of an SSI. All credentials issued by an institute would be signed with the public key of that institute, which presumably would be publicly notified on a DLT. This would allow all issued certificates to be verifiable even after the institute ends business. Credentials could also be checked for non-revocation without requiring contact with the issuing institution.</p>
+        <p>Even better, as demonstrated by Cardano's Atala Prism working with the Ethiopian Minister of Education, a next-generation blockchain-based solution can track grades and educational attainments of (starting with 5 million) students from kindergarten to 12th grade. Several applications and web-based applications would be built, allowing the ministry of education and school(s) to monitor the students. These applications could view what credentials have been issued to them, track the student's progress in certain subjects, monitor their attendance, and store all the certificates and data in the unique SSI of the student. This storage in the SSI of the student gives the student full ownership and control of their academic achievements, enabling easy sharing with universities or employment after graduation [<a id="link_IOHK_April2021" href="#IOHK_April2021">IOHK_April2021</a>].</p>
+        <p>Common use of this sort of recording in education could be applied with teachers to discover their pedantic methodologies and related student success. It could potentially be tailored to connect students with teachers who use methods favorable for the positive advancement of the student, the field, and even the nation and beyond.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
+
+<section id="" class="page hf">
+	<section>
+    	<h5>Banking and financial services</h5>
+        <p>With regulations on one side and customer's demand for speedy, fully digital experience on the other - in more developed cities and countries - the benefits of migrating to use the SSI ecosystem are evident.</p>
+        <p>Onboarding for new customers with verifiable KYC - the client's conditional disclosure of some or all of their financial history - becomes quick and cheap. Speed of onboarding is guaranteed as rather than a scattered paper trail, there is a cryptographically guaranteed and timestamped, immutable digital record. The lower operational costs are due to the elimination of the paper trail. Traceable and auditable PII processing should reduce regulatory liability and compliance costs. All this while enhancing client experience and convenient access to a broader selection of financial products.</p>
+        
+        <h5>Retail and E-commerce</h5>
+        <p>There is an increasing trend of counterfeit goods being marketed, primarily online. Anti-counterfeiting measures are often lengthy and often are on a per-case basis, doing little to curb the ongoing sale of counterfeit items as most fakes are sold online by traders with low risk for indictment. This can lead to substantial financial losses, damage to brand reputation, and decreased customer confidence.</p>
+        <p>VeChain offers a combination of blockchain and a Smart Tag such as an RFID tag or QR Code to trace a retail product's lifecycle, allowing customers to verify the products before purchase. The data at each stage is verified by an independent third party who uploads it to the immutable blockchain, thus guaranteeing authenticity for the downstream companies and customers. The VeChain Pro App can be used to scan the Smart Tag and allow the user to trace and verify the product. This essentially performs the procedure of supplying an SSI for the product.</p>
+        <p>Another aspect of the use of SSI on the retail distributor or E-commerce app or site would be reduced storage of customers' PII, keeping the minimum needed to recognize the customer at a future visit. Including a VC listing ownership of the Smart-Tag ID would be an additional step that could be implemented, allowing legal ownership verification in the case of a dispute.</p>
+        
+        <h5>Supply chain tracking</h5>
+        <p class="talj">Including SSI into marketable products can enable customers to trace the source, conditions in production, and all ingredients before purchase. When brands use green or</p>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
+        <p class="ti0">sustainable production, this could be clearly visible and verifiable by the buyer. A constant and reliable supply chain with all shipping conditions and exchanges immutably recorded on a BC is one piece that is necessary for this to be provided to the end customer.</p>
+        <p>Agriculture is one category whose supply chain must progress continually and be kept within certain conditions. Meat and dairy products are another division where the shipping conditions are even more stringent, possibly resulting in consumer death. The farming conditions for products labeled organic should also be visible to the end consumer.</p>
+        <p>Today's trade is still mostly based on paper documents in siloed data centers, with each step having its own system of paperwork. Farmers, haulers, retailers, and end consumers can all use BC for product certification and traceability.</p>
+        <p>VeChain, IOTA, and Atala Trace are some who are working to revitalize the supply chain system through different products and initiatives.</p>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<!-- -3pages -->
+
 
 <!-- Conclusion -->
 <section class="page hf">
@@ -1558,6 +1596,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p><a id="Hyperledger_Aries-RFCs" href="#link_Hyperledger_Aries-RFCs">[Hyperledger_Aries-RFCs]</a> Hyperledger. Hyperledger/Aries-Rfcs, n.d. https://github.com/hyperledger/aries-rfcs.</p>
         <p><a id="IOHK_AtalaPrism" href="#link_IOHK_AtalaPrism">[IOHK_AtalaPrism]</a> IOHK. atalaprism.io. Atala Prism, n.d. https://www.atalaprism.io/</p>
         <p><a id="Input-Output-HK" href="#link_Input-Output-HK">[Input-Output-HK]</a> Input-Output-Hk. Input-Output-Hk/Plutus. GitHub, n.d. https://github.com/input-output-hk/plutus.</p>
+        <p><a id="IOHK_April2021" href="#link_IOHK_April2021">[IOHK_April2021]</a> IOHK. “#CardanoAfrica: Our Partnership with Ethiopia's Ministry of Education.” YouTube. YouTube, April 30, 2021. https://www.youtube.com/watch?v=1f6h_K9JR5Y.</p>
         <p><a id="IOHK_January2021" href="#link_IOHK_January2021">[IOHK_January2021]</a> IOHK. Cardano Monthly Update - January 2021. YouTube, 2021. https://youtu.be/e_C90pUrfKs?t=4536.</p>
         <p><a id="IOHK_March2021" href="#link_IOHK_March2021">[IOHK_March2021]</a> IOHK. “Cardano360 - March 2021.” Youtube, March 2021. https://www.youtube.com/watch?v=ULBLgPgxtN8.</p>
         <p><a id="iohkdev.io" href="#link_iohkdev.io">[iohkdev.io]</a> iohkdev.io. Alpha.Marlowe.Iohkdev.Io. Marlowe Playground, n.d. https://alpha.marlowe.iohkdev.io/.</p>
