@@ -192,7 +192,6 @@
             		<li>
             			<p><a href="#originalPlan">4.1 - My untested original plan</a><span>?</span></p>
             		</li>
-                    
             		<li>
             			<p><a href="#SSI_underDevelopment">4.2 - SSI extensions under development</a><span>?</span></p>
             		</li>
@@ -1310,70 +1309,100 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-<section class="page hf">
+<section id="" class="page hf">
 	<section>
         <p>After Alice receives the invitation, she will need to accept the invitation, send a  corresponding create invitation back to Faber, which Faber must accept to have a connection established. After a connection is established, credentials can be issued and received, and private messages can be sent between contacts. This is an example demonstration of Aries protocols being developed that the SSI ecosystem will use.</p>
         <p>Hyperledger provides a GitHub repository for Aries RFCs documenting the latest concepts and features <a id="link_Hyperledger_Aries-RFCs" href="#Hyperledger_Aries-RFCs">[Hyperledger_Aries-RFCs]</a>. Links to all RFC updates will remain though control of some of the DIDComm standards is moving to the DIF.</p>
         
-		<h4 id="AtalaPrism">3.2 - Atala Prism</h4>
-        <p class="talj">Atala, an enterprise BC framework similar to Hyperledger Fabric used by IBM BC, was developed by IOHK to onboard governments in developing countries. Atala was</p>
-        <p class="ti0">built to handle real-world use cases such as property registration, voting systems, and supply chain management, focusing on digital currency adoption. Starting with Addis Ababa, Ethiopia’s capital, MoUs have been signed to create a digital payment system, allowing six million users to pay power and electricity bills with cryptocurrency, eventually combining this system with an identity card <a id="link_Wolfson_2019" href="#Wolfson_2019">[Wolfson_2019]</a>. In the Republic of Georgia, Atala is teaming up with the Ministry of Education and universities to enable students to receive, store and send their achievements from their phones. This eliminates the need for background checks and saves time for</p>
-        <p class="ti0" style="margin-top:0;">universities and employers.</p>
-        <p>As enterprises and governments want more control over data for legal and regulatory reasons, Atala was developed as a permissioned system based on Cardano. Cardano, in its initial era (Byron era), was a permissioned system. Currently, Atala focuses on layer two solutions such as Prism for SSI and economic identity, Hydra for scaling, and more. These layer two solutions are blockchain agnostic, and as such, can be used on both permissioned (Atala) and permissionless (Cardano). Since Atala and Cardano are very similar, when Cardano improves, Atala will also improve through downstream contributions such as the EUTXO model and Plutus SCs. IOHK is working with the Hyperledger Foundation to onboard Gerolamo, a unification of permissioned and permissionless chains for fluid portability between enterprise and public usage of the Cardano BC <a id="link_Hoskinson_2020" href="#Hoskinson_2020">[Hoskinson_2020]</a>.</p>
+    	<h4 id="RecoveryKeyManagement">3.1.1 - Recovery Key and Backup Management</h4>
+        <p class="ti0">Possible places for wallet backup storage:</p>
+        <ol>
+        	<li>The device itself</li>
+        	<li>The cloud agent</li>
+        	<li>Another device</li>
+        	<li>Peer-to-peer files</li>
+        </ol>
+        <p>The device itself is an easy location to store the encrypted backup. The device agent would initiate an incremental backup of the KMS database. This has an advantage for easy restoration should there be a problem with the wallet app and prepackaging in advance of external (cloud agent) backup. The disadvantage is primarily if the device is lost or irreparably damaged.</p>
+        <p>In the case of a mobile provider, the cloud agent would be an obvious place to store an encrypted backup. The potential risk lies in the cloud agent service operator having access to the data, even in encrypted form, as they could work on cracking the encryption. Alternatively, a separate trusted service such as a bank could potentially offer such services.</p>
+        <p>Another device or other hardware that you own or one controlled by a trusted other could be a valid backup. This could provide a recourse should your primary device be lost or broken.</p>
+        <p>Parts of the backup could be redundantly distributed to different backup holders via a P2P sharing technique, requiring collecting a certain number of the redundant files to restore the backup on the target device.</p>
 	</section>
     <footer>?</footer>
-</section><!-- END #AtalaPrism.page.hf -->
+</section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
+        <p class="ti0">Recovery key management is as essential as a reliable backup location. Locations to store include:</p>
+        <ul>
+        	<li>Hot storage – on device: protected via hardware provided protection like biometrics. This would prove moot should the device be lost.</li>
+        	<li style="talj">Cold storage – on paper or USB flashdisk: stored to a device that is not online, eliminating remote access by an attacker. On paper could be risky as, over time, the ink may fade. Storage on a USB key could be sufficient, though finding a safe place to store it may be an issue in itself. A bank deposit box or keeping a sealed  copy with</li>
+            <li class="lstn">a lawyer is a possibility that may be costly. Keeping a copy at work or with a friend/family member or two is another alternative. Though the more copies around, the higher the risk of unauthorized use.</li>
+        	<li>Sharded hot storage – social recovery: a novel proposal to shard the key into pieces and distribute the pieces amongst a set of holders, requiring only a decided subset of the pieces to combine for full key restoration - see passguardian.com.</li>
+        	<li>Memorizing: this may be difficult to retain as the key must be sufficiently long and random to be effective.</li>
+        </ul>
+        <p>Should all backups and recovery techniques fail or not exist, the wallet would be gone. In that case, a new wallet must be created and all credentials recollected from the various issuers. Presumedly the first credential would be a governmental ID and a degree of hassle and time to get the others in order of importance. Thus, multiple safe backups are necessary.</p>
+        
+		<h4 id="AtalaPrism">3.2 - Atala Prism</h4>
+        <p>Atala, an enterprise BC framework similar to Hyperledger Fabric used by IBM BC, was developed by IOHK to onboard governments in developing countries. Atala was built to handle real-world use cases such as property registration, voting systems, and supply chain management, focusing on digital currency adoption. Starting with Addis Ababa, Ethiopia’s capital, MoUs have been signed to create a digital payment system, allowing six million users to pay power and electricity bills with cryptocurrency, eventually combining this system with an identity card <a id="link_Wolfson_2019" href="#Wolfson_2019">[Wolfson_2019]</a>. In the Republic of Georgia, Atala is teaming up with the Ministry of Education and universities to enable students to receive, store and send their achievements from their phones. This eliminates the need for background checks and saves time for universities and employers.</p>
+    </section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section class="page hf">
+	<section>
+        <p>As enterprises and governments want more control over data for legal and regulatory reasons, Atala was developed as a permissioned system based on Cardano. Cardano, in its initial era (Byron era), was a permissioned system. Currently, Atala focuses on layer two solutions such as Prism for SSI and economic identity, Hydra for scaling, and more. These layer two solutions are blockchain agnostic, and as such, can be used on both permissioned (Atala) and permissionless (Cardano). Since Atala and Cardano are very similar, when Cardano improves, Atala will also improve through downstream contributions such as the EUTXO model and Plutus SCs. IOHK is working with the Hyperledger Foundation to onboard Gerolamo, a unification of permissioned and permissionless chains for fluid portability between enterprise and public usage of the Cardano BC <a id="link_Hoskinson_2020" href="#Hoskinson_2020">[Hoskinson_2020]</a>.</p>
         <p>The Cardano and Atala teams aim to provide the technology for digital identity to bank the unbanked and offer the means for developing countries to leapfrog legacy systems directly to the integrated digital world. In banking the unbanked and giving them access to a cryptocurrency for authenticating the supply chain, there comes an avenue to supply loans to local farmers and others.</p>
         <p>Atala Prism is still under development, and the code has not yet been released open-source <a id="link_IOHK_January2021" href="#IOHK_January2021">[IOHK_January2021]</a>. The following is the available demonstration part online, part on a mobile device <a id="link_IOHK_AtalaPrism" href="#IOHK_AtalaPrism">[IOHK_AtalaPrism]</a>, and it is a good demonstration, from a user's perspective,  of the intended ease of working with SSI .</p>
         <div class="image" style="padding:0 10%;">
           <img src="./imgs/Figure_11.gif" alt="Figure 11. Atala Prism demo on www.atalaprism.io">
           <p><b>Figure 11:</b> Atala Prism demo on www.atalaprism.io</p>
         </div>
-        <p>When the mobile app is installed on a phone, there is an initial seed phrase of 12 words you are instructed to save. If the phone is lost or broken, it is the only way to recover the account. If the seed phrase is lost, all contacts and VCs will have to be collected from scratch.</p>
-		<p>The demonstration follows the process for Jo to get four credentials: Government ID, University Degree, Proof of Employment, and Health Insurance. In the initial steps concatenated in Figure 12, a QR code is provided to be scanned by the mobile app Atala Prism. After scanning, on the mobile device is a confirmation to accept connection with the Metropol City Government. On confirmation, the Metropol City Government is added as a contact, and the Government ID in the far right of Figure 12 is available as a credential.</p>
 	</section>
     <footer>?</footer>
-</section><!-- END #.page.hf -->
+</section><!-- END #AtalaPrism.page.hf -->
+
 <section id="" class="page hf">
 	<section>
+        <p>When the mobile app is installed on a phone, there is an initial seed phrase of 12 words you are instructed to save. If the phone is lost or broken, it is the only way to recover the account. If the seed phrase is lost, all contacts and VCs will have to be collected from scratch.</p>
+		<p>The demonstration follows the process for Jo to get four credentials: Government ID, University Degree, Proof of Employment, and Health Insurance. In the initial steps concatenated in Figure 12, a QR code is provided to be scanned by the mobile app Atala Prism. After scanning, on the mobile device is a confirmation to accept connection with the Metropol City Government. On confirmation, the Metropol City Government is added as a contact, and the Government ID in the far right of Figure 12 is available as a credential.</p>
         <div class="image">
           <img src="./imgs/Figure_12.gif" alt="Figure 12: Atala Prism initial sequence for Jo to get a Government ID, for the illustrated Metropol City">
           <p><b>Figure 12:</b> Atala Prism initial sequence for Jo to get a Government ID, for the illustrated Metropol City</p>
         </div>
         <p style="margin-top:-10px;">Once the Government ID has been accepted, the process for getting degree credentials becomes available, as seen in Figure 13. In this process, the University requests the Government ID credential, which, when provided, adds the University as another contact and provides the University Degree as a credential on the mobile device.</p>
-        <div class="image">
-          <img src="./imgs/Figure_13.gif" alt="Figure 13: Atala Prism demo showing Jo applying for her University credential">
-          <p><b>Figure 13:</b> Atala Prism demo showing Jo applying for her University credential</p>
-        </div>
-        <p>The following step is for Jo to get a job. On the mobile device, 'Jo' is requested to share the VC of her University Degree and Government ID. Once consent is given, and presumably, Decentralized Inc. agrees to hire her, a Proof of Employment credential is provided - seen in Figure 14.</p>
-	</section>
-    <footer>?</footer>
-</section><!-- END #.page.hf -->
-
-<section class="page hf">
-	<section>
-        <div class="image">
-          <img src="./imgs/Figure_14.gif" alt="Figure 14: Atala Prism demo third step showing Jo getting a job at Decentralized Inc.">
-          <p><b>Figure 14:</b> Atala Prism demo third step, following Jo, newly hired, receiving a "Proof of Employment" at Decentralized Inc.</p>
-        </div>
-        <p>The fourth and final step is for Jo to apply for health insurance. For this, "proof of employment" and "government ID" are requested to be shown. Upon sharing those VCs, 'Jo' is granted her health insurance, with the policy number and expiry date seen on the left of Figure 15.</p>
-        <div class="image">
-          <img src="./imgs/Figure_15.gif" alt="Figure 15: Atala Prism demo fourth and final step with Jo getting health insurance">
-          <p><b>Figure 15:</b> Atala Prism demo fourth and final step as Jo recieves health insurance</p>
-        </div>
-        <p>Figure 16 shows the process completion and all four credentials on the mobile wallet that 'Jo' received on the right.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
+        <div class="image">
+          <img src="./imgs/Figure_13.gif" alt="Figure 13: Atala Prism demo showing Jo applying for her University credential">
+          <p><b>Figure 13:</b> Atala Prism demo showing Jo applying for her University credential</p>
+        </div>
+        <p>The following step is for Jo to get a job. On the mobile device, 'Jo' is requested to share the VC of her University Degree and Government ID. Once consent is given, and presumably, Decentralized Inc. agrees to hire her, a Proof of Employment credential is provided - seen in Figure 14.</p>
+        <div class="image">
+          <img src="./imgs/Figure_14.gif" alt="Figure 14: Atala Prism demo third step showing Jo getting a job at Decentralized Inc.">
+          <p><b>Figure 14:</b> Atala Prism demo third step, following Jo, newly hired, receiving a "Proof of Employment" at Decentralized Inc.</p>
+        </div>
+        <p>The fourth and final step is for Jo to apply for health insurance. For this, "proof of employment" and "government ID" are requested to be shown. Upon sharing those VCs, 'Jo' is granted her health insurance, with the policy number and expiry date seen on the left of Figure 15.</p>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section class="page hf">
+	<section>
+        <div class="image">
+          <img src="./imgs/Figure_15.gif" alt="Figure 15: Atala Prism demo fourth and final step with Jo getting health insurance">
+          <p><b>Figure 15:</b> Atala Prism demo fourth and final step as Jo recieves health insurance</p>
+        </div>
+        <p>Figure 16 shows the process completion and all four credentials on the mobile wallet that 'Jo' received on the right.</p>
         <div class="image" style="padding:0 10%;">
           <img src="./imgs/Figure_16.gif" alt="Figure 16: Atala Prism demo process completion showing all four recieved credentials">
           <p><b>Figure 16:</b> Atala Prism demo final showing or all four credentials Jo received</p>
         </div>
         <p>Anonymized threshold proofs are intended as the next level for Atala Prism, allowing specific characteristics to be proven without disclosing other data. This “where Prism is going as a product year 3 to year 5”, says Hoskinson <a id="link_Simmons_2021" href="#Simmons_2021">[Simmons_2021]</a>.</p>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
     	<h4 id="DecentralizedIdentityFoundation">3.3 - Decentralized Identity Foundation</h4>
         
         <p>The DIF has been focused on the open-source development of specifications and standards for protocols, components, and data formats for industry-wide collaboration in decentralized identity / SSI construction. In the DIF, working groups collaborate on defining the standard specifications for the following areas <a id="link_DIF" href="#DIF">[DIF]</a>:</p>
@@ -1385,24 +1414,20 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         	<li><b>Sidetree:</b> blockchain agnostic, layer two, DID Method <a id="link_DIF_Sidetree" href="#DIF_Sidetree">[DIF_Sidetree]</a></li>
         	<li><b>Secure Data Storage:</b> formulizing specifications for a foundational secure data storage layer</li>
         </ul>
-        <p class="talj">The majority of the content from the above working groups is standardization. However, one notable contribution comes in the form of a Universal Resolver (UR). The UR is a foundational piece of infrastructure for the SSI ecosystem by resolving the DIDdoc from a supplied DID <a id="link_Sabadello_2021" href="#Sabadello_2021">[Sabadello_2021]</a>. Currently, the development UR</p>
+        <p>The majority of the content from the above working groups is standardization. However, one notable contribution comes in the form of a Universal Resolver (UR). The UR is a foundational piece of infrastructure for the SSI ecosystem by resolving the DIDdoc from a supplied DID <a id="link_Sabadello_2021" href="#Sabadello_2021">[Sabadello_2021]</a>.</p>
+        <p>Currently, the development UR (https://dev.uniresolver.io) can support 42 DID Methods. Though this is not intended for more than development use, as being on a single server, the dev UR centralizes an intended decentralized infrastructure. When the SSI ecosystem is closer to final development, multiple servers will offer their own UR. The universal resolver protocol and appropriate drives are meant to be downloaded and run on more instances to maintain the distributed nature of the SSI ecosystem <a id="link_DIF_Universal_Resolver" href="#DIF_Universal_Resolver">[DIF_Universal_Resolver]</a>.</p>
+		<p>Another prominent project from DIF is Sidetree, a BC agnostic layer two protocol for PKI. The Sidetree protocol defines state change operations (i.e., Create, Read, Update, or Deactivate) to mutate a DID’s DIDdoc. Sidetree nodes anchor Content-Addressable Storage (CAS) references to the underlying anchoring system (e.g., DLT), offering an immutable chronology that all nodes can validate.</p>
+        <p class="talj">Building on Sidetree, Microsoft, a member of DIF, has been working on ION <a id="link_DIF_ION" href="#DIF_ION">[DIF_ION]</a>. ION uses Bitcoin as the underlying DLT and uses IPFS (see appendix 3) for CAS storage of DID operations (Fig. 14). Since ION nodes process transactions on layer two, it is possible to anchor tens of thousands of DID/DPKI operations in a single on-chain</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #DecentralizedIdentityFoundation.page.hf -->
 <section id="" class="page hf">
 	<section>
-        <p class="ti0">(https://dev.uniresolver.io) can support 42 DID Methods. This is not intended for more than development use, as being on a single server, the dev UR centralizes an intended decentralized infrastructure. When the SSI ecosystem is closer to final development, multiple servers will offer their own UR. The universal resolver protocol and appropriate drives are meant to be downloaded and run on more instances to maintain the distributed nature of the SSI ecosystem <a id="link_DIF_Universal_Resolver" href="#DIF_Universal_Resolver">[DIF_Universal_Resolver]</a>.</p>
-		<p>Another prominent project from DIF is Sidetree, a BC agnostic layer two protocol for PKI. The Sidetree protocol defines state change operations (i.e., Create, Read, Update, or Deactivate) to mutate a DID’s DIDdoc. Sidetree nodes anchor Content-Addressable Storage (CAS) references to the underlying anchoring system (e.g., DLT), offering an immutable chronology that all nodes can validate.</p>
-        <p>Building on Sidetree, Microsoft, a member of DIF, has been working on ION <a id="link_DIF_ION" href="#DIF_ION">[DIF_ION]</a>. ION uses Bitcoin as the underlying DLT and uses IPFS (see appendix 3) for CAS storage of DID operations (Fig. 14). Since ION nodes process transactions on layer two, it is possible to anchor tens of thousands of DID/DPKI operations in a single on-chain transaction. ION nodes can fetch, process, and assemble DID states in parallel, solving the scalability problem.</p>
+        <p class="ti0">transaction. ION nodes can fetch, process, and assemble DID states in parallel, solving the scalability problem.</p>
     	<div class="image" style="padding:0 22%;">
             <img src="./imgs/Figure_17.png" alt="Figure 17: ION overview">
             <p><b>Figure 17:</b> ION overview [source Microsoft techcommunity]</p>
         </div>
-	</section>
-    <footer>?</footer>
-</section><!-- END #.page.hf -->
-<section id="" class="page hf">
-	<section>
         <p>ION v1 is now complete and launched on Bitcoin mainnet, yet the process is still in the early phases. With v1, the following are possible <a id="link_Dingle_2021" href="#Dingle_2021">[Dingle_2021]</a>:</p>
         <ul>
             <li>Public preview of the Azure AD VC service</li>
@@ -1410,6 +1435,12 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
             <li>DID creation and cryptographic linking to controlled web domains for companies and individuals</li>
             <li>Use DIDs to issue VCs</li>
         </ul>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+
+<section id="" class="page hf">
+	<section>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
@@ -1433,7 +1464,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-<!-- -6/5 pages  -->
+<!-- -4 pages  -->
 
 <!-- Chapter 4 -->
 <section class="page hf">
@@ -1508,37 +1539,78 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p>The issuance of academic certification is centralized by each school. If a diploma, degree, or other credential is lost or damaged, it is typically costly to request a replacement. What if the issuing institute no longer exists? The original copy or a re-issued one, being on paper, are difficult to share when needed and almost certainly require an in-person visit. On behalf of the verifier, verification of the academic certificate is time-consuming at best or impossible if the issuing institute is no longer in business.</p>
         <p>These issues can be resolved through the use of an SSI. All credentials issued by an institute would be signed with the public key of that institute, which presumably would be publicly notified on a DLT. This would allow all issued certificates to be verifiable even after the institute ends business. Credentials could also be checked for non-revocation without requiring contact with the issuing institution.</p>
         <p>Even better, as demonstrated by Cardano's Atala Prism working with the Ethiopian Minister of Education, a next-generation blockchain-based solution can track grades and educational attainments of (starting with 5 million) students from kindergarten to 12th grade. Several applications and web-based applications would be built, allowing the ministry of education and school(s) to monitor the students. These applications could view what credentials have been issued to them, track the student's progress in certain subjects, monitor their attendance, and store all the certificates and data in the unique SSI of the student. This storage in the SSI of the student gives the student full ownership and control of their academic achievements, enabling easy sharing with universities or employment after graduation [<a id="link_IOHK_April2021" href="#IOHK_April2021">IOHK_April2021</a>].</p>
-        <p>Common use of this sort of recording in education could be applied with teachers to discover their pedantic methodologies and related student success. It could potentially be tailored to connect students with teachers who use methods favorable for the positive advancement of the student, the field, and even the nation and beyond.</p>
+        <p>Common use of this sort of academic monitoring could also be applied to teachers, discovering their pedantic methodologies and related student success. This could potentially be tailored to connect students with teachers who use methods favorable for the positive advancement of the student, the field, and even the nation and beyond.</p>
 	</section>
     <footer>?</footer>
-</section><!-- END #.page.hf -->
+</section><!-- END #SSI_underDevelopment.page.hf -->
 
 <section id="" class="page hf">
 	<section>
     	<h5>Banking and financial services</h5>
         <p>With regulations on one side and customer's demand for speedy, fully digital experience on the other - in more developed cities and countries - the benefits of migrating to use the SSI ecosystem are evident.</p>
-        <p>Onboarding for new customers with verifiable KYC - the client's conditional disclosure of some or all of their financial history - becomes quick and cheap. Speed of onboarding is guaranteed as rather than a scattered paper trail, there is a cryptographically guaranteed and timestamped, immutable digital record. The lower operational costs are due to the elimination of the paper trail. Traceable and auditable PII processing should reduce regulatory liability and compliance costs. All this while enhancing client experience and convenient access to a broader selection of financial products.</p>
+        <p>Efficient onboarding for new customers with verifiable KYC - client's conditional disclosure of some or all of their financial history - becomes quick and cheap. Speed of onboarding is guaranteed as rather than expending time and resources tracing a scattered paper trail, there is a readily available distributed, cryptographically guaranteed, and timestamped immutable digital record. The lower operational costs are due to eliminating the paper trail and associated time and resource expenses. Traceable and auditable PII processing should reduce regulatory liability and compliance costs while enhancing client experience and convenient access to a broader selection of financial products.</p>
         
         <h5>Retail and E-commerce</h5>
-        <p>There is an increasing trend of counterfeit goods being marketed, primarily online. Anti-counterfeiting measures are often lengthy and often are on a per-case basis, doing little to curb the ongoing sale of counterfeit items as most fakes are sold online by traders with low risk for indictment. This can lead to substantial financial losses, damage to brand reputation, and decreased customer confidence.</p>
-        <p>VeChain offers a combination of blockchain and a Smart Tag such as an RFID tag or QR Code to trace a retail product's lifecycle, allowing customers to verify the products before purchase. The data at each stage is verified by an independent third party who uploads it to the immutable blockchain, thus guaranteeing authenticity for the downstream companies and customers. The VeChain Pro App can be used to scan the Smart Tag and allow the user to trace and verify the product. This essentially performs the procedure of supplying an SSI for the product.</p>
+        <p>There is an increasing trend of counterfeit goods being marketed, primarily online. Anti-counterfeiting measures are often lengthy and often are on a per-case basis, doing little to curb the ongoing sale of counterfeit items as most fakes are sold online by traders with low risk for indictment. This can lead to substantial financial losses for buyers and manufacturers, damage to brand reputation, and decreased customer confidence。</p>
+        <p>VeChain offers a combination of the use of blockchain and a Smart Tag such as an RFID tag or QR Code to trace a retail product's lifecycle, allowing customers to verify the products are authentic before purchase. The data at each stage is verified by an independent third party who uploads the data to the immutable blockchain, thus guaranteeing authenticity for the downstream companies and customers. The VeChain Pro App can be used to scan the Smart Tag, allowing the user to trace and verify the product. This essentially performs the procedure of supplying an SSI for the product.</p>
         <p>Another aspect of the use of SSI on the retail distributor or E-commerce app or site would be reduced storage of customers' PII, keeping the minimum needed to recognize the customer at a future visit. Including a VC listing ownership of the Smart-Tag ID would be an additional step that could be implemented, allowing legal ownership verification in the case of a dispute.</p>
-        
-        <h5>Supply chain tracking</h5>
-        <p class="talj">Including SSI into marketable products can enable customers to trace the source, conditions in production, and all ingredients before purchase. When brands use green or</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
-        <p class="ti0">sustainable production, this could be clearly visible and verifiable by the buyer. A constant and reliable supply chain with all shipping conditions and exchanges immutably recorded on a BC is one piece that is necessary for this to be provided to the end customer.</p>
-        <p>Agriculture is one category whose supply chain must progress continually and be kept within certain conditions. Meat and dairy products are another division where the shipping conditions are even more stringent, possibly resulting in consumer death. The farming conditions for products labeled organic should also be visible to the end consumer.</p>
-        <p>Today's trade is still mostly based on paper documents in siloed data centers, with each step having its own system of paperwork. Farmers, haulers, retailers, and end consumers can all use BC for product certification and traceability.</p>
-        <p>VeChain, IOTA, and Atala Trace are some who are working to revitalize the supply chain system through different products and initiatives.</p>
+        <h5>Supply chain tracking</h5>
+        <p>Including SSI into marketable products can enable customers to trace the source, conditions in production, and all ingredients before purchase. When brands use green or sustainable production, this could be clearly visible and verifiable by the buyer. A constant and reliable supply chain with all shipping conditions and exchanges immutably recorded on a BC is one piece that is necessary for this to be provided to the end customer.</p>
+        <p>Agriculture is one category whose supply chain must progress continually for the growers' livelihoods and the sustenance of the eaters while being transported under specific stipulations. Meat and dairy products are another division where the shipping conditions are even more stringent to avoid resulting in consumer death. The farming conditions for products labeled organic should also be visible to the end consumer.</p>
+        <p>Today's trade is still mostly based on paper documents in siloed data centers, with each step having its own system of paperwork. Farmers, haulers, retailers, and end consumers can all use BC for product certification and traceability and have their own SSI to collect and store reputation and compliance with regulations over time.</p>
+        <p>VeChain, IOTA, and Atala Trace are among those working to revitalize the supply chain system through different products and initiatives.</p>
+        
+        <h5>Health care</h5>
+        <p>There are numerous advantages SSI use can bring to medical care, including certifying that medicines are legit and not counterfeit, protecting patients' PII data, confirming that a doctor's qualifications are up to date, and more.</p>
+        <p>Due to cost, peer pressure, or other reasons, people purchase medications online. Similar to E-commerce mentioned above, online sales are less regulated and easier to abuse, and counterfeit or substandard medications are another dilemma that not only inflicts financial losses but affects people's health as well. The use of SSI tracking schemes such as Atala SCAN or VeChain Smart Tags could reduce the risk and improve the well-being of patients globally.</p>
+		<p>A patient can use Doctors' SSI certification to confirm that the doctor is qualified in the desired field and also ensure that the licensing is by a notable medical authority.</p>
+        <p class="talj">Patients' PII kept safe through the use of SSI is one advantage. Storing the patient's entire medical record under their control allows the ease of transporting it between doctors,</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-<!-- -3pages -->
+<section id="" class="page hf">
+	<section>
+        <p class="ti0">locations, hospitals, cities, or even countries, escaping the siloed healthcare record system that currently exists. This is a tremendous advantage for the patients, as their medical data is consolidated and under their control.</p>
+        <p>The use of SSI can, most certainly, revolutionize the health care industry. Cryptographically authenticated anonymous statistics of the success of medicines and medical procedures could also be gathered to improve doctor recommendations and indirectly improve medicine research if currently used approaches could be improved.</p>
+        
+        <h5>IoT</h5>
+        <p>Attaching DIDs to items allows many enhancements, including streamlined automation in smart factories, traffic management, carbon reduction credits, and more.</p>
+        <p>Many IoT devices will have low computational resources and storage. These devices could have embedded Smart Tags or QR codes and rely on external data processing combined from multiple edge devices. For example, in a smart home, not all smart devices are required to do their processing independently. Instead, a smart-home-hub could gather, collectively manipulate and secure the data supplied by the discrete devices. Alternatively, all data could be tied to the owner's SSI mandating the owner's consent for visibility or manipulation of any data.</p>
+        <p>IOTA proposes advancing into Industry 4.0 whereby intelligent connected machines can self-organize, self-optimize, and develop into cross-company value chains with reliable, transparent data exchange. Devices can securely communicate and exchange data, goods, and services, leaving an immutable audit trail for administrative purposes.</p>
+        <p>VeChain advances a solution to encourage consumers to participate in carbon reduction, earning carbon reduction credits as a reward. This proposal comes as a result of traditional carbon reduction being mainly top-down administrative orders. Incentivising enterprises and consumers to favor the use of new energy vehicles, energy-efficient appliances, and so on through tagging these devices with Smart Tags and storing carbon reduction data on the BC, granting the responsible target carbon reduction credits.</p>
+        <p>Embedding DIDs into vehicles could be used to regulate traffic, give priority to emergency vehicles, and more. When self-driving cars come into use, traffic management as a whole could be operated transparently via DLT. <a id="link_Bagloee_2019" href="#Bagloee_2019">[Bagloee_2019]</a> formulates and numerically tests the concept of a smart-contract-based tradable mobility permit, exploring the side benefits it produces.</p>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
+        <p>There are many more use cases for tying SSI to IoT devices, enough to write an entire paper.  Allow this passage to whet the appetite for what the future can bring.</p>
+        
+        <h4>Chapter 4 Key Takeaways</h4>
+        <ul>
+        	<li>My original plan was to build an anonymized rating system for films on top of SSI.</li>
+            <li>This rating system would provide a new video recommendation system based on user selection rather than tailored to what they have previously seen or what similar viewers like.</li>
+            <li>IPFS' NodeIDs are public keys and thereby pseudonymous. However, IPFS's distributed hash table (DHT) records IP addresses of all PeerIDs, thereby nullifying any pseudonymity.</li>
+            <li>The SSI ecosystem goes beyond providing entities with a digital identity.</li>
+            <li>Education uses include collecting all educational data, attendance, and certificates embedded in a student-owned digital device for easy future use with higher education or employment.</li>
+            <li>In banking and financial services, there is the ease of onboarding new customers through immutable storage and cryptographic verifiability of all past financial history. An immutable, auditable trail is available for regulatory compliance.</li>
+            <li>Solving anti-counterfeiting through QR tagging or embedding RFID with DIDs can increase customer confidence and reduce financial losses for buyers and manufacturers.</li>
+            <li>Supply train tracking and recording all data on a blockchain offers a uniform tracking format from the factory to the vendor, allowing the consumer to see all ingredients and conditions in manufacture and shipping.</li>
+            <li>Supply train tracking for consumables could document for the buyer the degree of sustainable farming and the conditions in transport (e.g., was the meat kept consistently below a necessary temperature).</li>
+            <li>In health care, anti-counterfeiting medicine (particularly if purchased online), patient PII data protection, doctor qualification with updated licenses, and patient data portability between locations are among the solutions that can be built on the SSI ecosystem.</li>
+            <li>With IoT, automated smart factories could dynamically process devices, gathering necessary materials cross-company, and leave an immutable audit trail.</li>
+            <li>A pathway for incentivizing participation in becoming carbon neutral was presented by VeChain. Smart Tags can be embedded in low-carbon IoT devices to generate carbon reduction credits for the owner's use.
+Embedding DIDs in vehicles could allow automated traffic management.</li>
+        </ul>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<!-- -1pages -->
 
 
 <!-- Conclusion -->
@@ -1699,40 +1771,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
     </section>
     <footer>?</footer>
 </section><!-- END #GDPR.page.hf -->
-<!-- Appendix B -->
-<section class="page hf">
-	<section>
-    	<h2 id="RecoveryKeyManagement">Appendix A - Recovery Key and Backup Management</h2>
-        <p class="ti0">Possible places for wallet backup storage:</p>
-        <ol>
-        	<li>The device itself</li>
-        	<li>The cloud agent</li>
-        	<li>Another device</li>
-        	<li>Peer-to-peer files</li>
-        </ol>
-        <p>The device itself is an easy location to store the encrypted backup. The device agent would initiate an incremental backup of the KMS database. This has an advantage for easy restoration should there be a problem with the wallet app and prepackaging in advance of external (cloud agent) backup. The disadvantage is primarily if the device is lost or irreparably damaged.</p>
-        <p>In the case of a mobile provider, the cloud agent would be an obvious place to store an encrypted backup. The potential risk lies in the cloud agent service operator having access to the data, even in encrypted form, as they could work on cracking the encryption. Alternatively, a separate trusted service such as a bank could potentially offer such services.</p>
-        <p>Another device or other hardware that you own or one controlled by a trusted other could be a valid backup. This could provide a recourse should your primary device be lost or broken.</p>
-        <p>Parts of the backup could be redundantly distributed to different backup holders via a P2P sharing technique, requiring collecting a certain number of the redundant files to restore the backup on the target device.</p>
-        <p class="ti0">Recovery key management is as essential as a reliable backup location. Locations to store include:</p>
-        <ul>
-        	<li>Hot storage – on device: protected via hardware provided protection like biometrics. This would prove moot should the device be lost.</li>
-        	<li style="talj">Cold storage – on paper or USB flashdisk: stored to a device that is not online, eliminating remote access by an attacker. On paper could be risky as, over time, the ink may fade. Storage on a USB key could be sufficient, though finding a safe place to store it may be an issue in itself. A bank deposit box or keeping a sealed  copy with</li>
-    	</ul>
-    </section>
-    <footer>?</footer>
-</section><!-- END #RecoveryKeyManagement.page.hf -->
-<section class="page hf">
-	<section>
-        <ul>
-            <li class="lstn">a lawyer is a possibility that may be costly. Keeping a copy at work or with a friend/family member or two is another alternative. Though the more copies around, the higher the risk of unauthorized use.</li>
-        	<li>Sharded hot storage – social recovery: a novel proposal to shard the key into pieces and distribute the pieces amongst a set of holders, requiring only a decided subset of the pieces to combine for full key restoration - see passguardian.com.</li>
-        	<li>Memorizing: this may be difficult to retain as the key must be sufficiently long and random to be effective.</li>
-        </ul>
-        <p>Should all backups and recovery techniques fail or not exist, the wallet would be gone. In that case, a new wallet must be created and all credentials recollected from the various issuers. Presumedly the first credential would be a governmental ID and a degree of hassle and time to get the others in order of importance. Thus, multiple safe backups are necessary.</p>
-    </section>
-    <footer>?</footer>
-</section><!-- END #RecoveryKeyManagement1.page.hf -->
+
 
 
 
