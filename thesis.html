@@ -204,10 +204,7 @@
                 <p><a href="#References">References</a><span>?</span></p>
             </li>
             <li>
-                <p><a href="#GDPR">Appendix A - GDPR</a><span>37</span></p>
-            </li>
-            <li>
-                <p><a href="#RecoveryKeyManagement">Appendix B - Recovery Key and Backup Management</a><span>?</span></p>
+                <p><a href="#GDPR">Appendix A - GDPR</a><span>?</span></p>
             </li>
         </ul>
     </section>
@@ -1348,7 +1345,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 </section><!-- END #.page.hf -->
 <section class="page hf">
 	<section>
-        <p>As enterprises and governments want more control over data for legal and regulatory reasons, Atala was developed as a permissioned system based on Cardano. Cardano, in its initial era (Byron era), was a permissioned system. Currently, Atala focuses on layer two solutions such as Prism for SSI and economic identity, Hydra for scaling, and more. These layer two solutions are blockchain agnostic, and as such, can be used on both permissioned (Atala) and permissionless (Cardano). Since Atala and Cardano are very similar, when Cardano improves, Atala will also improve through downstream contributions such as the EUTXO model and Plutus SCs. IOHK is working with the Hyperledger Foundation to onboard Gerolamo, a unification of permissioned and permissionless chains for fluid portability between enterprise and public usage of the Cardano BC <a id="link_Hoskinson_2020" href="#Hoskinson_2020">[Hoskinson_2020]</a>.</p>
+        <p>As enterprises and governments want more control over data for legal and regulatory reasons, Atala was developed as a permissioned system based on Cardano. Cardano, in its initial era (Byron era), was a permissioned system. Currently, Atala focuses on layer two solutions such as Prism for SSI and economic identity, Hydra for scaling, and more. These layer two solutions are blockchain agnostic, and as such, can be used on both permissioned (Atala) and permissionless (Cardano). As both Atala and Cardano use the same underlying infrastructure similar, when Cardano improves, Atala will also improve through downstream contributions such as the EUTXO model and Plutus SCs. IOHK is working with the Hyperledger Foundation to onboard Gerolamo, a unification of permissioned and permissionless chains for fluid portability between enterprise and public usage of the Cardano BC <a id="link_Hoskinson_2020" href="#Hoskinson_2020">[Hoskinson_2020]</a>.</p>
         <p>The Cardano and Atala teams aim to provide the technology for digital identity to bank the unbanked and offer the means for developing countries to leapfrog legacy systems directly to the integrated digital world. In banking the unbanked and giving them access to a cryptocurrency for authenticating the supply chain, there comes an avenue to supply loans to local farmers and others.</p>
         <p>Atala Prism is still under development, and the code has not yet been released open-source <a id="link_IOHK_January2021" href="#IOHK_January2021">[IOHK_January2021]</a>. The following is the available demonstration part online, part on a mobile device <a id="link_IOHK_AtalaPrism" href="#IOHK_AtalaPrism">[IOHK_AtalaPrism]</a>, and it is a good demonstration, from a user's perspective,  of the intended ease of working with SSI .</p>
         <div class="image" style="padding:0 10%;">
@@ -1397,7 +1394,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
           <img src="./imgs/Figure_16.gif" alt="Figure 16: Atala Prism demo process completion showing all four recieved credentials">
           <p><b>Figure 16:</b> Atala Prism demo final showing or all four credentials Jo received</p>
         </div>
-        <p>Anonymized threshold proofs are intended as the next level for Atala Prism, allowing specific characteristics to be proven without disclosing other data. This “where Prism is going as a product year 3 to year 5”, says Hoskinson <a id="link_Simmons_2021" href="#Simmons_2021">[Simmons_2021]</a>.</p>
+        <p>Anonymized threshold proofs, a form of ZKP, are intended as the next level for Atala Prism, allowing specific characteristics to be proven without disclosing other data. This “where Prism is going as a product year 3 to year 5”, says Hoskinson <a id="link_Simmons_2021" href="#Simmons_2021">[Simmons_2021]</a>.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
@@ -1415,7 +1412,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         	<li><b>Secure Data Storage:</b> formulizing specifications for a foundational secure data storage layer</li>
         </ul>
         <p>The majority of the content from the above working groups is standardization. However, one notable contribution comes in the form of a Universal Resolver (UR). The UR is a foundational piece of infrastructure for the SSI ecosystem by resolving the DIDdoc from a supplied DID <a id="link_Sabadello_2021" href="#Sabadello_2021">[Sabadello_2021]</a>.</p>
-        <p>Currently, the development UR (https://dev.uniresolver.io) can support 42 DID Methods. Though this is not intended for more than development use, as being on a single server, the dev UR centralizes an intended decentralized infrastructure. When the SSI ecosystem is closer to final development, multiple servers will offer their own UR. The universal resolver protocol and appropriate drives are meant to be downloaded and run on more instances to maintain the distributed nature of the SSI ecosystem <a id="link_DIF_Universal_Resolver" href="#DIF_Universal_Resolver">[DIF_Universal_Resolver]</a>.</p>
+        <p>Currently, the development UR (https://dev.uniresolver.io) can resolve 42 DID Methods. This is not intended for more than development use, as being on a single server, the dev UR centralizes an intended decentralized infrastructure. When the SSI ecosystem is closer to final development, multiple servers will offer their own UR. The universal resolver protocol and appropriate drives are intended to be downloaded and run on more instances to maintain the distributed nature of the SSI ecosystem <a id="link_DIF_Universal_Resolver" href="#DIF_Universal_Resolver">[DIF_Universal_Resolver]</a>.</p>
 		<p>Another prominent project from DIF is Sidetree, a BC agnostic layer two protocol for PKI. The Sidetree protocol defines state change operations (i.e., Create, Read, Update, or Deactivate) to mutate a DID’s DIDdoc. Sidetree nodes anchor Content-Addressable Storage (CAS) references to the underlying anchoring system (e.g., DLT), offering an immutable chronology that all nodes can validate.</p>
         <p class="talj">Building on Sidetree, Microsoft, a member of DIF, has been working on ION <a id="link_DIF_ION" href="#DIF_ION">[DIF_ION]</a>. ION uses Bitcoin as the underlying DLT and uses IPFS (see appendix 3) for CAS storage of DID operations (Fig. 14). Since ION nodes process transactions on layer two, it is possible to anchor tens of thousands of DID/DPKI operations in a single on-chain</p>
 	</section>
@@ -1424,7 +1421,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 <section id="" class="page hf">
 	<section>
         <p class="ti0">transaction. ION nodes can fetch, process, and assemble DID states in parallel, solving the scalability problem.</p>
-    	<div class="image" style="padding:0 22%;">
+    	<div class="image" style="padding:0 8%;">
             <img src="./imgs/Figure_17.png" alt="Figure 17: ION overview">
             <p><b>Figure 17:</b> ION overview [source Microsoft techcommunity]</p>
         </div>
@@ -1435,10 +1432,40 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
             <li>DID creation and cryptographic linking to controlled web domains for companies and individuals</li>
             <li>Use DIDs to issue VCs</li>
         </ul>
+
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 
+<section id="" class="page hf">
+	<section>
+        <p>One primary avenue that Microsoft is offering for ION implementation is with its Azure Active Directory, currently available as a preview under the description of "Decentralized Identity" or "Active Directory Verifiable Credentials."</p>
+        <p class="ti0">Their SSI foundation is made up of several key components:</p>
+        <ol type="1">
+            <li>W3C's DIDs</li>
+            <li>ION (Identity Overlay Network)</li>
+            <li>DID User-Agent/Wallet</li>
+            <li>Microsoft Resolver</li>
+            <li>Azure Active Directory Verifiable Credentials Service</li>
+		</ol>
+        <p>The DIDs, as per the W3C's specifications, are user created, owned, and controlled, are globally unique identifiers linked to DPKI metadata comprised of JSON DIDdocs containing public keys, authentication descriptors, and service endpoints. </p>
+        <p>ION is a layer-two open-source, public permissionless network based on the blockchain agnostic, deterministic, Sidetree protocol. ION and Sidetree have no tokens, trusted validators, or consensus mechanisms, relying solely on Bitcoin-core's time chain. Capabilities include creating new DIDs, generating corresponding keys, and anchoring DIDs on the Bitcoin core BC.</p>
+        <p>The DID User-Agent offered is the Microsoft Authenticator App. The Authenticator app allows the creation of DIDs and manages the issuance and presentation of VCs. Backup of DID seeds in an encrypted wallet file is also possible.</p>
+        <p>Microsoft Resolver is an API performing lookup and resolution of DIDs using the <code>ion</code> DID method, returning the corresponding DIDdoc.</p>
+        <p>The Azure Active Directory Verifiable Credentials Service supplies an open-source SDK for issuance and verification of VCs signed with the <code>did:ion</code> method, allowing identity owners to generate, present, and verify claims.</p>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
 	</section>
@@ -1587,6 +1614,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
+
 <section id="" class="page hf">
 	<section>
         <p>There are many more use cases for tying SSI to IoT devices, enough to write an entire paper.  Allow this passage to whet the appetite for what the future can bring.</p>
