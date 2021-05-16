@@ -1449,15 +1449,33 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
             <li>Azure Active Directory Verifiable Credentials Service</li>
 		</ol>
         <p>The DIDs, as per the W3C's specifications, are user created, owned, and controlled, are globally unique identifiers linked to DPKI metadata comprised of JSON DIDdocs containing public keys, authentication descriptors, and service endpoints. </p>
-        <p>ION is a layer-two open-source, public permissionless network based on the blockchain agnostic, deterministic, Sidetree protocol. ION and Sidetree have no tokens, trusted validators, or consensus mechanisms, relying solely on Bitcoin-core's time chain. Capabilities include creating new DIDs, generating corresponding keys, and anchoring DIDs on the Bitcoin core BC.</p>
+        <p>ION is a layer-two open-source, public permissionless network based on the blockchain agnostic, deterministic, Sidetree protocol. ION and Sidetree have no tokens, trusted validators, or consensus mechanisms, relying solely on the underlying BCs time chain. In ION's case, the BC used is Bitcoin core. Capabilities include creating new DIDs, generating corresponding keys, and anchoring DIDs on the Bitcoin core BC. The purpose of ION is to allow hundreds or thousands of DPKI transactions to be confirmed with a single on-chain timestamp.</p>
         <p>The DID User-Agent offered is the Microsoft Authenticator App. The Authenticator app allows the creation of DIDs and manages the issuance and presentation of VCs. Backup of DID seeds in an encrypted wallet file is also possible.</p>
         <p>Microsoft Resolver is an API performing lookup and resolution of DIDs using the <code>ion</code> DID method, returning the corresponding DIDdoc.</p>
         <p>The Azure Active Directory Verifiable Credentials Service supplies an open-source SDK for issuance and verification of VCs signed with the <code>did:ion</code> method, allowing identity owners to generate, present, and verify claims.</p>
+        
+        <h5>ION for development purposes:</h5>
+        <p>ION runs as a decentralized layer two network on the Bitcoin BC. Its reference node is currently in beta phase, and potential breaking changes are expected. The ION node is comprised of an assortment of microservices including Bitcoin core, IPFS, and MongoDB <a id="link_Tsai_2021" href="#Tsai_2021">[Tsai_2021]</a>.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
+        <p>An ION node needs a trusted Bitcoin peer to fetch and write transactions, so for development purposes, storage of the Bitcoin core BC (around 1TB) is required.</p>
+        <p>For IPFS, the Go-IPFS release, or the IPFS Desktop which includes the previous is used. The Go-IPFS provides the UI.</p>
+        <p>MongoDB is used for local data persistence.</p>
+        
+        <h5>Azure preview of Azure Active Directory Verifiable Credentials</h5>
+        <ul>
+        	<li class="lstn">This preview has the following prerequisites:</li>
+            <li>NodeJS</li>
+            <li>GIT</li>
+            <li>Visual Studio Code</li>
+            <li>Microsoft Authenticator ~ on a mobile device</li>
+            <li>NGROK</li>
+        </ul>
+        <p>The preview is made for both Windows and Linux. For purposes of this demonstration, Ubuntu 20.04 is being run inside VirtualBox. The mobile portions using Microsoft Authenticator are using Android 10 (MIUI 12.0.8Stable).</p>
+
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
@@ -1570,7 +1588,6 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 	</section>
     <footer>?</footer>
 </section><!-- END #SSI_underDevelopment.page.hf -->
-
 <section id="" class="page hf">
 	<section>
     	<h5>Banking and financial services</h5>
@@ -1614,15 +1631,29 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-
 <section id="" class="page hf">
 	<section>
         <p>There are many more use cases for tying SSI to IoT devices, enough to write an entire paper.  Allow this passage to whet the appetite for what the future can bring.</p>
+        
+        <h5>Digital Rights Management</h5>
+        <p>Current digital media management is highly centralized, providing more financial profit to the centralized repository rather than the content creators, leaving the creators with limited access to accurate content distribution and insight for generating new content. Correct categorization of content in these repositories is subject to the algorithms of the centralized entity and may not be adequately supplied to the desired targets.</p>
+        <p>Another issue is piracy, or copyright infringement, especially in regards to digital content being easily replicated.</p>
+        <p>Solutions to providing accurate statistics and profit to the content creators can be provided by using BC timestamps stored on a decentralized ledger. The decentralized, immutable nature of a BC prevents the altering of any data by any centralized controller. A purely decentralized, creator-focused system such as monegraph could be used to permit content creators to receive the profit and maintain greater control over the use of that content <a href="#Karafiloski_2017">[Karafiloski_2017]</a>.</p>
+        <p>Anther progression that could be done using SSIs would be for directed sales to be made to the SSI of the purchaser, requiring private-key control to decrypt for access. A similar technique could be used for copyrighted software use.</p>
+        <p>Aside from access control, a user who has purchased digital content (e.g., NFTs) could have their purchase timestamped on a BC along with their public key, proving ownership for bragging rights or potential reselling later.</p>
+        <p>This field will likely be developed further after blockchains and the SSI ecosystem come into widespread use.</p>
         
         <h4>Chapter 4 Key Takeaways</h4>
         <ul>
         	<li>My original plan was to build an anonymized rating system for films on top of SSI.</li>
             <li>This rating system would provide a new video recommendation system based on user selection rather than tailored to what they have previously seen or what similar viewers like.</li>
+        </ul>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
+    	<ul>
             <li>IPFS' NodeIDs are public keys and thereby pseudonymous. However, IPFS's distributed hash table (DHT) records IP addresses of all PeerIDs, thereby nullifying any pseudonymity.</li>
             <li>The SSI ecosystem goes beyond providing entities with a digital identity.</li>
             <li>Education uses include collecting all educational data, attendance, and certificates embedded in a student-owned digital device for easy future use with higher education or employment.</li>
@@ -1634,12 +1665,13 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
             <li>With IoT, automated smart factories could dynamically process devices, gathering necessary materials cross-company, and leave an immutable audit trail.</li>
             <li>A pathway for incentivizing participation in becoming carbon neutral was presented by VeChain. Smart Tags can be embedded in low-carbon IoT devices to generate carbon reduction credits for the owner's use.
 Embedding DIDs in vehicles could allow automated traffic management.</li>
+			<li>Digital media creation can be timestamped on a blockchain by the creator. Sales and ownership of digital media can also be timestamped.</li>
+			<li>All profit for digital media can go directly to the creator in a decentralized manner rather than to a centralized publisher/platform, as is the current trend.</li>
+			<li>Targeted digital media sales could be linked to the SSI of the purchaser, requiring decryption to use.</li>
         </ul>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-<!-- -1pages -->
-
 
 <!-- Conclusion -->
 <section class="page hf">
@@ -1651,6 +1683,7 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
     </section>
     <footer>?</footer>
 </section><!-- END #Conclusion.page.hf -->
+
 <!-- References -->
 <section id="References" class="page references hf">
 	<section>
@@ -1743,6 +1776,7 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         <p><a id="Szabo_1997" href="#link_Szabo_1997">[Szabo_1997]</a> Szabo, Nick. “The Idea of Smart Contracts.” Nick Szabo’s Papers and Concise Tutorials 6, no. 1 (1997).</p>
         <p><a id="Tobin_2016" href="#link_Tobin_2016">[Tobin_2016]</a> Tobin, Andrew, and Drummond Reed. “The Inevitable Rise of Self-Sovereign Identity.” The Sovrin Foundation 29, no. 2016 (2016). https://sovrin.org/wp-content/uploads/2018/03/The-Inevitable-Rise-of-Self-Sovereign-Identity.pdf.</p>
         <p><a id="ToIP_2020" href="#link_ToIP_2020">[ToIP_2020]</a> ToIP. “Introducing the Trust over IP Foundation,” May 2020.</p>
+        <p><a id="Tsai_2021" href="#link_Tsai_2021">[Tsai_2021]</a> Tsai, Henry, Jameson Lopp, Dan Bolser, nayuta-ueno, Matthijs Hoekstra, jabdov, Daniel Buchner, Michael Burns, and balajipachai. “ION Installation Guide.” decentralized-identity/ion. GitHub, March 30, 2021. https://github.com/decentralized-identity/ion/blob/master/install-guide.md.</p>
     </section>
     <footer>?</footer>
 </section><!-- END #References4.references.page.hf -->
