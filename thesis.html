@@ -337,6 +337,7 @@ In the connected world of the Internet, digital identity has progressed from a c
         </ul>
         <p>In addition to the targets mentioned above, globally verifiable unique identities using DLT allow for transparent, open-source data collection leaving data sources un-targetable. This could be beneficial for numerous academic studies, such as anthropological studies, and for individuals seeking to expand their horizons or seek fellow-minded others.</p>
         <p>This SSI ecosystem is still under development and should be available for everyday use in the next 5-15 years, depending on where in the world one is, marking a future as full of potential as the beginnings of the world wide web.</p>
+        <p>Digital identities are the foundation upon which can be built multiple expansions. Expansions under development include solutions in education, banking, financial services, retail and e-commerce, supply chain tracking, health care, the internet of things (IoT), and digital rights management, as illustrated in figure 1 and explained further in 4.2.</p>
 	</section>
     <footer>7</footer>
 </section><!-- END #pg7.page.hf -->
@@ -1075,7 +1076,6 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
     </section>
     <footer>?</footer>
 </section><!-- END #IPFS.page.hf -->
-
 <section id="" class="page hf">
 	<section>
         <h5>Version Control Systems – Git</h5> 
@@ -1287,7 +1287,6 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-
 <section id="" class="page hf">
 	<section>
         <div class="image" style="padding:0 5%;">
@@ -1436,7 +1435,6 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-
 <section id="" class="page hf">
 	<section>
         <p>One primary avenue that Microsoft is offering for ION implementation is with its Azure Active Directory, currently available as a preview under the description of "Decentralized Identity" or "Active Directory Verifiable Credentials."</p>
@@ -1474,23 +1472,36 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
             <li>Microsoft Authenticator ~ on a mobile device</li>
             <li>NGROK</li>
         </ul>
-        <p>The preview is made for both Windows and Linux. For purposes of this demonstration, Ubuntu 20.04 is being run inside VirtualBox. The mobile portions using Microsoft Authenticator are using Android 10 (MIUI 12.0.8Stable).</p>
+        <p>The preview is made for both Windows and Linux. For purposes of this demonstration, Ubuntu 20.04 is being run inside VirtualBox. The mobile portions using Microsoft Authenticator are using Android 10.</p>
+        
+        <p>The preview worked successfully on Linux (see Figure 18), as did the verifier on port 8082, but the Authenticator app did not work on the mobile.</p>
+        <div class="image">
+            <img src="./imgs/Figure_18.gif" alt="Azure Preview VC Issuer on Ubuntu">
+            <p><b>Figure 18:</b> Azure Preview VC Issuer on Ubuntu</p>
+        </div>
 
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
+        <p>The version available in the app stores is only 6.2105.3004. Although there is an early preview available in the help (Figure 19.4) and confirmation (Figure 19.5), after scanning the QR code, the first three screenshots in Figure 19 are still the result. Even an attempt to download the APK from an unofficial download site delivered the same results. </p>
+        <div class="image" style="padding:0 10%;">
+            <img src="./imgs/Figure_19.gif" alt="Unsuccessful results from MS Authenticator app on mobile">
+            <p><b>Figure 19:</b> Unsuccessful results from MS Authenticator app on mobile</p>
+        </div>
+        <p>When the Authenticator update is available for public use or the early preview successfully works, the intended results are shown in Figure 20.</p>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
 <section id="" class="page hf">
 	<section>
-	</section>
-    <footer>?</footer>
-</section><!-- END #.page.hf -->
-<section id="" class="page hf">
-	<section>
+        <div class="image" style="padding:0 15%;">
+            <img src="./imgs/Figure_20.gif" alt="Intended mobile reults with MS Authenticator">
+            <p><b>Figure 20:</b> Intended mobile reults with MS Authenticator</p>
+        </div>
+        <p>The SSI ecosystem is still under development, and how soon it will be available for everyday use is left to supposition. However, considering the release of ION was at the end of March, perhaps we will not have to wait too long.</p>
+        
         <h4>Chapter 3 Key Takeaways</h4>
         <ul>
         	<li>The Linux Foundation set up the Hyperledger project in 2015 to advance cross-industry collaboration developing blockchains and distributed ledgers for non-cryptocurrency use.</li>
@@ -1498,6 +1509,13 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         	<li>Indy is publicly readable with permissioned write access. It is intended for only credential issuers to write public DIDs, credential schemas and definitions, and optional revocation registries. No personally identifiable information is allowed.</li>
         	<li>Aries is intended to be blockchain agnostic or interoperable.</li>
         	<li>Aries agents are divided into KMS, messaging interface, ledger interface, and controller. or for development purposes: framework and controller.</li>
+       </ul>
+	</section>
+    <footer>?</footer>
+</section><!-- END #.page.hf -->
+<section id="" class="page hf">
+	<section>
+       <ul>
         	<li>Aries frameworks for edge development are currently available in .NET and golang. For non-mobile development Aries Cloud Agent Python is available.</li>
         	<li>Aries RFCs are available on a GitHub repository.</li>
         	<li>Atala Prism is being developed by IOHK as an enterprise version of Cardano to offer SSI for governments in developing countries and beyond.</li>
@@ -1505,11 +1523,11 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         	<li>The Decentralized Identity Foundation (DIF) is focused on the open-source development of standards for protocols, components, and data formats for industry-wide construction of decentralized identity/SSI.</li>
         	<li>The DIF contributed a Universal Resolver (UR) to resolve the DIDdoc from a supplied DID.</li>
         	<li>Building on the DIF project, Sidetree, Microsoft, a member of DIF, has launched V1 of ION. ION is a layer two DPKI on Bitcoin, the underlying DLT, and uses IPFS for content-addressable storage (CAS) of DID operations.</li>
+            <li>Microsoft has a preview of Verifiable Credentials using ION available in their Azure Active Directory.</li>
         </ul>
 	</section>
     <footer>?</footer>
 </section><!-- END #.page.hf -->
-<!-- -4 pages  -->
 
 <!-- Chapter 4 -->
 <section class="page hf">
@@ -1557,8 +1575,8 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 	<section>
         <p class="ti0">A graphical representation of the plan:</p>
         <div class="image">
-            <img src="./imgs/Figure_18.svg" alt="Image representing the steps that a user would take">
-            <p><b>Figure 18:</b> A graphical representation of the original plan from a user perspectve</p>
+            <img src="./imgs/Figure_21.svg" alt="Image representing the steps that a user would take">
+            <p><b>Figure 21:</b> A graphical representation of the original plan from a user perspectve</p>
         </div>
     	<h5>Required changes to original idea</h5>
     	<p>The SSI ecosystem was not built to the degree required in time for this thesis. After exploring in-depth, with the available information, the three forerunners mentioned in chapter 3, several points in the original idea should be revised before this proposal is constructed.</p>
