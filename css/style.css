@@ -25,37 +25,7 @@ body{
   line-height:150%;
   text-align:justify;
 }
-section.page{ 
-  width:170mm;
-  height:257mm;
-  display:block;
-  margin:0 auto;
-  margin-bottom:5mm;
-  box-shadow:0 0 0.5cm rgba(0,0,0,0.5);
-  padding:20mm;
-  background:#fff;
-}
 
-section.page > section{
-	padding:7.5mm;
-	height: 257mm;
-}
-
-section.page.hf section::before{
-	content: "Beijing Institute of Technology Master Degree Thesis";
-	position:relative;
-	display:block;
-	top:-1cm;
-	font-size:8pt;
-    text-align: center;
-    border-bottom: 1px solid #000;
-}
-section.page.hf footer{
-	position:relative;
-	display:block;
-	top:-12mm;
-	text-align:center;
-}
 
 h1,h2,h3,h4,h5,h6{
 	text-align:center;
@@ -133,6 +103,38 @@ span.ul{
 	text-indent:0;
 	margin-top:0;
 }
+
+/* defining the page structure */
+section.page{ 
+  width:170mm;
+  height:257mm;
+  display:block;
+  margin:0 auto;
+  margin-bottom:5mm;
+  box-shadow:0 0 0.5cm rgba(0,0,0,0.5);
+  padding:20mm;
+  background:#fff;
+}
+section.page > section{
+	padding:7.5mm;
+	height: 257mm;
+}
+section.page.hf section::before{
+	content: "Beijing Institute of Technology Master Degree Thesis";
+	position:relative;
+	display:block;
+	top:-1cm;
+	font-size:8pt;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+section.page.hf footer{
+	position:relative;
+	display:block;
+	top:-12mm;
+	text-align:center;
+}
+
 
 article,
 .article{
