@@ -22,7 +22,7 @@ body{
   background:rgb(204,204,204);
   font-size:12pt;
   font-family:"Times New Roman", serif;
-  line-height:150%;
+  line-height:160%;
   text-align:justify;
 }
 
@@ -255,8 +255,10 @@ article,
 	font-weight:bold;
 	border-right:1px solid #000;
 }
-.table1.grid-container .item11{
-	padding-top:5px;
+.table1.grid-container .item3 *,
+.table1.grid-container .item4 *,
+.table1.grid-container .item11 *{
+	margin:0.5em 0;
 }
 
 /* .table styles */
@@ -294,6 +296,7 @@ article,
 .table.reverseBg tbody tr:nth-child(2n) td{
 	background-color:transparent;
 }
+.table tbody td{font-size:0.875em;}
 
 /* .code for code examples */
 .code h5{
@@ -311,7 +314,7 @@ article,
 	padding:0 5px;
 }
 @media print {
-  .code h5{border:1px solid #777;]
+  .code h5{border:1px solid #777;}
   .code pre{
 	  white-space:pre;
 	  background-color:#fff;
@@ -322,7 +325,7 @@ article,
 
 .references p{
 	text-indent:0;
-	margin:0.5em 0;
+	margin:0.375em 0;
 	text-align:left;
 	word-wrap:break-word;
 }
