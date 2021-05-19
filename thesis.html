@@ -68,11 +68,9 @@
 <section class="page hf">
 	<section>
     	<h2 id="Abstract">Abstract</h2>
-    	<p>Distributed Ledger Technology (DLT) refers to the broader class of distributed ledgers that include blockchain and directed acyclic graphs. Blockchain, the most familiar form of DLT, has transitioned from cryptocurrencies to Smart Contracts and current further development resolving deficiencies in scalability, interoperability, sustainability, privacy, and governance.</p>
-        <p>The Distributed Identity Foundation, with members including Microsoft and IBM, is working with the W3C and the Linux Foundation's Hyperledger project to develop a unified, interoperable ecosystem allowing users to control and store identity information by creating a decentralized digital identity or Self-Sovereign Identity (SSI).</p>
-        <p>Using DLT, a much-needed evolution of the internet will create a common identity layer allowing people, organizations, and things to have their own discrete SSI. This will alter the future of big data, giving control of identity back to the owners, allowing full regulation of who can use their data and how it can be used.</p>
-        <p>The aim is to create a new system of applications and products that enable developers and businesses to offer solely client-side services—giving every person their own portable digital identity securely stored to preserve privacy.</p>
-        <p>This research contributes a Comprehensive analysis of Distributed Ledger Technology, specifically the generations of blockchain and limitations that are being resolved. The analysis then covers the parts of an SSI: Decentralized Identifiers, Verifiable Credentials, and Identity Agents, and documents current development by Hyperledger Identity Stack, Atala Prism, and the Decentralized Identity Foundation.</p>
+    	<p>In the connected world of the internet, digital identity has progressed from a centralized authority to federated authorities and user-centric individual control. A much-needed evolution of the internet is creating a common identity layer, allowing people, organizations, and things to have their own discrete Self-Sovereign Identifier. Decentralized identities, or Self-Sovereign Identifiers, place control back into the hands of the identity holders or controllers in the case of non-animate subjects, allowing cryptographically verifiable identity claims to be presented to a verifier that requests access. The online economy can utilize just-in-time identity, eliminating personally identifiable information storage by organizations if needed, bringing mutual benefit to the user and the organization. The Distributed Identity Foundation, W3C, and the Linux Foundation’s Hyperledger project are working on a unified global distributed digital or Self-Sovereign Identity system, aiming to change the client-server web that we know to one that offers solely client-side services.</p>
+        <p>The Self-Sovereign Identifier ecosystem under construction will bring significant changes to digital identity, solving many of the intrinsic identity issues the world wide web neglected in its construction. Self-Sovereign Identifiers aim to improve digital identity to where it exceeds that of paper identification, minimize information given, give ownership of digital data back to the individual on their devices, allow identity data to be portable, and avoid centralized silos of identity data.</p>
+        <p>This research contributes a comprehensive analysis of the SSI ecosystem under development. It starts by covering the foundational principles of distributed ledger technology, blockchain, and its three generations. This paper then describes the components of Self-Sovereign Identifiers: Decentralized Identifiers, Verifiable Credentials, and Identity Agents. Then is covered an analysis of work in progress by the Hyperledger identity stack (i.e., Hyperledger Indy, Aries, and Ursa), IOHK’s Atala Prism, and the Distributed Identity Foundation and its member Microsoft’s ION. Finally, potential further uses of SSI and extensions under development are considered.</p>
     	<p class="title"><b>Key Words:</b> Distributed Ledger Technology (DLT); Blockchain (BC); Blockchain 3.0; Self-Sovereign Identity (SSI); Decentralized Identifier (DID); Verifiable Credential (VC); Identity Agents; Hyperledger Identity Stack; Atala Prism; Decentralized Identity Foundation (DIF)</p>
     </section>
     <footer>II</footer>
@@ -199,18 +197,18 @@
             			<p><a href="#originalPlan">4.1 - My untested original plan</a><span>65</span></p>
             		</li>
             		<li>
-            			<p><a href="#SSI_underDevelopment">4.2 - SSI extensions under development</a><span>70</span></p>
+            			<p><a href="#SSI_underDevelopment">4.2 - SSI extensions under development</a><span>69</span></p>
             		</li>
             	</ul>
             </li>
             <li>
-                <p><a href="#Conclusion">Conclusion and future remarks</a><span>77</span></p>
+                <p><a href="#Conclusion">Conclusion and future remarks</a><span>76</span></p>
             </li>
             <li>
-                <p><a href="#References">References</a><span>79</span></p>
+                <p><a href="#References">References</a><span>78</span></p>
             </li>
             <li>
-                <p><a href="#GDPR">Appendix A - GDPR</a><span>?</span></p>
+                <p><a href="#GDPR">Appendix A - GDPR</a><span>85</span></p>
             </li>
         </ul>
     </section>
@@ -248,9 +246,9 @@ In the connected world of the Internet, digital identity has progressed from a c
         <p>A standardized, machine-readable format must be defined to permit verification of the source and integrity of the digital credential. A commonly accepted digital signature, in the form of two keys – private key for signing and public key for verifying that the signature and signed digital document had not been tampered with. To verify a signature, one must have access to the public key and verify that the public key obtained is correct. These public keys are currently stored on a couple hundred certificate authorities (CA). This small source enables browsers to get the website’s public key to enable an encrypted HTTPS connection. However, the public-key infrastructure (PKI) supplied by CA are cumbersome, costly, and centralized – so companies, not individuals, are the purchasers of digital certificates.</p>
         <p class="talj">DLT, specifically a public BC, offers a decentralized PKI (DPKI) that nobody owns and everyone can use. This can replace trust in humans to verify identification claims, to</p>
 	</section>
-    <footer>4</footer>
-</section><!-- END #pg4.page.hf -->
-<section id="pg5" class="page hf">
+    <footer>3</footer>
+</section><!-- END #pg3.page.hf -->
+<section id="pg4" class="page hf">
 	<section>
         <p class="ti0">one where cryptography, in a machine-readable way, is stored immutably. Through DLT, the same process can be used to verify identity online that has been used offline for centuries. Every decentralized identifier (DID) has an associated public-private key pair. As long as the verifier can access the DID of the issuer (recorded publicly on a BC) shown on the digital credential, it is quick and easy to look up the issuer and verify the signature on the claims. Following this process, there is no need for identity federations or islands of identity for PKI  <a id="link_Sovrin_2019" href="#Sovrin_2019">[Sovrin_2019,</a> <a id="link_Tobin_2016" href="#Tobin_2016">Tobin_2016]</a>.</p>
         <p class="ti0">All blockchains follow the following procedure:</p>
@@ -263,9 +261,9 @@ In the connected world of the Internet, digital identity has progressed from a c
         <p>Identity is an inherent human condition; it is not conditional on outside administration. However, granting control of digital identities to centralized authorities leaves users locked to a single authority that can deny their identity or confirm a false identity. Centralization gives power to the centralized authorities, not the users. In the creation of an SSI, the individual must be carefully protected. The goal of digital identity is to make identity information widely available, crossing international boundaries, without losing user control, redefining modern concepts of identity. An SSI must be transportable, not locked down to one site or locale <a href="#Allen_2016">[Allen_2016]</a>.</p>
         <p class="talj">Identity also needs to be widely available for everyone, no matter their location or situation. According to the World Bank, almost 15% of the world’s population was without ID <a id="link_Desai_2017" href="#Desai_2017">[Desai_2017]</a>. In addition, more than half of the world is currently offline. Banking the unbanked, as Cardano is attempting to do through their Atala Prism (see Section 3.2), is partly done through giving people without ID an SSI. Many of those without ID live in remote areas with little access to electricity, mobile service, or even wired telephone</p>
     </section>
-    <footer>3</footer>
-</section><!-- END #pg3.page.hf -->
-<section id="pg4" class="page hf">
+    <footer>4</footer>
+</section><!-- END #pg4.page.hf -->
+<section id="pg5" class="page hf">
 	<section>
         <p class="ti0">service. This makes inclusion for all people difficult. Cardano is making strides in that direction in Africa, partnering with World Mobile, which aims to connect the unconnected by providing decentralized low-cost, sustainable, and profitable internet to remote villages across Tanzania and eventually other areas. Cardano then provides them with an SSI through Atala Prism, giving them further financial opportunities <a id="link_Desai_2017" href="#Desai_2017">[Cardano_2021]</a>.</p>
         <p>The problems SSI aims to resolve are based  on the following principles <a id="link_Tobin_2016" href="#Tobin_2016">[Tobin_2016]</a>:</p>
@@ -922,13 +920,12 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 </pre>
     	</article>
     	<p>VC holders can either show the VC wholly or generate verifiable presentations using claims from multiple VCs to submit to a verifier to demonstrate necessary competence. As both VCs and verifiable presentations are cryptographically verifiable and can be transmitted rapidly, this alone makes them superior to physical credentials.</p>
+        <p>Some verifiable presentations may contain data in synthesized form, such as ZKP, rather than the original VC claims.</p>
 	</section>
     <footer>32</footer>
 </section><!-- END #pg32.page.hf -->
 <section id="pg33" class="page hf">
 	<section>
-        
-        <p>Some verifiable presentations may contain data in synthesized form, such as ZKP, rather than the original VC claims.</p>
     	<p>The digital proof attached to the VC allows presenting a verifiable presentation to a verifier, attaching a digital signature at the end. See Example 3.</p>
 
         <article class="code">
@@ -966,6 +963,10 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
       "type": "RsaSignature2018",
       "created": "2017-06-18T21:19:10Z",
       "proofPurpose": "assertionMethod",
+      "verificationMethod": "https://example.edu/issuers/keys/1",
+      "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
+    }
+  }],
 </pre>
 <pre class="printShow">
 {
@@ -1000,22 +1001,25 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
       "type": "RsaSignature2018",
       "created": "2017-06-18T21:19:10Z",
       "proofPurpose": "assertionMethod",
+      "verificationMethod": "https://example.edu/issuers/keys/1",
+      "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY
+      0Il19..TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEut
+      s01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IF
+      LOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBP
+      M"
+    }
+  }],
 </pre>
     	</article>
 	</section>
     <footer>33</footer>
-</section><!-- END #pg33#.page.hf -->
+</section><!-- END #pg33.page.hf -->
 <section class="page hf">
 	<section>
         
         <article class="code">
 <pre class="printHide">
-...
-      "verificationMethod": "https://example.edu/issuers/keys/1",
-      "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
-    }
-  }],
-  
+...  
   "proof": {
     "type": "RsaSignature2018",
     "created": "2018-09-14T21:19:10Z",
@@ -1028,16 +1032,7 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 }
 </pre>
 <pre class="printShow">
-...
-      "verificationMethod": "https://example.edu/issuers/keys/1",
-      "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY
-      0Il19..TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEut
-      s01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IF
-      LOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBP
-      M"
-    }
-  }],
-  
+...  
   "proof": {
     "type": "RsaSignature2018",
     "created": "2018-09-14T21:19:10Z",
@@ -1627,9 +1622,9 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         </ul>
         <p class="ti0">The methodology for hypothesis 3, presuming that 1 and 2 were satisfied:</p>
 	</section>
-    <footer>67</footer>
-</section><!-- END #pg67.page.hf -->
-<section id="pg68" class="page hf">
+    <footer>66</footer>
+</section><!-- END #pg66.page.hf -->
+<section id="pg67" class="page hf">
 	<section>
         <ul>
             <li>Create SSI interface for rating collection</li>
@@ -1645,17 +1640,17 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
     	<p>First, rather than adding a protocol to supply the K-anonymity, the use of uncorrelatable, pairwise DIDs would allow the user a degree of anonymity. If the rater is concerned with being targeted, they should not add too specific a location (e.g., one with a small population) as a group. This may not be of concern to many people but is a safety mechanism for those who may be targeted for some differences they hold.</p>
     	<p class="talj">Next, the idea to use IPFS is not quite as anonymous as expected. Originally the understanding was that all NodeIDs were simply a public key and thereby as</p>
 	</section>
-    <footer>68</footer>
+    <footer>67</footer>
 </section><!-- END #pg68.page.hf -->
-<section id="pg69" class="page hf">
+<section id="pg68" class="page hf">
 	<section>
         <p class="ti0">pseudonymous as most BCs. However, like public BCs that do not use ZKP (e.g., Bitcoin) where IP addresses can be traced in explorers,  IPFS’s DHT stores the IP address of every user’s PeerID <a id="link_IPFS" href="#IPFS">[IPFS]</a>. This could allow targetability for the original rater and all who store the content hash (CID). This could be of concern as data profiling would still be possible by ISPs and other unidentified profiling organizations, which would go contrary to the GDPR standards, or other hackers who may have personal or paid interest to target a particular group. Although IPFS is still in its early formulation and may resolve these issues later, as of now, it is not anonymous enough. Thus Hypothesis 1 is contradicted.</p>
         <p>One possible way to resolve this would be to make an HTTP page where the logs would originally be totaled. Rather than storing the individual ratings on IPFS, instead, allow timestamped query results from the HTTP totals page to be exported to NoSQL and stored on IPFS. Any individual that wishes to maintain their privacy can store a copy of multiple query results on their IPFS, so even if their IP is available, targeting them would be a matter of speculation that they hold membership in any of those groups. Thus Question, and Hypothesis 2, could be applicably adjusted, and Question 1 could be reformulated.</p>
         <p>Finally, in regards to Question 3, there are demonstrations (i.e., Atala Prism) of using SSI to register DIDs, accept and request VCs, and use said VCs to prove necessary claims. However, as to this point, Atala Prism is only available as a demonstration model, not one that can be used to develop on top of. Other privacy principles, such as pairwise DIDs that Hyperledger Identity Stack recommends, cannot be confirmed that Atala Prism implements. Although there are claims that Atala is open-source, the code is not yet released for public access. Hyperledger Aries is working on the underlying DIDcomm, but there are no available GUIs yet. Although the DIDcomm protocols already defined could presumably be used to simulate the concept of submitting a rating as simple text with claims attached, it would be far too primitive and take too much time to do in time for a master’s thesis. ION claims to have released a basic framework at the end of March, but that release was too late to provide enough time to develop on top of it.</p>
         <p class="talj">Further, SSIs, or DIDs, are not specific for human individuals but for things and organizations too. Another proposal would be to give each film its own DID to which ratings would be attached. This could be advantageous for a film to demonstrate acclaim among different audiences. The disadvantage would be that with an SSI, the ratings would be at the disclosure of the controller of that SSI, so the controller may choose not to release</p>
 	</section>
-    <footer>69</footer>
-</section><!-- END #pg69.page.hf -->
+    <footer>68</footer>
+</section><!-- END #pg68.page.hf -->
 <section class="page hf">
 	<section>
         <p class="ti0">all reviews, only the positive ones. Since SSIs are linked to a public BC, there may be ways to compare the total of data transactions to the film's DID to the total amounts of votes displayed. However, there are many ways the film's SSI controller could excuse this without permitting full transparency.</p>
@@ -1667,9 +1662,9 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p>These issues can be resolved through the use of an SSI. All credentials issued by an institute would be signed with the public key of that institute, which presumably would be publicly notified on a DLT. This would allow all issued certificates to be verifiable even after the institute ends business. Credentials could also be checked for non-revocation without requiring contact with the issuing institution.</p>
         <p>Even better, as demonstrated by Cardano's Atala Prism working with the Ethiopian Minister of Education, a next-generation blockchain-based solution can track grades and educational attainments of (starting with 5 million) students from kindergarten to 12th grade. Several applications and web-based applications would be built, allowing the ministry of education and school(s) to monitor the students. These applications could view what credentials have been issued to them, track the student's progress in certain subjects, monitor their attendance, and store all the certificates and data in the unique SSI of the student. This storage in the SSI of the student gives the student full ownership and control of their academic achievements, enabling easy sharing with universities or employment after graduation [<a id="link_IOHK_April2021" href="#IOHK_April2021">IOHK_April2021</a>].</p>
 	</section>
-    <footer>70</footer>
+    <footer>69</footer>
 </section><!-- END #SSI_underDevelopment.page.hf -->
-<section id="pg71" class="page hf">
+<section id="pg70" class="page hf">
 	<section>
         <p>Common use of this sort of academic monitoring could also be applied to teachers, discovering their pedantic methodologies and related student success. This could potentially be tailored to connect students with teachers who use methods favorable for the positive advancement of the student, the field, and even the nation and beyond.</p>
         
@@ -1682,9 +1677,9 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p>VeChain offers a combination of the use of blockchain and a Smart Tag such as an RFID tag or QR Code to trace a retail product's lifecycle, allowing customers to verify the products are authentic before purchase. The data at each stage is verified by an independent third party who uploads the data to the immutable blockchain, thus guaranteeing authenticity for the downstream companies and customers. The VeChain Pro App can be used to scan the Smart Tag, allowing the user to trace and verify the product. This essentially performs the procedure of supplying an SSI for the product.</p>
         <p class="talj">Another aspect of the use of SSI on the retail distributor or E-commerce app or site would be reduced storage of customers' PII, keeping the minimum needed to recognize the</p>
 	</section>
-    <footer>71</footer>
-</section><!-- END #pg71.page.hf -->
-<section id="pg72" class="page hf">
+    <footer>70</footer>
+</section><!-- END #pg70.page.hf -->
+<section id="pg71" class="page hf">
 	<section>
         <p class="ti0">customer at a future visit. Including a VC listing ownership of the Smart-Tag ID would be an additional step that could be implemented, allowing legal ownership verification in the case of a dispute.</p>
         <h5>Supply chain tracking</h5>
@@ -1696,12 +1691,12 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <h5>Health care</h5>
         <p>There are numerous advantages SSI use can bring to medical care, including certifying that medicines are legit and not counterfeit, protecting patients' PII data, confirming that a doctor's qualifications are up to date, and more.</p>
         <p>Due to cost, peer pressure, or other reasons, people purchase medications online. Similar to E-commerce mentioned above, online sales are less regulated and easier to abuse, and counterfeit or substandard medications are another dilemma that not only inflicts financial losses but affects people's health as well. The use of SSI tracking schemes such as Atala SCAN or VeChain Smart Tags could reduce the risk and improve the well-being of patients globally.</p>
-		<p>A patient can use Doctors' SSI certification to confirm that the doctor is qualified in the desired field and also ensure that the licensing is by a notable medical authority.</p>
 	</section>
-    <footer>72</footer>
-</section><!-- END #pg72.page.hf -->
-<section id="pg73" class="page hf">
+    <footer>71</footer>
+</section><!-- END #pg71.page.hf -->
+<section id="pg72" class="page hf">
 	<section>
+		<p>A patient can use Doctors' SSI certification to confirm that the doctor is qualified in the desired field and also ensure that the licensing is by a notable medical authority.</p>
         <p>Patients' PII kept safe through the use of SSI is one advantage. Storing the patient's entire medical record under their control allows the ease of transporting it between doctors, locations, hospitals, cities, or even countries, escaping the siloed healthcare record system that currently exists. This is a tremendous advantage for the patients, as their medical data is consolidated and under their control.</p>
         <p>The use of SSI can, most certainly, revolutionize the health care industry. Cryptographically authenticated anonymous statistics of the success of medicines and medical procedures could also be gathered to improve doctor recommendations and indirectly improve medicine research if currently used approaches could be improved.</p>
         
@@ -1710,13 +1705,12 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p>Many IoT devices will have low computational resources and storage. These devices could have embedded Smart Tags or QR codes and rely on external data processing combined from multiple edge devices. For example, in a smart home, not all smart devices are required to do their processing independently. Instead, a smart-home-hub could gather, collectively manipulate and secure the data supplied by the discrete devices. Alternatively, all data could be tied to the owner's SSI mandating the owner's consent for visibility or manipulation of any data.</p>
         <p>IOTA proposes advancing into Industry 4.0 whereby intelligent connected machines can self-organize, self-optimize, and develop into cross-company value chains with reliable, transparent data exchange. Devices can securely communicate and exchange data, goods, and services, leaving an immutable audit trail for administrative purposes.</p>
         <p>VeChain advances a solution to encourage consumers to participate in carbon reduction, earning carbon reduction credits as a reward. This proposal comes as a result of traditional carbon reduction being mainly top-down administrative orders. Incentivising enterprises and consumers to favor the use of new energy vehicles, energy-efficient appliances, and so on through tagging these devices with Smart Tags and storing carbon reduction data on the BC, granting the responsible target carbon reduction credits.</p>
-        <p class="talj">Embedding DIDs into vehicles could be used to regulate traffic, give priority to emergency vehicles, and more. When self-driving cars come into use, traffic management</p>
 	</section>
-    <footer>73</footer>
-</section><!-- END #pg73.page.hf -->
-<section id="pg74" class="page hf">
+    <footer>72</footer>
+</section><!-- END #pg72.page.hf -->
+<section id="pg73" class="page hf">
 	<section>
-        <p class="ti0">as a whole could be operated transparently via DLT. <a id="link_Bagloee_2019" href="#Bagloee_2019">[Bagloee_2019]</a> formulates and numerically tests the concept of a smart-contract-based tradable mobility permit, exploring the side benefits it produces.</p>
+        <p>Embedding DIDs into vehicles could be used to regulate traffic, give priority to emergency vehicles, and more. When self-driving cars come into use, traffic management as a whole could be operated transparently via DLT. <a id="link_Bagloee_2019" href="#Bagloee_2019">[Bagloee_2019]</a> formulates and numerically tests the concept of a smart-contract-based tradable mobility permit, exploring the side benefits it produces.</p>
         <p>There are many more use cases for tying SSI to IoT devices, enough to write an entire paper.  Allow this passage to whet the appetite for what the future can bring.</p>
         
         <h5>Digital Rights Management</h5>
@@ -1727,9 +1721,9 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
         <p>Aside from access control, a user who has purchased digital content (e.g., NFTs) could have their purchase timestamped on a BC along with their public key, proving ownership for bragging rights or potential reselling later.</p>
         <p>This field will likely be developed further after blockchains and the SSI ecosystem come into widespread use.</p>
 	</section>
-    <footer>74</footer>
-</section><!-- END #pg74.page.hf -->
-<section id="pg75" class="page hf">
+    <footer>73</footer>
+</section><!-- END #pg73.page.hf -->
+<section id="pg74" class="page hf">
 	<section>
         <h4>Chapter 4 Key Takeaways</h4>
         <ul>
@@ -1748,10 +1742,10 @@ gRxDWUcX16dUEMGlv50aqzpqh4Qktb3rkBuQy72IFLOqV0G_zS245kronKb78cPN2
 Embedding DIDs in vehicles could allow automated traffic management.</li>
         </ul>
 	</section>
-    <footer>75</footer>
-</section><!-- END #pg75.page.hf -->
+    <footer>74</footer>
+</section><!-- END #pg74.page.hf -->
 
-<section id="pg76" class="page hf">
+<section id="pg75" class="page hf">
 	<section>
     	<ul>
 			<li>Digital media creation can be timestamped on a blockchain by the creator. Sales and ownership of digital media can also be timestamped.</li>
@@ -1759,9 +1753,8 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
 			<li>Targeted digital media sales could be linked to the SSI of the purchaser, requiring decryption to use.</li>
         </ul>
 	</section>
-    <footer>76</footer>
-</section><!-- END #pg76.page.hf -->
-
+    <footer>75</footer>
+</section><!-- END #pg75.page.hf -->
 
 <!-- Conclusion -->
 <section class="page hf">
@@ -1777,15 +1770,15 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         <p>SSI data minimization and pairwise identifiers, preventing correlatability, will bring alterations to big data gathering. Through ZKP and data minimization, a cryptographic certification that a holder is over 21 can be done with a simple claim “is over 21 years old”.  Instead of presenting extraneous personal information typically on a paper ID (e.g., address, full date of birth, height, weight, …). Pairwise DIDs can be assigned to each entity such that the entities have no way to confirm that the same individual is the holder of the discrete DIDs.</p>
         <p>Identity data through the use of ZKP and non-correlatable links can potentially be anonymized enough to allow for big-data collection straight from the source with consent receipts attached – thus improving from the current centralized, unverifiable data silos. This anonymized data could be used for scientific research, a new recommendation system, or product appreciation. However, for those purposes, the SSI ecosystem must be developed further and come into mainstream use.</p>
     </section>
-    <footer>77</footer>
+    <footer>76</footer>
 </section><!-- END #Conclusion.page.hf -->
-<section id="pg78" class="page hf">
+<section id="pg77" class="page hf">
 	<section>
-        <p>This paper documents the motivation for SSI development as an enhancement of digital identity for use across the web. Then covers the foundational principles of Distributed Ledger Technology, Blockchain, Blockchain means of consensus, and blockchain’s generations: cryptocurrency (BC 1.0), smart contracts (BC 2.0), and ongoing improvements in scalability, interoperability, sustainability, privacy, and governance (BC 3.0). Next is a description of the subsections of Self-Sovereign Identities: Decentralized Identifiers, Verifiable Credentials, and Identity Agents. An expansion follows with work in progress by the Hyperledger identity stack (i.e., Hyperledger Indy, Aries, and Ursa), IOHK’s Atala Prism, and the Distributed Identity Foundation and its member Microsoft’s ION. Finally, potential further uses of SSI and extensions under development are considered.</p>
+        <p>This paper documents the motivation for SSI development as an enhancement of digital identity for use across the web. Then it covers the foundational principles of Distributed Ledger Technology, Blockchain, Blockchain means of consensus, and blockchain’s generations: cryptocurrency (BC 1.0), smart contracts (BC 2.0), and ongoing improvements in scalability, interoperability, sustainability, privacy, and governance (BC 3.0). It continues with a description of the subsections of Self-Sovereign Identities: Decentralized Identifiers, Verifiable Credentials, and Identity Agents. An expansion follows with work in progress by the Hyperledger identity stack (i.e., Hyperledger Indy, Aries, and Ursa), IOHK’s Atala Prism, and the Distributed Identity Foundation and its member Microsoft’s ION. Finally, potential further uses of SSI and extensions under development are considered.</p>
         <p>Future research, when the SSI infrastructure has sufficiently culminated, will aim to produce an anonymized categorization, in the form of verifiable credentials with pairwise DIDs, allowing ratings to be classified by appending the categories the holder chooses to include. These categories could store knowledge of preferences in a globally accessible way (e.g., ratings categorized by age, gender, nationality, etc.) to be used in sorting by other users, machine learning predictions, or other big data purposes.</p>
 	</section>
-    <footer>78</footer>
-</section><!-- END #pg78.page.hf -->
+    <footer>77</footer>
+</section><!-- END #pg77.page.hf -->
 
 <!-- References -->
 <section id="References" class="page references hf">
@@ -1804,9 +1797,9 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         <p><a id="DIF" href="#link_DIF">[DIF]</a> DIF. DIF - Decentralized Identity Foundation, n.d. https://identity.foundation/.</p>
         <p><a id="DIF_ION" href="#link_DIF_ION">[DIF_ION]</a> Decentralized-Identity. Decentralized-Identity/Ion, n.d. https://github.com/decentralized-identity/ion.</p>
     </section>
-    <footer>79</footer>
+    <footer>78</footer>
 </section><!-- END #References.references.page.hf -->
-<section id="pg80" class="page references hf">
+<section id="pg79" class="page references hf">
 	<section>
         <p><a id="DIF_Sidetree" href="#link_DIF_Sidetree">[DIF_Sidetree]</a> DIF. Decentralized-Identity/Sidetree, n.d. https://github.com/decentralized-identity/sidetree.</p>
         <p><a id="DIF_Universal_Resolver" href="#link_DIF_Universal_Resolver">[DIF_Universal_Resolver]</a> decentralized-identity. Decentralized-Identity/Universal-Resolver, n.d. https://github.com/decentralized-identity/universal-resolver.</p>
@@ -1820,9 +1813,9 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         <p><a id="Greenlight" href="#link_Greenlight">[Greenlight]</a> GreenLight Dev Ledger Indy Network. GreenLight, n.d. http://dev.greenlight.bcovrin.vonx.io/.</p>
         <p><a id="Guo_2019" href="#link_Guo_2019">[Guo_2019]</a> Guo, Leiyong, Hui Xie, and Yu Li. “Data Encryption Based Blockchain and Privacy Preserving Mechanisms towards Big Data.” Journal of Visual Communication and Image Representation 70 (December 2019): 102741. https://doi.org/10.1016/j.jvcir.2019.102741.</p>
     </section>
-    <footer>80</footer>
-</section><!-- END #pg80.references.page.hf -->
-<section id="pg81" class="page references hf">
+    <footer>79</footer>
+</section><!-- END #pg79.references.page.hf -->
+<section id="pg80" class="page references hf">
 	<section>
         <p><a id="Hoskinson_2020" href="#link_Hoskinson_2020">[Hoskinson_2020]</a> Hoskinson, Charles. “Atala versus Cardano (Permissioned versus Permissionless).” YouTube, September 2020. https://www.youtube.com/watch?v=uZgDxPCXgPo.</p>
         <p><a id="Hyperledger_AriesOpenAPIDemo" href="#link_Hyperledger_AriesOpenAPIDemo">[Hyperledger_AriesOpenAPIDemo]</a> Hyperledger. Aries OpenAPI Demo, 2021.<br>https://github.com/hyperledger/aries-cloudagent-python/blob/main/demo/AriesOpenAPIDemo.md.</p>
@@ -1839,9 +1832,9 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         <p><a id="IPFS" href="#link_IPFS">[IPFS]</a> IPFS “IPFS and Privacy.” IPFS Docs. docs.ipfs.io. Accessed December 2020. https://docs.ipfs.io/concepts/privacy/.</p>
         <p><a id="Ivan_2020" href="#link_Ivan_2020">[Ivan_2020]</a> Ivan. “Breaking Down ETH 2.0 - Zk-SNARKS and Zk-Rollups.” Ivan on Tech Blockchain Academy. academy.ivanontech.com, June 25, 2020. https://academy.ivanontech.com/blog/breaking-down-eth-2-0-zk-snarks-and-zk-rollups.</p>
     </section>
-    <footer>81</footer>
-</section><!-- END #pg81.references.page.hf -->
-<section id="pg82" class="page references hf">
+    <footer>80</footer>
+</section><!-- END #pg80.references.page.hf -->
+<section id="pg81" class="page references hf">
 	<section>
         <p><a id="Jawaheri_2020" href="#link_Jawaheri_2020">[Jawaheri_2020]</a> Jawaheri, Husam Al, Mashael Al Sabah, Yazan Boshmaf, and Aiman Erbad. “Deanonymizing Tor Hidden Service Users through Bitcoin Transactions Analysis.” Computers &amp; Security 89 (February 2020): 101684. https://doi.org/10.1016/j.cose.2019.101684.</p>
         <p><a id="Jones_2019" href="#link_Jones_2019">[Jones_2019]</a> Jones, Ben, Dan Robinson, Georgios Konstantopoulos, Joseph Poon, Karl Floersch, Kelvin Fichter, Vitalik Buterin, and Xuanji Li. Plasma Contracts. plasma.io, 2019. https://plasma.io/plasma-contracts.html.</p>
@@ -1854,9 +1847,9 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         <p><a id="Maller_2019" href="#link_Maller_2019">[Maller_2019]</a> Maller, Mary, Sean Bowe, Markulf Kohlweiss, and Sarah Meiklejohn. “Sonic: Zero-Knowledge SNARKs from Linear-Size Universal and Updatable Structured Reference Strings.” Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security, 2019. https://doi.org/10.1145/3319535.3339817.</p>
         <p><a id="Mazières_1998" href="#link_Mazières_1998">[Mazières_1998]</a> Mazières, David, and M. Frans Kaashoek. “Escaping the Evils of Centralized Control with Self-Certifying Pathnames.” Proceedings of the 8th ACM SIGOPS European Workshop on Support for Composing Distributed Applications - EW 8, 1998. https://doi.org/10.1145/319195.319213.</p>
     </section>
-    <footer>82</footer>
-</section><!-- END #pg82.references.page.hf -->
-<section id="pg83" class="page references hf">
+    <footer>81</footer>
+</section><!-- END #pg81.references.page.hf -->
+<section id="pg82" class="page references hf">
 	<section>
         <p><a id="Mazières_2000" href="#link_Mazières_2000">[Mazières_2000]</a> Mazières, David, and David Folkman. “Self-Certifying File System.” PhD Thesis, Massachusetts Institute of Technology, 2000.</p>
         <p><a id="Merkle_1990" href="#link_Merkle_1990">[Merkle_1990]</a> Merkle, Ralph C. “A Certified Digital Signature.” Advances in Cryptology — CRYPTO’ 89 Proceedings, 1990, 218–38. https://doi.org/10.1007/0-387-34805-0_21.</p>
@@ -1872,9 +1865,9 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         <p><a id="Sovrin_2020" href="#link_Sovrin_2020">[Sovrin_2020]</a>Sovrin Foundation. Write to the Sovrin Public Ledger. Sovrin, 2020. https://sovrin.org/issue-credentials/.</p>
         <p><a id="Sporny_2019" href="#link_Sporny_2019">[Sporny_2019]</a> Sporny, Manu, Dave Longley, and David Chadwick. Verifiable Credentials Data Model 1.0. W3C Recommendation 19 November 2019. Verifiable Credentials Data Model 1.0. W3C, 2019. https://www.w3.org/TR/2019/REC-vc-data-model-20191119/.</p>
     </section>
-    <footer>83</footer>
-</section><!-- END #pg83.references.page.hf -->
-<section id="pg84" class="page references hf">
+    <footer>82</footer>
+</section><!-- END #pg82.references.page.hf -->
+<section id="pg83" class="page references hf">
 	<section>
         <p><a id="Steele_2020" href="#link_Steele_2020">[Steele_2020]</a> Steele, Orie, and Manu Sporny. DID Specification Registries. W3C Editor’s Draft 10 December 2020. W3C DID Specification Registries. W3C, 2020. https://w3c.github.io/did-spec-registries/.</p>
         <p><a id="Stoll_2019" href="#link_Stoll_2019">[Stoll_2019]</a> Stoll, Christian, Lena KlaaBen, and Ulrich Gallersdörfer. “The Carbon Footprint of Bitcoin.” SSRN Electronic Journal, July 2019. https://doi.org/10.2139/ssrn.3335781.</p>
@@ -1888,9 +1881,9 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         <p><a id="Viriyasitavat_2019" href="#link_Viriyasitavat_2019">[Viriyasitavat_2019]</a> Viriyasitavat, Wattana, and Danupol Hoonsopon. “Blockchain Characteristics and Consensus in Modern Business Processes.” Journal of Industrial Information Integration 13 (March 2019): 32–39. https://doi.org/10.1016/j.jii.2018.07.004.</p>
         <p><a id="Wackerow_2021" href="#link_Wackerow_2021">[Wackerow_2021]</a> Wackerow, Paul, Sam Richards, Stanislav Bezkorovainyi, Kevin Ziechmann, ethosdev, Nikolai Golub, Aheesh, et al. Layer 2 Scaling. ethereum.org, 2021. https://ethereum.org/en/developers/docs/layer-2-scaling/.</p>
     </section>
-    <footer>84</footer>
-</section><!-- END #pg84.references.page.hf -->
-<section id="pg85" class="page references hf">
+    <footer>83</footer>
+</section><!-- END #pg83.references.page.hf -->
+<section id="pg84" class="page references hf">
 	<section>
         <p><a id="Wolfson_2019" href="#link_Wolfson_2019">[Wolfson_2019]</a> Wolfson, Rachel. “Cardano Founder Launches Enterprise Blockchain Framework In Collaboration With Ethiopian Government.” Forbes. Forbes Magazine, April 2019. https://www.forbes.com/sites/rachelwolfson/2019/04/30/cardano-founder-launches-enterprise-blockchain-framework-in-collaboration-with-ethiopian-government/?sh=4683cdaf4e10.</p>
         <p><a id="Wood_2014" href="#link_Wood_2014">[Wood_2014]</a> Wood, Gavin. "Ethereum: A secure decentralised generalised transaction ledger." Ethereum project yellow paper 151, no. 2014 (2014): 1-32.</p>
@@ -1899,8 +1892,8 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         <p><a id="Zheng_2017" href="#link_Zheng_2017">[Zheng_2017]</a> Zheng, Zibin, Shaoan Xie, Hongning Dai, Xiangping Chen, and Huaimin Wang. “An Overview of Blockchain Technology: Architecture, Consensus, and Future Trends.” In 2017 IEEE International Congress on Big Data (BigData Congress), 557–64. IEEE, 2017. https://doi.org/10.1109/bigdatacongress.2017.85.</p>
         <p><a id="Zilliqa_2017" href="#link_Zilliqa_2017">[Zilliqa_2017]</a> Zilliqa, Team and others. “The Zilliqa Technical Whitepaper.” 2019.</p>
 	</section>
-    <footer>85</footer>
-</section><!-- END #pg85.references.page.hf -->
+    <footer>84</footer>
+</section><!-- END #pg84.references.page.hf -->
 
 <!-- Appendices -->
 <!-- Appendix A -->
@@ -1931,9 +1924,9 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         	<li>What is the status of the on-chain hash where transactional data is stored off-chain and subsequently erased?</li>
         </ul>
     </section>
-    <footer>86</footer>
+    <footer>85</footer>
 </section><!-- END #GDPR.page.hf -->
-<section id="pg87" class="page hf">
+<section id="pg86" class="page hf">
 	<section>
         <ul>
         	<li>What is the status of anonymity solutions such as zero-knowledge proofs under the GDPR?</li>
@@ -1942,10 +1935,8 @@ Embedding DIDs in vehicles could allow automated traffic management.</li>
         	<li>How ought 'erasure' to be interpreted for the purposes of Article 17 GDPR? Can the deletion of a private key satisfy as the erasure of on-chain data?</li>
         </ul>
 	</section>
-    <footer>87</footer>
-</section><!-- END #pg87.page.hf -->
-
-
+    <footer>86</footer>
+</section><!-- END #pg86.page.hf -->
 
 </body>
 </html>
