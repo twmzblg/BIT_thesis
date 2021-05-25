@@ -9,3 +9,7 @@ To print to PDF:
   4. Press Save
   
 Links to references and table of contents will work in the printed PDF document.
+
+
+Important note:
+This thesis did not qualify. While the idea is sound, it was ahead of its time. The underlying infrastructure is yet to be released, so there was not enough to build a demonstration, and the thesis did not qualify.
